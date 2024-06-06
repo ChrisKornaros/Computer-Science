@@ -1,5 +1,5 @@
 # Ignore .md files
-.md
+*.md
 
 # Ignore .git folder
 .git

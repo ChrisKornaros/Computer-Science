@@ -1,7 +1,13 @@
+#include <cs50.h>
 #include <stdio.h>
 
 int main() {
-    int height = 5;
+    int height;
+    do
+    {
+        height = get_int("Height: ");
+    }
+    while (height < 1);
 
     for (int i = 1; i <= height; i++) {
         // Print spaces

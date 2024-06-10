@@ -7,7 +7,7 @@ int main(void)
     int n;
     do
     {
-        n = 87;
+        n = get_int("Change: ");
     }
     while (n < 0);
     // Calculate how many quarters you should give the customer

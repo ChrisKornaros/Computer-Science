@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "*.erd": "json",
-        "*.vuerd": "json",
-        "cs50.h": "c",
-        "stdio.h": "c"
-    }
-}

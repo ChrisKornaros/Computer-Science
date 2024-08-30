@@ -1,8 +1,8 @@
 # CS50p Notes by Unit
-### Unit 0: Functions and Variables
+## Unit 0: Functions and Variables
 :::{}
 - My local Computer_Science repo now has a specific branch for CS50p
-```zsh
+```{zsh}
 git checkout cs50p
 git add .
 git commit -m "Saving recent work for CS50p."
@@ -11,7 +11,7 @@ git merge --no-ff cs50p main
 git push
 ```
 - Quarto is used from the command line, the .qmd file uses markdown syntax
-```md
+```{md}
 :::{}
 - This creates a list
 - Add various items
@@ -37,3 +37,89 @@ git push
 :::{.callout-note}
 For more markdown tips, docs, and shortcuts <https://quarto.org/docs/authoring/markdown-basics.html>
 :::
+
+### Lecture 0
+#### Integers or `int`
+:::{}
+* F-string formatting is a way to embed variables in strings, simply use ```print(f"There are, {count} apples.")```
+* In python an integer is referred to as an `int` 
+* It's easy to interact with `int` variables natively in Python
+```{python}
+#| echo: true
+x = 1
+y = 2
+
+z = x + y
+
+print(z)
+```
+* You can improve upon the above program by using base Python functions
+```{python}
+#| echo: true
+x = int(input("What's x? "))
+y = int(input("What's y? "))
+
+print(x + y)
+```
+:::
+#### Floats
+:::{}
+* A floating point value is a real number with a decimal, like `0.52`
+* Modifying the previous code to use the `float` data type allows you to perform operations on decimals too
+* When dealing with decimals, you may want or need to round the values
+* You can tie everything together with the following code, which rounds the sum to 2 decimal places
+  * Additionally, ```print(f"{z:,}")``` prints the variable `z` and adds a comma to the value
+```{python}
+# Get the user's input
+x = float(input("What's x? "))
+y = float(input("What's y? "))
+
+# Create a rounded result
+z = round(x + y, 2)
+
+# Print the formatted result
+print(f"{z:,}")
+```
+* Finally, you could remove the piece of code that rounds the values with f-string formatting
+```{python}
+# Get the user's input
+x = float(input("What's x? "))
+y = float(input("What's y? "))
+
+# Calculate the result
+z = x / y
+
+# Print the result
+print(f"{z:.2f}")
+```
+:::
+#### Def
+:::{}
+* Use the `def` keyword to initialize a UDF (user-defined function)
+* Follow this with the function name, parentheses, and then any conditions in the parentheses
+```{python}
+def hello():
+    print("hello")
+
+
+name = input("What's your name? ")
+hello()
+print(name)
+```
+* Notice how everything is indented under def, Python uses indentation to understand what's part of the function
+* Similar to other programming languages, Python utilizes main functions in scripts for the primary purpose
+* Utilize a main function and return a value as follows
+```{python}
+def main():
+    x = int(input("What's x? "))
+    print("x squared is", square(x))
+
+
+def square(n):
+    return n * n
+
+
+main()
+```
+:::
+

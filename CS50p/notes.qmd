@@ -93,6 +93,10 @@ z = x / y
 print(f"{z:.2f}")
 ```
 :::
+::: {.callout-note}
+Python has several built-in numeric operators: + (addition), - (subtraction), * (multiplication), / (division), ** (exponentiation),
+% (modulo or **remainder**)
+:::
 #### Def
 :::{}
 * Use the `def` keyword to initialize a UDF (user-defined function)

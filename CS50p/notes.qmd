@@ -6,6 +6,7 @@ toc: true
 # Git, Quarto, and other general notes
 :::{}
 - My local Computer_Science repo now has a specific branch for CS50p
+  - Note, you can use git within the .venv or outside of it, git is unaffected by the virtual environment for CS50p.
 ```{zsh}
 git checkout cs50p
 git add .

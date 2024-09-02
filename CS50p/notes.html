@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>notes</title>
+<title>CS50p Notes by Unit</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,43 +71,75 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="fullcontent">
+<body>
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#git-quarto-and-other-general-notes" id="toc-git-quarto-and-other-general-notes" class="nav-link active" data-scroll-target="#git-quarto-and-other-general-notes">Git, Quarto, and other general notes</a></li>
+  <li><a href="#unit-0-functions-and-variables" id="toc-unit-0-functions-and-variables" class="nav-link" data-scroll-target="#unit-0-functions-and-variables">Unit 0: Functions and Variables</a>
+  <ul class="collapse">
+  <li><a href="#lecture-0" id="toc-lecture-0" class="nav-link" data-scroll-target="#lecture-0">Lecture 0</a>
+  <ul class="collapse">
+  <li><a href="#integers-or-int" id="toc-integers-or-int" class="nav-link" data-scroll-target="#integers-or-int">Integers or <code>int</code></a></li>
+  <li><a href="#floats" id="toc-floats" class="nav-link" data-scroll-target="#floats">Floats</a></li>
+  <li><a href="#def" id="toc-def" class="nav-link" data-scroll-target="#def">Def</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">CS50p Notes by Unit</h1>
+</div>
 
 
 
-<section id="cs50p-notes-by-unit" class="level1">
-<h1>CS50p Notes by Unit</h1>
-<section id="unit-0-functions-and-variables" class="level3">
-<h3 class="anchored" data-anchor-id="unit-0-functions-and-variables">Unit 0: Functions and Variables</h3>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="git-quarto-and-other-general-notes" class="level1">
+<h1>Git, Quarto, and other general notes</h1>
 <div>
 <ul>
 <li>My local Computer_Science repo now has a specific branch for CS50p</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout cs50p</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Saving recent work for CS50p."</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--no-ff</span> cs50p main</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="{zsh}"><code>git checkout cs50p
+git add .
+git commit -m "Saving recent work for CS50p."
+git checkout main
+git merge --no-ff cs50p main
+git push</code></pre>
 <ul>
 <li>Quarto is used from the command line, the .qmd file uses markdown syntax</li>
+<li>Using Docker to spin up a container to run the quarto preview was clunky and complicated, still did not work
+<ul>
+<li>So, simplest solution is spinning up a virtual envionment in the folder I want to work from and then using the venv</li>
+</ul></li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>:::{}</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>This creates a list</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Add various items</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Also knows whether to continue with your symbol</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>:::{}</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Create a numbered one</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>That even has subnumbers on an indent</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>To add a block of code, ```followed by the code block and then```</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="ss">-  </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="{quarto}"><code>:::{}
+- This creates a list
+- Add various items
+- Also knows whether to continue with your symbol
+1. Create a numbered one
+2. That even has subnumbers on an indent
+:::
+- To add a block of code, ```{code_lang} followed by the code block and then```</code></pre>
 <blockquote class="blockquote">
 <p>Blockquote start</p>
 <p>More text</p>
@@ -129,24 +161,155 @@ Note
 <p>For more markdown tips, docs, and shortcuts <a href="https://quarto.org/docs/authoring/markdown-basics.html" class="uri">https://quarto.org/docs/authoring/markdown-basics.html</a></p>
 </div>
 </div>
-<section id="lecture-0" class="level4">
-<h4 class="anchored" data-anchor-id="lecture-0">Lecture 0</h4>
+</section>
+<section id="unit-0-functions-and-variables" class="level1">
+<h1>Unit 0: Functions and Variables</h1>
+<section id="lecture-0" class="level2">
+<h2 class="anchored" data-anchor-id="lecture-0">Lecture 0</h2>
+<section id="integers-or-int" class="level3">
+<h3 class="anchored" data-anchor-id="integers-or-int">Integers or <code>int</code></h3>
 <div>
 <ul>
-<li>F-string formatting is a way to embed variables in strings, simply use <code>print(f"Hello, {name}.")</code></li>
+<li>F-string formatting is a way to embed variables in strings, simply use <code>print(f"There are, {count} apples.")</code></li>
 <li>In python an integer is referred to as an <code>int</code></li>
 <li>It’s easy to interact with <code>int</code> variables natively in Python</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> x <span class="op">+</span> y</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="5953a9bb" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> x <span class="op">+</span> y</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3</code></pre>
+</div>
+</div>
 <ul>
-<li></li>
+<li>You can improve upon the above program by using base Python functions</li>
 </ul>
+<div id="733e5da1" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span><span class="co">#int(input("What's x? "))</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">4</span><span class="co">#int(input("What's y? "))</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="op">+</span> y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>9</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Quarto does not support user input code rendering, so the file preview fails with functions like <code>input()</code>. As a result, appropriate values are hard-coded.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="floats" class="level3">
+<h3 class="anchored" data-anchor-id="floats">Floats</h3>
+<div>
+<ul>
+<li>A floating point value is a real number with a decimal, like <code>0.52</code></li>
+<li>Modifying the previous code to use the <code>float</code> data type allows you to perform operations on decimals too</li>
+<li>When dealing with decimals, you may want or need to round the values</li>
+<li>You can tie everything together with the following code, which rounds the sum to 2 decimal places
+<ul>
+<li>Additionally, <code>print(f"{z:,}")</code> prints the variable <code>z</code> and adds a comma to the value</li>
+</ul></li>
+</ul>
+<div id="94e5babf" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the user's input</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">2</span><span class="co">#float(input("What's x? "))</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fl">3.3</span><span class="co">#float(input("What's y? "))</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a rounded result</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> <span class="bu">round</span>(x <span class="op">+</span> y, <span class="dv">2</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the formatted result</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>z<span class="sc">:,}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>5.3</code></pre>
+</div>
+</div>
+<ul>
+<li>Finally, you could remove the piece of code that rounds the values with f-string formatting</li>
+</ul>
+<div id="6d578693" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the user's input</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">2.2</span><span class="co">#float(input("What's x? "))</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fl">3.4</span><span class="co">#float(input("What's y? "))</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the result</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> x <span class="op">/</span> y</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the result</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>z<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.65</code></pre>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Python has several built-in numeric operators: + (addition), - (subtraction), * (multiplication), / (division), ** (exponentiation), % (modulo or <strong>remainder</strong>)</p>
+</div>
+</div>
+</section>
+<section id="def" class="level3">
+<h3 class="anchored" data-anchor-id="def">Def</h3>
+<div>
+<ul>
+<li>Use the <code>def</code> keyword to initialize a UDF (user-defined function)</li>
+<li>Follow this with the function name, parentheses, and then any conditions in the parentheses</li>
+</ul>
+<div id="b3481a84" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hello():</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"hello"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Chris"</span><span class="co">#input("What's your name? ")</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>hello()</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>hello
+Chris</code></pre>
+</div>
+</div>
+<ul>
+<li>Notice how everything is indented under def, Python uses indentation to understand what’s part of the function</li>
+<li>Similar to other programming languages, Python utilizes main functions in scripts for the primary purpose</li>
+<li>Utilize a main function and return a value as follows</li>
+</ul>
+<div id="5db73589" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="dv">3</span><span class="co">#int(input("What's x? "))</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x squared is"</span>, square(x))</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square(n):</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> n <span class="op">*</span> n</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x squared is 9</code></pre>
+</div>
+</div>
 </div>
 </section>
 </section>

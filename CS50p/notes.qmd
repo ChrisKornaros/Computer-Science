@@ -1,5 +1,9 @@
-# CS50p Notes by Unit
-## Unit 0: Functions and Variables
+---
+title: CS50p Notes by Unit
+format: html
+toc: true
+---
+# Git, Quarto, and other general notes
 :::{}
 - My local Computer_Science repo now has a specific branch for CS50p
 ```{zsh}
@@ -11,18 +15,17 @@ git merge --no-ff cs50p main
 git push
 ```
 - Quarto is used from the command line, the .qmd file uses markdown syntax
-```{md}
+- Using Docker to spin up a container to run the quarto preview was clunky and complicated, still did not work
+  - So, simplest solution is spinning up a virtual envionment in the folder I want to work from and then using the venv
+```{quarto}
 :::{}
 - This creates a list
 - Add various items
 - Also knows whether to continue with your symbol
-:::
-:::{}
 1. Create a numbered one
 2. That even has subnumbers on an indent
 :::
-- To add a block of code, ```followed by the code block and then```
--  
+- To add a block of code, ```{code_lang} followed by the code block and then```
 ```
 > Blockquote start 
 > 
@@ -37,9 +40,9 @@ git push
 :::{.callout-note}
 For more markdown tips, docs, and shortcuts <https://quarto.org/docs/authoring/markdown-basics.html>
 :::
-
-### Lecture 0
-#### Integers or `int`
+# Unit 0: Functions and Variables
+## Lecture 0
+### Integers or `int`
 :::{}
 * F-string formatting is a way to embed variables in strings, simply use ```print(f"There are, {count} apples.")```
 * In python an integer is referred to as an `int` 
@@ -55,14 +58,16 @@ print(z)
 ```
 * You can improve upon the above program by using base Python functions
 ```{python}
-#| echo: true
-x = int(input("What's x? "))
-y = int(input("What's y? "))
+x = 5#int(input("What's x? "))
+y = 4#int(input("What's y? "))
 
 print(x + y)
 ```
+::: {.callout-note}
+Quarto does not support user input code rendering, so the file preview fails with functions like `input()`. As a result, appropriate values are hard-coded.
 :::
-#### Floats
+:::
+### Floats
 :::{}
 * A floating point value is a real number with a decimal, like `0.52`
 * Modifying the previous code to use the `float` data type allows you to perform operations on decimals too
@@ -71,8 +76,8 @@ print(x + y)
   * Additionally, ```print(f"{z:,}")``` prints the variable `z` and adds a comma to the value
 ```{python}
 # Get the user's input
-x = float(input("What's x? "))
-y = float(input("What's y? "))
+x = 2#float(input("What's x? "))
+y = 3.3#float(input("What's y? "))
 
 # Create a rounded result
 z = round(x + y, 2)
@@ -83,8 +88,8 @@ print(f"{z:,}")
 * Finally, you could remove the piece of code that rounds the values with f-string formatting
 ```{python}
 # Get the user's input
-x = float(input("What's x? "))
-y = float(input("What's y? "))
+x = 2.2#float(input("What's x? "))
+y = 3.4#float(input("What's y? "))
 
 # Calculate the result
 z = x / y
@@ -97,7 +102,7 @@ print(f"{z:.2f}")
 Python has several built-in numeric operators: + (addition), - (subtraction), * (multiplication), / (division), ** (exponentiation),
 % (modulo or **remainder**)
 :::
-#### Def
+### Def
 :::{}
 * Use the `def` keyword to initialize a UDF (user-defined function)
 * Follow this with the function name, parentheses, and then any conditions in the parentheses
@@ -106,7 +111,7 @@ def hello():
     print("hello")
 
 
-name = input("What's your name? ")
+name = "Chris"#input("What's your name? ")
 hello()
 print(name)
 ```
@@ -115,7 +120,7 @@ print(name)
 * Utilize a main function and return a value as follows
 ```{python}
 def main():
-    x = int(input("What's x? "))
+    x = 3#int(input("What's x? "))
     print("x squared is", square(x))
 
 

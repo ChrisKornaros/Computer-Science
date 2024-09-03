@@ -11,9 +11,8 @@ code-copy: hover
 code-line-numbers: true
 code-block-bg: "#37474F"
 ---
-# Git, Quarto, and other general notes
-
-## Git
+# Document Introduction {#sec-introduction .unnumbered}
+## Git {#sec-git .unnumbered}
 :::{}
 - My local Computer_Science repo now has a specific branch for CS50p
   - Note, you can use git within the .venv or outside of it, git is unaffected by the virtual environment for CS50p.
@@ -26,12 +25,12 @@ git merge --no-ff cs50p main
 git push
 ```
 
-## Quarto and Markdown
+## Quarto and Markdown {#sec-quarto-markdown .unnumbered}
 - Quarto is used from the command line, the .qmd file uses markdown syntax
 - Using Docker to spin up a container to run the quarto preview was clunky and complicated, still did not work
   - So, simplest solution is spinning up a virtual envionment in the folder I want to work from and then using the venv
 
-### Some general markdown tips for .qmd files
+### Some general markdown tips for .qmd files {#sec-md-tips .unnumbered}
 ```{quarto}
 :::{}
 - This creates a list
@@ -52,15 +51,15 @@ git push
 > As above
 ```
 :::
-:::{#nte-quarto-md-basics .callout-note}
+:::{#nte-quarto_md_basics .callout-note .unnumbered}
 ## Quarto Markdown Basics
 
 For more markdown tips, docs, and shortcuts <https://quarto.org/docs/authoring/markdown-basics.html>
 :::
 
-# Unit 0: Functions and Variables
-## Lecture 0
-### Integers or `int`
+# Unit 0: Functions and Variables {#sec-unit-0 .unnumbered}
+## Lecture 0 {#sec-lecture-0}
+### Integers or `int` {#sec-integers}
 :::{}
 * F-string formatting is a way to embed variables in strings, simply use ```print(f"There are, {count} apples.")```
 * In python an integer is referred to as an `int` 
@@ -81,7 +80,7 @@ y = 4#int(input("What's y? "))
 
 print(x + y)
 ```
-::: {#nte-hardcoded-variables .callout-note}
+::: {#nte-hardcoded_variables .callout-note}
 ## Hardcoded Variable Values
 
 Quarto does not support user input code rendering, so the file preview fails with functions like `input()`. As a result, appropriate values are hard-coded.
@@ -89,7 +88,7 @@ Quarto does not support user input code rendering, so the file preview fails wit
 
 :::
 
-### Floats
+### Floats {#sec-floats}
 :::{}
 * A floating point value is a real number with a decimal, like `0.52`
 * Modifying the previous code to use the `float` data type allows you to perform operations on decimals too
@@ -121,13 +120,13 @@ print(f"{z:.2f}")
 ```
 :::
 
-::: {#nte-numeric-operators .callout-note}
+::: {#nte-numeric_operators .callout-note}
 ## Python Numeric Operators
 
 Python has several built-in operators for numeric data types: `+`, `-`, `*`, `/`, `** (exponentiation)`, `% (remainder)`.
 :::
 
-### Def
+### Def (User Defined Functions) {#sec-udf}
 :::{}
 * Use the `def` keyword to initialize a UDF (user-defined function)
 * Follow this with the function name, parentheses, and then any conditions in the parentheses
@@ -157,9 +156,123 @@ main()
 ```
 :::
 
-# Unit 1: Conditionals
-## Lecture 1
-### Conditionls
+## Problem Set 0 {#sec-problem-set-0}
+```{python}
+#| lst-label: lst-0_indoor
+#| lst-cap: Indoor Voice
+
+# Problem Set 0, Problem 1
+# Prompt the user for input
+def ask_user():
+    global a
+    a = "MY NAME IS WD-40"
+    return a
+
+# Lowercase the string
+
+
+def a_lower():
+    print(a.lower())
+
+
+ask_user()
+a_lower()
+
+```
+```{python}
+#| lst-label: lst-0_playback
+#| lst-cap: Playback Speed
+
+# Prompt the user for input
+def ask_user():
+    global a
+    a = "Hello, it's very nice to meet you!"
+    return a
+
+# Add the three periods
+
+
+def playback():
+    b = a.replace(' ', '...')
+    print(b)
+
+
+ask_user()
+playback()
+```
+```{python}
+#| lst-label: lst-0_faces
+#| lst-cap: Making Faces
+
+# Build main function
+def main():
+    # Prompt the user for a value
+    a = ":)"
+
+    # Conver the input
+    b = convert(a)
+
+    return print(b)
+
+# Build the convert function
+def convert(val):
+    # Replace the slightly smiling and slightly frowning faces in place and overwrite the input variable
+    val = str(val).replace(":)", "\U0001F642").replace(":(", "\U0001f641")
+
+    return val
+
+
+main()
+```
+```{python}
+#| lst-label: lst-0_einstein
+#| lst-cap: Einstein
+
+def main():
+    # Prompt the user for an integer
+    m = int(50)
+
+    # Store the speed of light
+    c = 300000000
+
+    # Calculate the energy
+    e = m * (c ** 2)
+
+    return print(f"E: {e}")
+
+main()
+```
+```{python}
+#| lst-label: lst-0_tip
+#| lst-cap: Tip Calculator
+
+def main():
+    meal = dollars_to_float("76.50")
+    percent = percent_to_float("20%")
+    tip = meal * percent
+    print(f"Leave ${tip:.2f}")
+
+
+def dollars_to_float(d):
+    # Should accept a str as input in excepted format of $##.## and remove the leading $
+    d = d.replace("$", "")
+    # Convert d to a float
+    d = float(d)
+
+    return d
+
+
+def percent_to_float(p):
+    # Should accept a str as input in expected format of ##% and remove the trailing %
+    p = p.replace("%", "")
+    # Return p as a percentage, stored as a decimal float
+    p = float(p) * 0.01
+
+    return p
+
+
+main()
+```
 :::{}
 - Conditionals allow you to provide specific instructions in your program on how to handle various situations
 - Python has a set of built-in operators to compare a left hand term to a right hand term
@@ -168,13 +281,13 @@ main()
   - `== and !=` this denotes equal to and not equal to, respectively.
 :::
 
-::: {#nte-equal-sign-diff .callout-note}
+::: {#nte-equal_sign_diff .callout-note}
 ## Difference betweeen `=` and `==`
 
 Using a single `=` will assign a value on the right to the value on the left: `x = 2`; however, the double `==` will check if the value on the right equals the value on the left `x == 2`.  
 :::
 
-### if Statements
+### if Statements {#sec-if}
 ::: {}
 - `if` Statements use `bool` or boolean values (`true or false`) to decide whether to execute
 - To better understand if statement behavior look at the following code:
@@ -207,7 +320,7 @@ else:
 ```
 :::
 
-### or Statements
+### or Statements {#sec-or}
 :::{}
 - `or` allows your program to decide between one or more alternatives
 - When dealing with multiple conditions, using *or* can drastically decrease code complexity
@@ -223,7 +336,7 @@ else:
 - This code block works, but we could improve upon it further by just checking to see if `x == y` or `x != y`
 :::
 
-### and Statements
+### and Statements {#sec-and}
 :::{}
 - `and` statements are another type of conditional, they check whether something meets multiple conditions simultaneously 
 - Starting with the following code, let's make some readability and functionality improvements
@@ -270,8 +383,143 @@ else:
 ```
 :::
 
-### Modulo
+### Modulo {#sec-modulo}
 :::{}
-- Mentioned briefly in @nte-numeric-operators, the `%` operator shows whether a number divides evenly or with a remainder
-- For example, `4 % 2` evaluates to `0`, but `3 % 2` evaluates to
+- Mentioned briefly in [@nte-numeric_operators], the `%` operator shows whether a number divides evenly or with a remainder
+  - For example, `24 % 2` evaluates to `0`, but `24 % 5` evaluates to 4 the *remainder*
+  - In mathematics, whether something is even or odd is referred to as parity
+- Discussed in [Unit @sec-udf] it's useful to create your own functions
+```{python}
+def main():
+    x = 21
+    if is_even(x):
+        print("Even")
+    else:
+        print("Odd")
+
+def is_even(n):
+    if n % 2 == 0:
+        return True
+    else:
+        return False
+
+main()
+```
+- In programming, the phrase *Pythonic* refers to a way to code something that only occurs in Python
+- You can further refine your code and abstract away some of the process using native Python functionality
+- Simplify `is_even(n)` to the following
+  - Recall that `==` evaluates whether something is equal or not, it returns a `Bool`
+```{python}
+def main():
+    x = 94
+    if is_even(x):
+        print("Even")
+    else:
+        print("Odd")
+
+def is_even(n):
+    return n % 2 == 0
+
+main()
+```
 :::
+
+### match Statements {#sec-match}
+:::{}
+- Similar to other conditional statements, `match` can be used to run code that matches a certain value
+- The structure follows the Python pattern of identation with conditions and uses the keywords `match` and `case`
+```{python}
+name = "Ron"
+
+match name:
+    case "Harry":
+        print("Gryffindor")
+    case "Ron":
+        print("Gryffindor")
+    case "Hermione":
+        print("Gryffindor")
+    case "Draco":
+        print("Slytherin")
+    case _:
+        print("Who?")
+```
+- The `_` functions similar to an `else` statement as it takes in all values
+- This statement compares the value following `match` with each value following `case`
+  - In the event a match is found, the indented code is executed and the search *stops*
+- Improve upon the code by using the `|` operator, which equates to `or` and checks multiple values in the same case statement
+```{python}
+name = "Hermione"
+
+match name:
+    case "Harry" | "Ron" | "Hermione":
+        print("Gryffindor")
+    case "Draco":
+        print("Slytherin")
+    case _:
+        print("Who?")
+```
+:::
+
+## Problem Set 1 {#sec-problem-set-1}
+```{python}
+#| lst-label: lst-1_thought
+#| lst-cap: Deep Thought
+
+# Build the main function
+def main():
+    # Prompt the user for the answer to the Great Question of Life, the Universe and Everything
+    ans = ("ForTy-tWo").lower().strip()
+
+    match ans:
+        case "42" | "forty-two" | "forty two":
+            return print("Yes")
+        case _:
+            return print("No")
+
+
+main()
+```
+:::{#tip-case_conditions .callout-tip}
+## Case Conditions
+
+The `case _ if` syntax allows you to add conditions to each case when using a match statement. Combine this with the `in` operator to perform searches in strings: `case _ if h in hello`. 
+:::
+```{python}
+#| lst-label: lst-1_bank
+#| lst-cap: Home Federal Savings Bank
+
+# Build the main function
+def main():
+    # Prompt the user for a greeting
+    greet = ("How you doing?").lower().strip()
+
+    # Decide how much money the user gets
+    match greet:
+         case _ if greet.startswith("hello"):
+              return print("$0")
+         case _ if greet.startswith("h"):
+              return print("$20")
+         case _:
+              return print("$100")
+
+
+main()
+```
+```{python}
+#| lst-label: lst-1_file
+#| lst-cap: File Extensions
+
+
+```
+```{python}
+#| lst-label: lst-1_math
+#| lst-cap: Math Interpreter
+
+
+```
+```{python}
+#| lst-label: lst-1_meal
+#| lst-cap: Meal Time
+
+
+```

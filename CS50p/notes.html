@@ -63,23 +63,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="notes_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="notes_files/libs/quarto-html/anchor.min.js"></script>
 <link href="notes_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="notes_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="notes_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="notes_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="notes_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="notes_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="notes_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 
 
 </head>
 
 <body>
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active">
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#git-quarto-and-other-general-notes" id="toc-git-quarto-and-other-general-notes" class="nav-link active" data-scroll-target="#git-quarto-and-other-general-notes">Git, Quarto, and other general notes</a></li>
+  <li><a href="#git-quarto-and-other-general-notes" id="toc-git-quarto-and-other-general-notes" class="nav-link active" data-scroll-target="#git-quarto-and-other-general-notes">Git, Quarto, and other general notes</a>
+  <ul class="collapse">
+  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">Git</a></li>
+  </ul></li>
   <li><a href="#unit-0-functions-and-variables" id="toc-unit-0-functions-and-variables" class="nav-link" data-scroll-target="#unit-0-functions-and-variables">Unit 0: Functions and Variables</a>
   <ul class="collapse">
   <li><a href="#lecture-0" id="toc-lecture-0" class="nav-link" data-scroll-target="#lecture-0">Lecture 0</a>
@@ -89,8 +92,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#def" id="toc-def" class="nav-link" data-scroll-target="#def">Def</a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#unit-1-conditionals" id="toc-unit-1-conditionals" class="nav-link" data-scroll-target="#unit-1-conditionals">Unit 1: Conditionals</a>
+  <ul class="collapse">
+  <li><a href="#lecture-1" id="toc-lecture-1" class="nav-link" data-scroll-target="#lecture-1">Lecture 1</a>
+  <ul class="collapse">
+  <li><a href="#conditionls" id="toc-conditionls" class="nav-link" data-scroll-target="#conditionls">Conditionls</a></li>
+  <li><a href="#if-statements" id="toc-if-statements" class="nav-link" data-scroll-target="#if-statements">if Statements</a></li>
+  <li><a href="#or-statements" id="toc-or-statements" class="nav-link" data-scroll-target="#or-statements">or Statements</a></li>
+  <li><a href="#and-statements" id="toc-and-statements" class="nav-link" data-scroll-target="#and-statements">and Statements</a></li>
+  <li><a href="#modulo" id="toc-modulo" class="nav-link" data-scroll-target="#modulo">Modulo</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
 <main class="content" id="quarto-document-content">
 
@@ -115,16 +131,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="git-quarto-and-other-general-notes" class="level1">
 <h1>Git, Quarto, and other general notes</h1>
+<section id="git" class="level2">
+<h2 class="anchored" data-anchor-id="git">Git</h2>
 <div>
 <ul>
-<li>My local Computer_Science repo now has a specific branch for CS50p</li>
+<li>My local Computer_Science repo now has a specific branch for CS50p
+<ul>
+<li>Note, you can use git within the .venv or outside of it, git is unaffected by the virtual environment for CS50p.</li>
+</ul></li>
 </ul>
-<pre class="{zsh}"><code>git checkout cs50p
-git add .
-git commit -m "Saving recent work for CS50p."
-git checkout main
-git merge --no-ff cs50p main
-git push</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {zsh} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>git checkout cs50p</span>
+<span id="cb1-2"><a href="#cb1-2"></a>git add .</span>
+<span id="cb1-3"><a href="#cb1-3"></a>git commit -m "Saving recent work for CS50p."</span>
+<span id="cb1-4"><a href="#cb1-4"></a>git checkout main</span>
+<span id="cb1-5"><a href="#cb1-5"></a>git merge --no-ff cs50p main</span>
+<span id="cb1-6"><a href="#cb1-6"></a>git push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="quarto-and-markdown" class="level2">
+<h2 class="anchored" data-anchor-id="quarto-and-markdown">Quarto and Markdown</h2>
 <ul>
 <li>Quarto is used from the command line, the .qmd file uses markdown syntax</li>
 <li>Using Docker to spin up a container to run the quarto preview was clunky and complicated, still did not work
@@ -132,14 +155,16 @@ git push</code></pre>
 <li>So, simplest solution is spinning up a virtual envionment in the folder I want to work from and then using the venv</li>
 </ul></li>
 </ul>
-<pre class="{quarto}"><code>:::{}
-- This creates a list
-- Add various items
-- Also knows whether to continue with your symbol
-1. Create a numbered one
-2. That even has subnumbers on an indent
-:::
-- To add a block of code, ```{code_lang} followed by the code block and then```</code></pre>
+<section id="some-general-markdown-tips-for-.qmd-files" class="level3">
+<h3 class="anchored" data-anchor-id="some-general-markdown-tips-for-.qmd-files">Some general markdown tips for .qmd files</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {quarto} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>:::{}</span>
+<span id="cb2-2"><a href="#cb2-2"></a>- This creates a list</span>
+<span id="cb2-3"><a href="#cb2-3"></a>- Add various items</span>
+<span id="cb2-4"><a href="#cb2-4"></a>- Also knows whether to continue with your symbol</span>
+<span id="cb2-5"><a href="#cb2-5"></a>1. Create a numbered one</span>
+<span id="cb2-6"><a href="#cb2-6"></a>2. That even has subnumbers on an indent</span>
+<span id="cb2-7"><a href="#cb2-7"></a>:::</span>
+<span id="cb2-8"><a href="#cb2-8"></a>- To add a block of code, ```{code_lang} followed by the code block and then```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <blockquote class="blockquote">
 <p>Blockquote start</p>
 <p>More text</p>
@@ -147,20 +172,23 @@ git push</code></pre>
 <pre><code>&gt; Same pattern
 &gt; 
 &gt; As above</code></pre>
+</section>
+</section>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
+<div id="nte-quarto-md-basics" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Note&nbsp;1: Quarto Markdown Basics
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>For more markdown tips, docs, and shortcuts <a href="https://quarto.org/docs/authoring/markdown-basics.html" class="uri">https://quarto.org/docs/authoring/markdown-basics.html</a></p>
 </div>
 </div>
+</section>
 </section>
 <section id="unit-0-functions-and-variables" class="level1">
 <h1>Unit 0: Functions and Variables</h1>
@@ -174,13 +202,13 @@ Note
 <li>In python an integer is referred to as an <code>int</code></li>
 <li>It’s easy to interact with <code>int</code> variables natively in Python</li>
 </ul>
-<div id="5953a9bb" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> x <span class="op">+</span> y</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="a7fe65f3" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>x <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>y <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a>z <span class="op">=</span> x <span class="op">+</span> y</span>
+<span id="cb4-5"><a href="#cb4-5"></a></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="bu">print</span>(z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>3</code></pre>
 </div>
@@ -188,22 +216,22 @@ Note
 <ul>
 <li>You can improve upon the above program by using base Python functions</li>
 </ul>
-<div id="733e5da1" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span><span class="co">#int(input("What's x? "))</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">4</span><span class="co">#int(input("What's y? "))</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="op">+</span> y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e1226fc7" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>x <span class="op">=</span> <span class="dv">5</span><span class="co">#int(input("What's x? "))</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>y <span class="op">=</span> <span class="dv">4</span><span class="co">#int(input("What's y? "))</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="bu">print</span>(x <span class="op">+</span> y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>9</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
+<div id="nte-hardcoded-variables" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Note&nbsp;2: Hardcoded Variable Values
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -224,16 +252,16 @@ Note
 <li>Additionally, <code>print(f"{z:,}")</code> prints the variable <code>z</code> and adds a comma to the value</li>
 </ul></li>
 </ul>
-<div id="94e5babf" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the user's input</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">2</span><span class="co">#float(input("What's x? "))</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fl">3.3</span><span class="co">#float(input("What's y? "))</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a rounded result</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> <span class="bu">round</span>(x <span class="op">+</span> y, <span class="dv">2</span>)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the formatted result</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>z<span class="sc">:,}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e04142d2" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># Get the user's input</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>x <span class="op">=</span> <span class="dv">2</span><span class="co">#float(input("What's x? "))</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>y <span class="op">=</span> <span class="fl">3.3</span><span class="co">#float(input("What's y? "))</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="co"># Create a rounded result</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>z <span class="op">=</span> <span class="bu">round</span>(x <span class="op">+</span> y, <span class="dv">2</span>)</span>
+<span id="cb8-7"><a href="#cb8-7"></a></span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="co"># Print the formatted result</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>z<span class="sc">:,}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>5.3</code></pre>
 </div>
@@ -241,32 +269,32 @@ Note
 <ul>
 <li>Finally, you could remove the piece of code that rounds the values with f-string formatting</li>
 </ul>
-<div id="6d578693" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the user's input</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">2.2</span><span class="co">#float(input("What's x? "))</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fl">3.4</span><span class="co">#float(input("What's y? "))</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the result</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> x <span class="op">/</span> y</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the result</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>z<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="3ab686a5" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Get the user's input</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>x <span class="op">=</span> <span class="fl">2.2</span><span class="co">#float(input("What's x? "))</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>y <span class="op">=</span> <span class="fl">3.4</span><span class="co">#float(input("What's y? "))</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a></span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="co"># Calculate the result</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a>z <span class="op">=</span> x <span class="op">/</span> y</span>
+<span id="cb10-7"><a href="#cb10-7"></a></span>
+<span id="cb10-8"><a href="#cb10-8"></a><span class="co"># Print the result</span></span>
+<span id="cb10-9"><a href="#cb10-9"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>z<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0.65</code></pre>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
+<div id="nte-numeric-operators" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Note&nbsp;3: Python Numeric Operators
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Python has several built-in numeric operators: + (addition), - (subtraction), * (multiplication), / (division), ** (exponentiation), % (modulo or <strong>remainder</strong>)</p>
+<p>Python has several built-in operators for numeric data types: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>** (exponentiation)</code>, <code>% (remainder)</code>.</p>
 </div>
 </div>
 </section>
@@ -277,14 +305,14 @@ Note
 <li>Use the <code>def</code> keyword to initialize a UDF (user-defined function)</li>
 <li>Follow this with the function name, parentheses, and then any conditions in the parentheses</li>
 </ul>
-<div id="b3481a84" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hello():</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"hello"</span>)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Chris"</span><span class="co">#input("What's your name? ")</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>hello()</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="be12cda3" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">def</span> hello():</span>
+<span id="cb12-2"><a href="#cb12-2"></a>    <span class="bu">print</span>(<span class="st">"hello"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3"></a></span>
+<span id="cb12-4"><a href="#cb12-4"></a></span>
+<span id="cb12-5"><a href="#cb12-5"></a>name <span class="op">=</span> <span class="st">"Chris"</span><span class="co">#input("What's your name? ")</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a>hello()</span>
+<span id="cb12-7"><a href="#cb12-7"></a><span class="bu">print</span>(name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>hello
 Chris</code></pre>
@@ -295,21 +323,196 @@ Chris</code></pre>
 <li>Similar to other programming languages, Python utilizes main functions in scripts for the primary purpose</li>
 <li>Utilize a main function and return a value as follows</li>
 </ul>
-<div id="5db73589" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="dv">3</span><span class="co">#int(input("What's x? "))</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x squared is"</span>, square(x))</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square(n):</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> n <span class="op">*</span> n</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="b5f9a8fe" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">def</span> main():</span>
+<span id="cb14-2"><a href="#cb14-2"></a>    x <span class="op">=</span> <span class="dv">3</span><span class="co">#int(input("What's x? "))</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a>    <span class="bu">print</span>(<span class="st">"x squared is"</span>, square(x))</span>
+<span id="cb14-4"><a href="#cb14-4"></a></span>
+<span id="cb14-5"><a href="#cb14-5"></a></span>
+<span id="cb14-6"><a href="#cb14-6"></a><span class="kw">def</span> square(n):</span>
+<span id="cb14-7"><a href="#cb14-7"></a>    <span class="cf">return</span> n <span class="op">*</span> n</span>
+<span id="cb14-8"><a href="#cb14-8"></a></span>
+<span id="cb14-9"><a href="#cb14-9"></a></span>
+<span id="cb14-10"><a href="#cb14-10"></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>x squared is 9</code></pre>
 </div>
 </div>
+</div>
+</section>
+</section>
+</section>
+<section id="unit-1-conditionals" class="level1">
+<h1>Unit 1: Conditionals</h1>
+<section id="lecture-1" class="level2">
+<h2 class="anchored" data-anchor-id="lecture-1">Lecture 1</h2>
+<section id="conditionls" class="level3">
+<h3 class="anchored" data-anchor-id="conditionls">Conditionls</h3>
+<div>
+<ul>
+<li>Conditionals allow you to provide specific instructions in your program on how to handle various situations</li>
+<li>Python has a set of built-in operators to compare a left hand term to a right hand term
+<ul>
+<li><code>&gt; and &lt;</code> are what you expect: greater than and less than, respectively.</li>
+<li><code>&gt;= and &lt;=</code> follow the same pattern as above: greater than or equal to and less than or equal to, respectively.</li>
+<li><code>== and !=</code> this denotes equal to and not equal to, respectively.</li>
+</ul></li>
+</ul>
+</div>
+<div id="nte-equal-sign-diff" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;4: Difference betweeen <code>=</code> and <code>==</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Using a single <code>=</code> will assign a value on the right to the value on the left: <code>x = 2</code>; however, the double <code>==</code> will check if the value on the right equals the value on the left <code>x == 2</code>.</p>
+</div>
+</div>
+</section>
+<section id="if-statements" class="level3">
+<h3 class="anchored" data-anchor-id="if-statements">if Statements</h3>
+<div>
+<ul>
+<li><code>if</code> Statements use <code>bool</code> or boolean values (<code>true or false</code>) to decide whether to execute</li>
+<li>To better understand if statement behavior look at the following code:</li>
+</ul>
+<div id="6293940d" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>y <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a></span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="cf">if</span> x <span class="op">&lt;</span> y:</span>
+<span id="cb16-5"><a href="#cb16-5"></a>    <span class="bu">print</span>(<span class="st">"x is less than y"</span>)</span>
+<span id="cb16-6"><a href="#cb16-6"></a><span class="cf">if</span> x <span class="op">&gt;</span> y:</span>
+<span id="cb16-7"><a href="#cb16-7"></a>    <span class="bu">print</span>(<span class="st">"x is greater than y"</span>)</span>
+<span id="cb16-8"><a href="#cb16-8"></a><span class="cf">if</span> x <span class="op">==</span> y:</span>
+<span id="cb16-9"><a href="#cb16-9"></a>    <span class="bu">print</span>(<span class="st">"x is equal to y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x is greater than y</code></pre>
+</div>
+</div>
+<ul>
+<li>Python evaluates the first if statement and sees that 5 is not less than 4, so it does nothing
+<ul>
+<li>Then, Python evaluates the second if statement and see that 5 is greater than 4, so it prints the message</li>
+<li>As a result, the program stops and the third statement is not evaluated (even though the third statement is not true anyways)</li>
+<li>This “flow” of decisions is called <strong><code>control flow</code></strong></li>
+</ul></li>
+<li>You can improve upon this flow using the <code>if</code> <code>elif</code> <code>else</code> syntax</li>
+</ul>
+<div id="c3291004" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>y <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a></span>
+<span id="cb18-4"><a href="#cb18-4"></a><span class="cf">if</span> x <span class="op">&lt;</span> y:</span>
+<span id="cb18-5"><a href="#cb18-5"></a>    <span class="bu">print</span>(<span class="st">"x is less than y"</span>)</span>
+<span id="cb18-6"><a href="#cb18-6"></a><span class="cf">elif</span> x <span class="op">&gt;</span> y:</span>
+<span id="cb18-7"><a href="#cb18-7"></a>    <span class="bu">print</span>(<span class="st">"x is greater than y"</span>)</span>
+<span id="cb18-8"><a href="#cb18-8"></a><span class="cf">else</span>:</span>
+<span id="cb18-9"><a href="#cb18-9"></a>    <span class="bu">print</span>(<span class="st">"x is equal to y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x is equal to y</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="or-statements" class="level3">
+<h3 class="anchored" data-anchor-id="or-statements">or Statements</h3>
+<div>
+<ul>
+<li><code>or</code> allows your program to decide between one or more alternatives</li>
+<li>When dealing with multiple conditions, using <em>or</em> can drastically decrease code complexity</li>
+</ul>
+<div id="792cd49e" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a>y <span class="op">=</span> <span class="dv">7</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a></span>
+<span id="cb20-4"><a href="#cb20-4"></a><span class="cf">if</span> (x <span class="op">&lt;</span> y) <span class="kw">or</span> (x <span class="op">&gt;</span> y):</span>
+<span id="cb20-5"><a href="#cb20-5"></a>    <span class="bu">print</span>(<span class="st">"x is not equal to y"</span>)</span>
+<span id="cb20-6"><a href="#cb20-6"></a><span class="cf">else</span>:</span>
+<span id="cb20-7"><a href="#cb20-7"></a>    <span class="bu">print</span>(<span class="st">"x is equal to y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x is not equal to y</code></pre>
+</div>
+</div>
+<ul>
+<li>This code block works, but we could improve upon it further by just checking to see if <code>x == y</code> or <code>x != y</code></li>
+</ul>
+</div>
+</section>
+<section id="and-statements" class="level3">
+<h3 class="anchored" data-anchor-id="and-statements">and Statements</h3>
+<div>
+<ul>
+<li><code>and</code> statements are another type of conditional, they check whether something meets multiple conditions simultaneously</li>
+<li>Starting with the following code, let’s make some readability and functionality improvements</li>
+</ul>
+<div id="98765e29" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>score <span class="op">=</span> <span class="dv">78</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="cf">if</span> score <span class="op">&gt;=</span> <span class="dv">90</span> <span class="kw">and</span> score <span class="op">&lt;=</span> <span class="dv">100</span>:</span>
+<span id="cb22-3"><a href="#cb22-3"></a>    <span class="bu">print</span>(<span class="st">"Grade: A"</span>)</span>
+<span id="cb22-4"><a href="#cb22-4"></a><span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">80</span> <span class="kw">and</span> score <span class="op">&lt;</span> <span class="dv">90</span>:</span>
+<span id="cb22-5"><a href="#cb22-5"></a>    <span class="bu">print</span>(<span class="st">"Grade: B"</span>)</span>
+<span id="cb22-6"><a href="#cb22-6"></a><span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">70</span> <span class="kw">and</span> score <span class="op">&lt;</span> <span class="dv">80</span>:</span>
+<span id="cb22-7"><a href="#cb22-7"></a>    <span class="bu">print</span>(<span class="st">"Grade: C"</span>)</span>
+<span id="cb22-8"><a href="#cb22-8"></a><span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">60</span> <span class="kw">and</span> score <span class="op">&lt;</span> <span class="dv">70</span>:</span>
+<span id="cb22-9"><a href="#cb22-9"></a>    <span class="bu">print</span>(<span class="st">"Grade: D"</span>)</span>
+<span id="cb22-10"><a href="#cb22-10"></a><span class="cf">else</span>:</span>
+<span id="cb22-11"><a href="#cb22-11"></a>    <span class="bu">print</span>(<span class="st">"Grade: F"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Grade: C</code></pre>
+</div>
+</div>
+<ul>
+<li>A nice feature of python is you can chain together conditionals in an easy to understand format</li>
+</ul>
+<div id="10e81fa9" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>score <span class="op">=</span> <span class="dv">81</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="cf">if</span> <span class="dv">90</span> <span class="op">&lt;=</span> score <span class="op">&lt;=</span> <span class="dv">100</span>:</span>
+<span id="cb24-3"><a href="#cb24-3"></a>    <span class="bu">print</span>(<span class="st">"Grade: A"</span>)</span>
+<span id="cb24-4"><a href="#cb24-4"></a><span class="cf">elif</span> <span class="dv">80</span> <span class="op">&lt;=</span> score <span class="op">&lt;</span> <span class="dv">90</span>:</span>
+<span id="cb24-5"><a href="#cb24-5"></a>    <span class="bu">print</span>(<span class="st">"Grade: B"</span>)</span>
+<span id="cb24-6"><a href="#cb24-6"></a><span class="cf">elif</span> <span class="dv">70</span> <span class="op">&lt;=</span> score <span class="op">&lt;</span> <span class="dv">80</span>:</span>
+<span id="cb24-7"><a href="#cb24-7"></a>    <span class="bu">print</span>(<span class="st">"Grade: C"</span>)</span>
+<span id="cb24-8"><a href="#cb24-8"></a><span class="cf">elif</span> <span class="dv">60</span> <span class="op">&lt;=</span> score <span class="op">&lt;</span> <span class="dv">70</span>:</span>
+<span id="cb24-9"><a href="#cb24-9"></a>    <span class="bu">print</span>(<span class="st">"Grade: D"</span>)</span>
+<span id="cb24-10"><a href="#cb24-10"></a><span class="cf">else</span>:</span>
+<span id="cb24-11"><a href="#cb24-11"></a>    <span class="bu">print</span>(<span class="st">"Grade: F"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Grade: B</code></pre>
+</div>
+</div>
+<ul>
+<li>Again, similar to <code>or</code> it’s best to ask the simplest question in a conditional</li>
+</ul>
+<div id="45b49391" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>score <span class="op">=</span> <span class="dv">90</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="cf">if</span> score <span class="op">&gt;=</span> <span class="dv">90</span>:</span>
+<span id="cb26-3"><a href="#cb26-3"></a>    <span class="bu">print</span>(<span class="st">"Grade: A"</span>)</span>
+<span id="cb26-4"><a href="#cb26-4"></a><span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">80</span>:</span>
+<span id="cb26-5"><a href="#cb26-5"></a>    <span class="bu">print</span>(<span class="st">"Grade: B"</span>)</span>
+<span id="cb26-6"><a href="#cb26-6"></a><span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">70</span>:</span>
+<span id="cb26-7"><a href="#cb26-7"></a>    <span class="bu">print</span>(<span class="st">"Grade: C"</span>)</span>
+<span id="cb26-8"><a href="#cb26-8"></a><span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">60</span>:</span>
+<span id="cb26-9"><a href="#cb26-9"></a>    <span class="bu">print</span>(<span class="st">"Grade: D"</span>)</span>
+<span id="cb26-10"><a href="#cb26-10"></a><span class="cf">else</span>:</span>
+<span id="cb26-11"><a href="#cb26-11"></a>    <span class="bu">print</span>(<span class="st">"Grade: F"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Grade: A</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="modulo" class="level3">
+<h3 class="anchored" data-anchor-id="modulo">Modulo</h3>
+<div>
+<ul>
+<li>Mentioned briefly in <a href="#nte-numeric-operators" class="quarto-xref">Note&nbsp;3</a>, the <code>%</code> operator shows whether a number divides evenly or with a remainder</li>
+<li>For example, <code>4 % 2</code> evaluates to <code>0</code>, but <code>3 % 2</code> evaluates to</li>
+</ul>
 </div>
 </section>
 </section>

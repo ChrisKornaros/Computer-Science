@@ -1,9 +1,19 @@
 ---
 title: CS50p Notes by Unit
 format: html
+theme: solar
 toc: true
+toc-location: left
+toc-expand: true
+fontcolor: "#ECEFF1"
+# Still want to change/configure the background color for the callout boxes
+code-copy: hover
+code-line-numbers: true
+code-block-bg: "#37474F"
 ---
 # Git, Quarto, and other general notes
+
+## Git
 :::{}
 - My local Computer_Science repo now has a specific branch for CS50p
   - Note, you can use git within the .venv or outside of it, git is unaffected by the virtual environment for CS50p.
@@ -15,9 +25,13 @@ git checkout main
 git merge --no-ff cs50p main
 git push
 ```
+
+## Quarto and Markdown
 - Quarto is used from the command line, the .qmd file uses markdown syntax
 - Using Docker to spin up a container to run the quarto preview was clunky and complicated, still did not work
   - So, simplest solution is spinning up a virtual envionment in the folder I want to work from and then using the venv
+
+### Some general markdown tips for .qmd files
 ```{quarto}
 :::{}
 - This creates a list
@@ -38,9 +52,12 @@ git push
 > As above
 ```
 :::
-:::{.callout-note}
+:::{#nte-quarto-md-basics .callout-note}
+## Quarto Markdown Basics
+
 For more markdown tips, docs, and shortcuts <https://quarto.org/docs/authoring/markdown-basics.html>
 :::
+
 # Unit 0: Functions and Variables
 ## Lecture 0
 ### Integers or `int`
@@ -64,10 +81,14 @@ y = 4#int(input("What's y? "))
 
 print(x + y)
 ```
-::: {.callout-note}
+::: {#nte-hardcoded-variables .callout-note}
+## Hardcoded Variable Values
+
 Quarto does not support user input code rendering, so the file preview fails with functions like `input()`. As a result, appropriate values are hard-coded.
 :::
+
 :::
+
 ### Floats
 :::{}
 * A floating point value is a real number with a decimal, like `0.52`
@@ -99,10 +120,13 @@ z = x / y
 print(f"{z:.2f}")
 ```
 :::
-::: {.callout-note}
-Python has several built-in numeric operators: + (addition), - (subtraction), * (multiplication), / (division), ** (exponentiation),
-% (modulo or **remainder**)
+
+::: {#nte-numeric-operators .callout-note}
+## Python Numeric Operators
+
+Python has several built-in operators for numeric data types: `+`, `-`, `*`, `/`, `** (exponentiation)`, `% (remainder)`.
 :::
+
 ### Def
 :::{}
 * Use the `def` keyword to initialize a UDF (user-defined function)
@@ -133,3 +157,121 @@ main()
 ```
 :::
 
+# Unit 1: Conditionals
+## Lecture 1
+### Conditionls
+:::{}
+- Conditionals allow you to provide specific instructions in your program on how to handle various situations
+- Python has a set of built-in operators to compare a left hand term to a right hand term
+  - `> and <` are what you expect: greater than and less than, respectively. 
+  - `>= and <=` follow the same pattern as above: greater than or equal to and less than or equal to, respectively.
+  - `== and !=` this denotes equal to and not equal to, respectively.
+:::
+
+::: {#nte-equal-sign-diff .callout-note}
+## Difference betweeen `=` and `==`
+
+Using a single `=` will assign a value on the right to the value on the left: `x = 2`; however, the double `==` will check if the value on the right equals the value on the left `x == 2`.  
+:::
+
+### if Statements
+::: {}
+- `if` Statements use `bool` or boolean values (`true or false`) to decide whether to execute
+- To better understand if statement behavior look at the following code:
+```{python}
+x = 5
+y = 4
+
+if x < y:
+    print("x is less than y")
+if x > y:
+    print("x is greater than y")
+if x == y:
+    print("x is equal to y")
+```
+- Python evaluates the first if statement and sees that 5 is not less than 4, so it does nothing
+  - Then, Python evaluates the second if statement and see that 5 is greater than 4, so it prints the message
+  - As a result, the program stops and the third statement is not evaluated (even though the third statement is not true anyways)
+  - This "flow" of decisions is called **`control flow`**
+- You can improve upon this flow using the `if` `elif` `else` syntax
+```{python}
+x = 5
+y = 5
+
+if x < y:
+    print("x is less than y")
+elif x > y:
+    print("x is greater than y")
+else:
+    print("x is equal to y")
+```
+:::
+
+### or Statements
+:::{}
+- `or` allows your program to decide between one or more alternatives
+- When dealing with multiple conditions, using *or* can drastically decrease code complexity
+```{python}
+x = 5
+y = 7
+
+if (x < y) or (x > y):
+    print("x is not equal to y")
+else:
+    print("x is equal to y")
+```
+- This code block works, but we could improve upon it further by just checking to see if `x == y` or `x != y`
+:::
+
+### and Statements
+:::{}
+- `and` statements are another type of conditional, they check whether something meets multiple conditions simultaneously 
+- Starting with the following code, let's make some readability and functionality improvements
+```{python}
+score = 78
+if score >= 90 and score <= 100:
+    print("Grade: A")
+elif score >= 80 and score < 90:
+    print("Grade: B")
+elif score >= 70 and score < 80:
+    print("Grade: C")
+elif score >= 60 and score < 70:
+    print("Grade: D")
+else:
+    print("Grade: F")
+```
+- A nice feature of python is you can chain together conditionals in an easy to understand format
+```{python}
+score = 81
+if 90 <= score <= 100:
+    print("Grade: A")
+elif 80 <= score < 90:
+    print("Grade: B")
+elif 70 <= score < 80:
+    print("Grade: C")
+elif 60 <= score < 70:
+    print("Grade: D")
+else:
+    print("Grade: F")
+```
+- Again, similar to `or` it's best to ask the simplest question in a conditional
+```{python}
+score = 90
+if score >= 90:
+    print("Grade: A")
+elif score >= 80:
+    print("Grade: B")
+elif score >= 70:
+    print("Grade: C")
+elif score >= 60:
+    print("Grade: D")
+else:
+    print("Grade: F")
+```
+:::
+
+### Modulo
+:::{}
+- Mentioned briefly in @nte-numeric-operators, the `%` operator shows whether a number divides evenly or with a remainder
+- For example, `4 % 2` evaluates to `0`, but `3 % 2` evaluates to
+:::

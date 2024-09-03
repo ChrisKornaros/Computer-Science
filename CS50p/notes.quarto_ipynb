@@ -59,7 +59,7 @@
         "* In python an integer is referred to as an `int` \n",
         "* It's easy to interact with `int` variables natively in Python"
       ],
-      "id": "2fc3c69d"
+      "id": "0af0c9e2"
     },
     {
       "cell_type": "code",
@@ -73,7 +73,7 @@
         "\n",
         "print(z)"
       ],
-      "id": "392060ed",
+      "id": "e6446401",
       "execution_count": null,
       "outputs": []
     },
@@ -83,7 +83,7 @@
       "source": [
         "* You can improve upon the above program by using base Python functions"
       ],
-      "id": "fd26aa69"
+      "id": "96274e9f"
     },
     {
       "cell_type": "code",
@@ -94,7 +94,7 @@
         "\n",
         "print(x + y)"
       ],
-      "id": "5bced9bd",
+      "id": "733a3b7a",
       "execution_count": null,
       "outputs": []
     },
@@ -118,7 +118,7 @@
         "* You can tie everything together with the following code, which rounds the sum to 2 decimal places\n",
         "  * Additionally, ```print(f\"{z:,}\")``` prints the variable `z` and adds a comma to the value"
       ],
-      "id": "dde9d932"
+      "id": "df9f0b97"
     },
     {
       "cell_type": "code",
@@ -134,7 +134,7 @@
         "# Print the formatted result\n",
         "print(f\"{z:,}\")"
       ],
-      "id": "12e78a09",
+      "id": "a89f7487",
       "execution_count": null,
       "outputs": []
     },
@@ -144,7 +144,7 @@
       "source": [
         "* Finally, you could remove the piece of code that rounds the values with f-string formatting"
       ],
-      "id": "0c3cfb63"
+      "id": "d0cdcf94"
     },
     {
       "cell_type": "code",
@@ -160,7 +160,7 @@
         "# Print the result\n",
         "print(f\"{z:.2f}\")"
       ],
-      "id": "7911c43f",
+      "id": "25ed178c",
       "execution_count": null,
       "outputs": []
     },
@@ -181,7 +181,7 @@
         "* Use the `def` keyword to initialize a UDF (user-defined function)\n",
         "* Follow this with the function name, parentheses, and then any conditions in the parentheses"
       ],
-      "id": "de3d8623"
+      "id": "06ebd48e"
     },
     {
       "cell_type": "code",
@@ -195,7 +195,7 @@
         "hello()\n",
         "print(name)"
       ],
-      "id": "975ca7f4",
+      "id": "750dff9b",
       "execution_count": null,
       "outputs": []
     },
@@ -207,7 +207,7 @@
         "* Similar to other programming languages, Python utilizes main functions in scripts for the primary purpose\n",
         "* Utilize a main function and return a value as follows"
       ],
-      "id": "0a60684b"
+      "id": "e34b4d00"
     },
     {
       "cell_type": "code",
@@ -224,7 +224,7 @@
         "\n",
         "main()"
       ],
-      "id": "f98b09e7",
+      "id": "350cd9fd",
       "execution_count": null,
       "outputs": []
     },
@@ -236,7 +236,7 @@
         "\n",
         "## Problem Set 0 {#sec-problem-set-0}"
       ],
-      "id": "e5cfc680"
+      "id": "5d5dd3fa"
     },
     {
       "cell_type": "code",
@@ -263,7 +263,7 @@
         "ask_user()\n",
         "a_lower()"
       ],
-      "id": "6c242885",
+      "id": "86ae0460",
       "execution_count": null,
       "outputs": []
     },
@@ -292,7 +292,7 @@
         "ask_user()\n",
         "playback()"
       ],
-      "id": "c75361fb",
+      "id": "7b381694",
       "execution_count": null,
       "outputs": []
     },
@@ -324,7 +324,7 @@
         "\n",
         "main()"
       ],
-      "id": "85dcd8b6",
+      "id": "30166d84",
       "execution_count": null,
       "outputs": []
     },
@@ -350,7 +350,7 @@
         "\n",
         "main()"
       ],
-      "id": "47a62281",
+      "id": "7d36c347",
       "execution_count": null,
       "outputs": []
     },
@@ -389,7 +389,7 @@
         "\n",
         "main()"
       ],
-      "id": "9796f1f7",
+      "id": "ab305a3e",
       "execution_count": null,
       "outputs": []
     },
@@ -418,7 +418,7 @@
         "- `if` Statements use `bool` or boolean values (`true or false`) to decide whether to execute\n",
         "- To better understand if statement behavior look at the following code:"
       ],
-      "id": "ce110ed9"
+      "id": "d1a6a9e4"
     },
     {
       "cell_type": "code",
@@ -434,7 +434,7 @@
         "if x == y:\n",
         "    print(\"x is equal to y\")"
       ],
-      "id": "aa47c737",
+      "id": "ac945fee",
       "execution_count": null,
       "outputs": []
     },
@@ -448,7 +448,7 @@
         "  - This \"flow\" of decisions is called **`control flow`**\n",
         "- You can improve upon this flow using the `if` `elif` `else` syntax"
       ],
-      "id": "5cd55bc3"
+      "id": "ee29bebf"
     },
     {
       "cell_type": "code",
@@ -464,7 +464,7 @@
         "else:\n",
         "    print(\"x is equal to y\")"
       ],
-      "id": "bd232a31",
+      "id": "513060d5",
       "execution_count": null,
       "outputs": []
     },
@@ -479,7 +479,7 @@
         "- `or` allows your program to decide between one or more alternatives\n",
         "- When dealing with multiple conditions, using *or* can drastically decrease code complexity"
       ],
-      "id": "7a2acf58"
+      "id": "9389f03a"
     },
     {
       "cell_type": "code",
@@ -493,7 +493,7 @@
         "else:\n",
         "    print(\"x is equal to y\")"
       ],
-      "id": "6dd75975",
+      "id": "97abcc97",
       "execution_count": null,
       "outputs": []
     },
@@ -509,7 +509,7 @@
         "- `and` statements are another type of conditional, they check whether something meets multiple conditions simultaneously \n",
         "- Starting with the following code, let's make some readability and functionality improvements"
       ],
-      "id": "265cbfd8"
+      "id": "e74f5b9f"
     },
     {
       "cell_type": "code",
@@ -527,7 +527,7 @@
         "else:\n",
         "    print(\"Grade: F\")"
       ],
-      "id": "dbe2e4db",
+      "id": "b65f190f",
       "execution_count": null,
       "outputs": []
     },
@@ -537,7 +537,7 @@
       "source": [
         "- A nice feature of python is you can chain together conditionals in an easy to understand format"
       ],
-      "id": "2bf1edce"
+      "id": "e5767cd7"
     },
     {
       "cell_type": "code",
@@ -555,7 +555,7 @@
         "else:\n",
         "    print(\"Grade: F\")"
       ],
-      "id": "d3665389",
+      "id": "5b4e0a1e",
       "execution_count": null,
       "outputs": []
     },
@@ -565,7 +565,7 @@
       "source": [
         "- Again, similar to `or` it's best to ask the simplest question in a conditional"
       ],
-      "id": "f7167dff"
+      "id": "9b3798b5"
     },
     {
       "cell_type": "code",
@@ -583,7 +583,7 @@
         "else:\n",
         "    print(\"Grade: F\")"
       ],
-      "id": "a9c1c1ab",
+      "id": "74374669",
       "execution_count": null,
       "outputs": []
     },
@@ -600,7 +600,7 @@
         "  - In mathematics, whether something is even or odd is referred to as parity\n",
         "- Discussed in [Unit @sec-udf] it's useful to create your own functions"
       ],
-      "id": "ec2f8b84"
+      "id": "a16daee4"
     },
     {
       "cell_type": "code",
@@ -621,7 +621,7 @@
         "\n",
         "main()"
       ],
-      "id": "011b151b",
+      "id": "d4d2576c",
       "execution_count": null,
       "outputs": []
     },
@@ -634,7 +634,7 @@
         "- Simplify `is_even(n)` to the following\n",
         "  - Recall that `==` evaluates whether something is equal or not, it returns a `Bool`"
       ],
-      "id": "190c7ede"
+      "id": "be6059f5"
     },
     {
       "cell_type": "code",
@@ -652,7 +652,7 @@
         "\n",
         "main()"
       ],
-      "id": "a276a4db",
+      "id": "95a79e10",
       "execution_count": null,
       "outputs": []
     },
@@ -667,7 +667,7 @@
         "- Similar to other conditional statements, `match` can be used to run code that matches a certain value\n",
         "- The structure follows the Python pattern of identation with conditions and uses the keywords `match` and `case`"
       ],
-      "id": "ea6965db"
+      "id": "aaf2f30f"
     },
     {
       "cell_type": "code",
@@ -687,7 +687,7 @@
         "    case _:\n",
         "        print(\"Who?\")"
       ],
-      "id": "1d0972ac",
+      "id": "efe548d0",
       "execution_count": null,
       "outputs": []
     },
@@ -700,7 +700,7 @@
         "  - In the event a match is found, the indented code is executed and the search *stops*\n",
         "- Improve upon the code by using the `|` operator, which equates to `or` and checks multiple values in the same case statement"
       ],
-      "id": "5c5ffccf"
+      "id": "6528597d"
     },
     {
       "cell_type": "code",
@@ -716,7 +716,7 @@
         "    case _:\n",
         "        print(\"Who?\")"
       ],
-      "id": "d918cab9",
+      "id": "60db0bca",
       "execution_count": null,
       "outputs": []
     },
@@ -728,7 +728,7 @@
         "\n",
         "## Problem Set 1 {#sec-problem-set-1}"
       ],
-      "id": "95ccc3ed"
+      "id": "42386f78"
     },
     {
       "cell_type": "code",
@@ -752,7 +752,7 @@
         "\n",
         "main()"
       ],
-      "id": "1f70843c",
+      "id": "f1ffba4d",
       "execution_count": null,
       "outputs": []
     },
@@ -766,7 +766,7 @@
         "The `case _ if` syntax allows you to add conditions to each case when using a match statement. Combine this with the `in` operator to perform searches in strings: `case _ if h in hello`. \n",
         ":::"
       ],
-      "id": "0839ba32"
+      "id": "aa4b2e09"
     },
     {
       "cell_type": "code",
@@ -793,7 +793,7 @@
         "\n",
         "main()"
       ],
-      "id": "3e9f4c23",
+      "id": "6c0dcf93",
       "execution_count": null,
       "outputs": []
     },
@@ -834,7 +834,7 @@
         "\n",
         "main()"
       ],
-      "id": "2f18b73d",
+      "id": "2a8ef074",
       "execution_count": null,
       "outputs": []
     },
@@ -846,7 +846,7 @@
         "There are far more efficient ways to do the above, including using a dictionary and iterators. Those are covered in the next unit.\n",
         ":::"
       ],
-      "id": "c7b5e547"
+      "id": "b819299f"
     },
     {
       "cell_type": "code",
@@ -884,7 +884,7 @@
         "\n",
         "main()"
       ],
-      "id": "f0b32ee4",
+      "id": "f96780e8",
       "execution_count": null,
       "outputs": []
     },
@@ -928,7 +928,7 @@
         "if __name__ == '__main__':\n",
         "    main()"
       ],
-      "id": "be9430c2",
+      "id": "458ad41c",
       "execution_count": null,
       "outputs": []
     }

@@ -609,3 +609,33 @@ if __name__ == '__main__':
 
 # Unit 2: Loops {#sec-unit_2}
 ## Lecture 2 {#sec-lecture_2}
+:::{}
+- Loops are a way of doing something over and over again
+- Pretend you write the following block of code
+```{python}
+#| output: false
+
+print("meow")
+print("meow")
+print("meow")
+```
+- It's not going to be efficient to do this 20 times, let a few hundred, this is where loops are useful
+:::
+
+### while Loops {#sec-while_loops}
+:::{}
+- The `while` loops is nearly universal in all coding languages
+- As its name says, it runs while a condition is `true` and until it is `false` or *vice versa*
+  - Like with all processes run from a command line, use `Ctrl-C` to kill any hanging or infinitely running programs
+- The term iteration is very significant with regards to coding, it refers to each cycle through a loop
+- For a basic example of a while loop with an iteration counter:
+```{python}
+i = 0
+while i < 3:
+    print("meow")
+    i += 1
+```
+:::
+:::{#tip-add_sub_assignment}
+The `+=` and `-=` symbols are the addition and subtraction assignment operators, respectively. They are a great shortcut for iteratively adding values while looping. 
+:::

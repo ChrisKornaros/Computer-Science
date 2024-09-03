@@ -41,9 +41,9 @@ For more markdown tips, docs, and shortcuts <https://quarto.org/docs/authoring/m
 # Unit 0: Functions and Variables {#sec-unit_0 .unnumbered}
 ## Lecture 0 {#sec-lecture_0}
 ### Integers or `int` {#sec-integers}
-* F-string formatting is a way to embed variables in strings, simply use ```print(f"There are, {count} apples.")```
-* In python an integer is referred to as an `int` 
-* It's easy to interact with `int` variables natively in Python
+- F-string formatting is a way to embed variables in strings, simply use ```print(f"There are, {count} apples.")```
+- In python an integer is referred to as an `int` 
+- It's easy to interact with `int` variables natively in Python
 ```{python}
 #| echo: true
 x = 1
@@ -53,7 +53,7 @@ z = x + y
 
 print(z)
 ```
-* You can improve upon the above program by using base Python functions
+- You can improve upon the above program by using base Python functions
 ```{python}
 x = 5#int(input("What's x? "))
 y = 4#int(input("What's y? "))
@@ -67,11 +67,11 @@ Quarto does not support user input code rendering, so the file preview fails wit
 :::
 
 ### Floats {#sec-floats}
-* A floating point value is a real number with a decimal, like `0.52`
-* Modifying the previous code to use the `float` data type allows you to perform operations on decimals too
-* When dealing with decimals, you may want or need to round the values
-* You can tie everything together with the following code, which rounds the sum to 2 decimal places
-  * Additionally, ```print(f"{z:,}")``` prints the variable `z` and adds a comma to the value
+- A floating point value is a real number with a decimal, like `0.52`
+- Modifying the previous code to use the `float` data type allows you to perform operations on decimals too
+- When dealing with decimals, you may want or need to round the values
+- You can tie everything together with the following code, which rounds the sum to 2 decimal places
+  - Additionally, ```print(f"{z:,}")``` prints the variable `z` and adds a comma to the value
 ```{python}
 # Get the user's input
 x = 2#float(input("What's x? "))
@@ -83,7 +83,7 @@ z = round(x + y, 2)
 # Print the formatted result
 print(f"{z:,}")
 ```
-* Finally, you could remove the piece of code that rounds the values with f-string formatting
+- Finally, you could remove the piece of code that rounds the values with f-string formatting
 ```{python}
 # Get the user's input
 x = 2.2#float(input("What's x? "))
@@ -609,9 +609,123 @@ while i < 3:
     print("meow")
     i += 1
 ```
-:::{#tip-add_sub_assignment}
+
+:::{#tip-add_sub_assignment .callout-tip}
+## Addition and Subtraction Assignment Operators
 The `+=` and `-=` symbols are the addition and subtraction assignment operators, respectively. They are a great shortcut for iteratively adding values while looping. 
 :::
 
 ### for Loops {#sec-for_loops}
-- 
+- A `for` loop is used with what's called an `iterable` data type, like a `list` or `dictionary`
+  - This is a crucial component of problem solving with Python, there will be several code examples to illustrate how it works
+  - Using the same example as the while loop, look how clean the following is
+``` {python}
+#| output: false
+
+for i in [0, 1, 2]:
+    print("meow")
+``` 
+- This can be further improved upon using the `range` data type, and the built-in `range()` function
+```{python}
+#| output: false
+
+for i in range(3):
+    print("meow")
+```
+
+:::{#nte-underscore_wildcard .callout-note}
+## Use of the `_` as a wildcard operator
+You can further simplifying things by removing the unused `i` and replacing it with a `_` to represent it. ***However,*** only do this when the variable you're replacing, in this case `i`, isn't used in the code.
+:::
+
+```{python}
+#| output: false
+
+for _ in range(3):
+    print("meow")
+```
+- Finally, you could write this out on one line, without the use of a loop (just as an example)
+  - Adding the `\n` linebreak and `end=""` tells the compiler to add a linebreak at the end of each meow
+```{python}
+#| output: false
+
+print("meow\n" * 3, end="")
+```
+- You can bring out more of loops by combining their functionality
+  - It's common to use `while` to validate user input
+  - The keywords `continue` and `break` tell a loop to go to the next iteration of a loop or break out, respectively
+  - See how you can tie together various kinds of loops with the following 
+```{python}
+#| output: false
+
+def main():
+    meow(get_number())
+
+
+def get_number():
+    while True:
+        n = int("5")
+        if n > 0:
+            return n
+
+
+def meow(n):
+    for _ in range(n):
+        print("meow")
+
+
+main()
+```
+
+### Iterables {#sec-iterables}
+- Python uses what's called `zero indexing`, meaning object position indexes start at 0
+- For iterables, like a `list`, `dict`, or `range` this is important when performing positional transformations
+- Another useful function when talking about objects is `len`
+  - For iterable data types, this will provide the *length* of an object
+  - Combine this function with previous examples to simplify your code
+```{python}
+students = ["Harry", "Ron", "Hermione"]
+
+for i in range(len(students)):
+    print(i + 1, students[i])
+```
+- `Dictionaries` are another core iterable type in Python, with numerous applications across specializations
+  - Software Development
+  - Data Engineering
+  - Machine Learning
+  - etc.
+- While a list stores multiple values or objects (even other lists), a dictionary stores a key and values
+- You could store students and houses in lists and try to keep their positions always lined up, but the issues are obvious
+- A better approach is using a dictionary
+```{python}
+#| output: false
+
+students_list = ["Hermoine", "Harry", "Ron", "Draco"]
+houses_list = ["Gryffindor", "Gryffindor", "Griffindor", "Slytherin"]
+
+students = {
+    "Hermoine": "Gryffindor",
+    "Harry": "Gryffindor",
+    "Ron": "Gryffindor",
+    "Draco": "Slytherin",
+}
+for student in students:
+    print(student, students[student], sep=", ")
+```
+- You could also expand your dictionary to have more information than just the Student and their House
+```{python}
+#| output: false
+
+students = [
+    {"name": "Hermoine", "house": "Gryffindor", "patronus": "Otter"},
+    {"name": "Harry", "house": "Gryffindor", "patronus": "Stag"},
+    {"name": "Ron", "house": "Gryffindor", "patronus": "Jack Russell terrier"},
+    {"name": "Draco", "house": "Slytherin", "patronus": None},
+]
+
+for student in students:
+    print(student["name"], student["house"], student["patronus"], sep=", ")
+```
+
+### Mario {#sec-mario}
+- The classic 2D Mario games are a great illustration of the use of loops

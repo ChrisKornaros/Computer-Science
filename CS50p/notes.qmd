@@ -57,8 +57,8 @@ git push
 For more markdown tips, docs, and shortcuts <https://quarto.org/docs/authoring/markdown-basics.html>
 :::
 
-# Unit 0: Functions and Variables {#sec-unit-0 .unnumbered}
-## Lecture 0 {#sec-lecture-0}
+# Unit 0: Functions and Variables {#sec-unit_0 .unnumbered}
+## Lecture 0 {#sec-lecture_0}
 ### Integers or `int` {#sec-integers}
 :::{}
 * F-string formatting is a way to embed variables in strings, simply use ```print(f"There are, {count} apples.")```
@@ -273,6 +273,8 @@ def percent_to_float(p):
 
 main()
 ```
+# Unit 1: Conditionals {#sec-unit_1}
+## Lecture 1 {#sec-lecture_1}
 :::{}
 - Conditionals allow you to provide specific instructions in your program on how to handle various situations
 - Python has a set of built-in operators to compare a left hand term to a right hand term

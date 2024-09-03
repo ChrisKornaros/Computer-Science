@@ -82,6 +82,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#sec-introduction" id="toc-sec-introduction" class="nav-link active" data-scroll-target="#sec-introduction">Document Introduction</a>
   <ul class="collapse">
   <li><a href="#sec-git" id="toc-sec-git" class="nav-link" data-scroll-target="#sec-git">Git</a></li>
+  <li><a href="#sec-quarto-markdown" id="toc-sec-quarto-markdown" class="nav-link" data-scroll-target="#sec-quarto-markdown">Quarto and Markdown</a></li>
   </ul></li>
   <li><a href="#sec-unit_0" id="toc-sec-unit_0" class="nav-link" data-scroll-target="#sec-unit_0">Unit 0: Functions and Variables</a>
   <ul class="collapse">
@@ -148,8 +149,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4"></a>git checkout main</span>
 <span id="cb1-5"><a href="#cb1-5"></a>git merge --no-ff cs50p main</span>
 <span id="cb1-6"><a href="#cb1-6"></a>git push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 <section id="sec-quarto-markdown" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-quarto-markdown">Quarto and Markdown</h2>
+<div>
 <ul>
 <li>Quarto is used from the command line, the .qmd file uses markdown syntax</li>
 <li>Using Docker to spin up a container to run the quarto preview was clunky and complicated, still did not work
@@ -159,22 +163,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <section id="sec-md-tips" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="sec-md-tips">Some general markdown tips for .qmd files</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {quarto} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>:::{}</span>
-<span id="cb2-2"><a href="#cb2-2"></a>- This creates a list</span>
-<span id="cb2-3"><a href="#cb2-3"></a>- Add various items</span>
-<span id="cb2-4"><a href="#cb2-4"></a>- Also knows whether to continue with your symbol</span>
-<span id="cb2-5"><a href="#cb2-5"></a>1. Create a numbered one</span>
-<span id="cb2-6"><a href="#cb2-6"></a>2. That even has subnumbers on an indent</span>
-<span id="cb2-7"><a href="#cb2-7"></a>:::</span>
-<span id="cb2-8"><a href="#cb2-8"></a>- To add a block of code, ```{code_lang} followed by the code block and then```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<blockquote class="blockquote">
-<p>Blockquote start</p>
-<p>More text</p>
-</blockquote>
-<pre><code>&gt; Same pattern
-&gt; 
-&gt; As above</code></pre>
-</section>
+<ul>
+<li>Even though there are general settings set at the top of the <code>.qmd</code> file, when settings are changed on specific objects, <em>all</em> of their settings must be configured, even the document’s defaults</li>
+</ul>
 </section>
 </div>
 <div id="nte-quarto_md_basics" class="unnumbered callout callout-style-default callout-note callout-titled">
@@ -204,13 +195,13 @@ Note&nbsp;1: Quarto Markdown Basics
 <li>In python an integer is referred to as an <code>int</code></li>
 <li>It’s easy to interact with <code>int</code> variables natively in Python</li>
 </ul>
-<div id="105f5d5a" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>x <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a>y <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a></span>
-<span id="cb4-4"><a href="#cb4-4"></a>z <span class="op">=</span> x <span class="op">+</span> y</span>
-<span id="cb4-5"><a href="#cb4-5"></a></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="bu">print</span>(z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="0e03307d" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>x <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>y <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a>z <span class="op">=</span> x <span class="op">+</span> y</span>
+<span id="cb2-5"><a href="#cb2-5"></a></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="bu">print</span>(z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>3</code></pre>
 </div>
@@ -218,11 +209,11 @@ Note&nbsp;1: Quarto Markdown Basics
 <ul>
 <li>You can improve upon the above program by using base Python functions</li>
 </ul>
-<div id="e8e51d16" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>x <span class="op">=</span> <span class="dv">5</span><span class="co">#int(input("What's x? "))</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>y <span class="op">=</span> <span class="dv">4</span><span class="co">#int(input("What's y? "))</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="bu">print</span>(x <span class="op">+</span> y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="f9ba0ef0" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>x <span class="op">=</span> <span class="dv">5</span><span class="co">#int(input("What's x? "))</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>y <span class="op">=</span> <span class="dv">4</span><span class="co">#int(input("What's y? "))</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="bu">print</span>(x <span class="op">+</span> y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>9</code></pre>
 </div>
@@ -254,16 +245,16 @@ Note&nbsp;2: Hardcoded Variable Values
 <li>Additionally, <code>print(f"{z:,}")</code> prints the variable <code>z</code> and adds a comma to the value</li>
 </ul></li>
 </ul>
-<div id="267bb437" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># Get the user's input</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a>x <span class="op">=</span> <span class="dv">2</span><span class="co">#float(input("What's x? "))</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a>y <span class="op">=</span> <span class="fl">3.3</span><span class="co">#float(input("What's y? "))</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a></span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="co"># Create a rounded result</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a>z <span class="op">=</span> <span class="bu">round</span>(x <span class="op">+</span> y, <span class="dv">2</span>)</span>
-<span id="cb8-7"><a href="#cb8-7"></a></span>
-<span id="cb8-8"><a href="#cb8-8"></a><span class="co"># Print the formatted result</span></span>
-<span id="cb8-9"><a href="#cb8-9"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>z<span class="sc">:,}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="b201e252" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Get the user's input</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>x <span class="op">=</span> <span class="dv">2</span><span class="co">#float(input("What's x? "))</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>y <span class="op">=</span> <span class="fl">3.3</span><span class="co">#float(input("What's y? "))</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="co"># Create a rounded result</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>z <span class="op">=</span> <span class="bu">round</span>(x <span class="op">+</span> y, <span class="dv">2</span>)</span>
+<span id="cb6-7"><a href="#cb6-7"></a></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="co"># Print the formatted result</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>z<span class="sc">:,}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>5.3</code></pre>
 </div>
@@ -271,16 +262,16 @@ Note&nbsp;2: Hardcoded Variable Values
 <ul>
 <li>Finally, you could remove the piece of code that rounds the values with f-string formatting</li>
 </ul>
-<div id="97f319ea" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Get the user's input</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a>x <span class="op">=</span> <span class="fl">2.2</span><span class="co">#float(input("What's x? "))</span></span>
-<span id="cb10-3"><a href="#cb10-3"></a>y <span class="op">=</span> <span class="fl">3.4</span><span class="co">#float(input("What's y? "))</span></span>
-<span id="cb10-4"><a href="#cb10-4"></a></span>
-<span id="cb10-5"><a href="#cb10-5"></a><span class="co"># Calculate the result</span></span>
-<span id="cb10-6"><a href="#cb10-6"></a>z <span class="op">=</span> x <span class="op">/</span> y</span>
-<span id="cb10-7"><a href="#cb10-7"></a></span>
-<span id="cb10-8"><a href="#cb10-8"></a><span class="co"># Print the result</span></span>
-<span id="cb10-9"><a href="#cb10-9"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>z<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="81b49ec1" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># Get the user's input</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>x <span class="op">=</span> <span class="fl">2.2</span><span class="co">#float(input("What's x? "))</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>y <span class="op">=</span> <span class="fl">3.4</span><span class="co">#float(input("What's y? "))</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="co"># Calculate the result</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>z <span class="op">=</span> x <span class="op">/</span> y</span>
+<span id="cb8-7"><a href="#cb8-7"></a></span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="co"># Print the result</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>z<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0.65</code></pre>
 </div>
@@ -307,14 +298,14 @@ Note&nbsp;3: Python Numeric Operators
 <li>Use the <code>def</code> keyword to initialize a UDF (user-defined function)</li>
 <li>Follow this with the function name, parentheses, and then any conditions in the parentheses</li>
 </ul>
-<div id="6a8b3448" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">def</span> hello():</span>
-<span id="cb12-2"><a href="#cb12-2"></a>    <span class="bu">print</span>(<span class="st">"hello"</span>)</span>
-<span id="cb12-3"><a href="#cb12-3"></a></span>
-<span id="cb12-4"><a href="#cb12-4"></a></span>
-<span id="cb12-5"><a href="#cb12-5"></a>name <span class="op">=</span> <span class="st">"Chris"</span><span class="co">#input("What's your name? ")</span></span>
-<span id="cb12-6"><a href="#cb12-6"></a>hello()</span>
-<span id="cb12-7"><a href="#cb12-7"></a><span class="bu">print</span>(name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="8a91d4b2" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">def</span> hello():</span>
+<span id="cb10-2"><a href="#cb10-2"></a>    <span class="bu">print</span>(<span class="st">"hello"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3"></a></span>
+<span id="cb10-4"><a href="#cb10-4"></a></span>
+<span id="cb10-5"><a href="#cb10-5"></a>name <span class="op">=</span> <span class="st">"Chris"</span><span class="co">#input("What's your name? ")</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a>hello()</span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="bu">print</span>(name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>hello
 Chris</code></pre>
@@ -325,17 +316,17 @@ Chris</code></pre>
 <li>Similar to other programming languages, Python utilizes main functions in scripts for the primary purpose</li>
 <li>Utilize a main function and return a value as follows</li>
 </ul>
-<div id="e8c8c4bd" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">def</span> main():</span>
-<span id="cb14-2"><a href="#cb14-2"></a>    x <span class="op">=</span> <span class="dv">3</span><span class="co">#int(input("What's x? "))</span></span>
-<span id="cb14-3"><a href="#cb14-3"></a>    <span class="bu">print</span>(<span class="st">"x squared is"</span>, square(x))</span>
-<span id="cb14-4"><a href="#cb14-4"></a></span>
-<span id="cb14-5"><a href="#cb14-5"></a></span>
-<span id="cb14-6"><a href="#cb14-6"></a><span class="kw">def</span> square(n):</span>
-<span id="cb14-7"><a href="#cb14-7"></a>    <span class="cf">return</span> n <span class="op">*</span> n</span>
-<span id="cb14-8"><a href="#cb14-8"></a></span>
-<span id="cb14-9"><a href="#cb14-9"></a></span>
-<span id="cb14-10"><a href="#cb14-10"></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e62b9b16" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">def</span> main():</span>
+<span id="cb12-2"><a href="#cb12-2"></a>    x <span class="op">=</span> <span class="dv">3</span><span class="co">#int(input("What's x? "))</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>    <span class="bu">print</span>(<span class="st">"x squared is"</span>, square(x))</span>
+<span id="cb12-4"><a href="#cb12-4"></a></span>
+<span id="cb12-5"><a href="#cb12-5"></a></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="kw">def</span> square(n):</span>
+<span id="cb12-7"><a href="#cb12-7"></a>    <span class="cf">return</span> n <span class="op">*</span> n</span>
+<span id="cb12-8"><a href="#cb12-8"></a></span>
+<span id="cb12-9"><a href="#cb12-9"></a></span>
+<span id="cb12-10"><a href="#cb12-10"></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>x squared is 9</code></pre>
 </div>
@@ -345,14 +336,14 @@ Chris</code></pre>
 </section>
 <section id="sec-problem-set-0" class="level2">
 <h2 class="anchored" data-anchor-id="sec-problem-set-0">Problem Set 0</h2>
-<div id="40b18fca" class="cell" data-execution_count="7">
-<div id="lst-0_indoor" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored">
+<div id="d6cfb23c" class="cell" data-execution_count="7">
+<div id="lst-0_indoor" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored" data-code-line-numbers="true">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-0_indoor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Listing&nbsp;1: Indoor Voice
 </figcaption>
 <div aria-describedby="lst-0_indoor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="sourceCode cell-code" id="lst-0_indoor"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="lst-0_indoor-1"><a href="#lst-0_indoor-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Problem Set 0, Problem 1</span></span>
+<div class="sourceCode cell-code" id="lst-0_indoor" data-code-line-numbers="true"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="lst-0_indoor-1"><a href="#lst-0_indoor-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Problem Set 0, Problem 1</span></span>
 <span id="lst-0_indoor-2"><a href="#lst-0_indoor-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Prompt the user for input</span></span>
 <span id="lst-0_indoor-3"><a href="#lst-0_indoor-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ask_user():</span>
 <span id="lst-0_indoor-4"><a href="#lst-0_indoor-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> a</span>
@@ -375,14 +366,14 @@ Listing&nbsp;1: Indoor Voice
 <pre><code>my name is wd-40</code></pre>
 </div>
 </div>
-<div id="baab1391" class="cell" data-execution_count="8">
-<div id="lst-0_playback" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored">
+<div id="eae4d61f" class="cell" data-execution_count="8">
+<div id="lst-0_playback" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored" data-code-line-numbers="true">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-0_playback-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Listing&nbsp;2: Playback Speed
 </figcaption>
 <div aria-describedby="lst-0_playback-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="sourceCode cell-code" id="lst-0_playback"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="lst-0_playback-1"><a href="#lst-0_playback-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prompt the user for input</span></span>
+<div class="sourceCode cell-code" id="lst-0_playback" data-code-line-numbers="true"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="lst-0_playback-1"><a href="#lst-0_playback-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prompt the user for input</span></span>
 <span id="lst-0_playback-2"><a href="#lst-0_playback-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ask_user():</span>
 <span id="lst-0_playback-3"><a href="#lst-0_playback-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> a</span>
 <span id="lst-0_playback-4"><a href="#lst-0_playback-4" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="st">"Hello, it's very nice to meet you!"</span></span>
@@ -405,14 +396,14 @@ Listing&nbsp;2: Playback Speed
 <pre><code>Hello,...it's...very...nice...to...meet...you!</code></pre>
 </div>
 </div>
-<div id="408726a9" class="cell" data-execution_count="9">
-<div id="lst-0_faces" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored">
+<div id="acdfd480" class="cell" data-execution_count="9">
+<div id="lst-0_faces" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored" data-code-line-numbers="true">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-0_faces-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Listing&nbsp;3: Making Faces
 </figcaption>
 <div aria-describedby="lst-0_faces-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="sourceCode cell-code" id="lst-0_faces"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="lst-0_faces-1"><a href="#lst-0_faces-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build main function</span></span>
+<div class="sourceCode cell-code" id="lst-0_faces" data-code-line-numbers="true"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="lst-0_faces-1"><a href="#lst-0_faces-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build main function</span></span>
 <span id="lst-0_faces-2"><a href="#lst-0_faces-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
 <span id="lst-0_faces-3"><a href="#lst-0_faces-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Prompt the user for a value</span></span>
 <span id="lst-0_faces-4"><a href="#lst-0_faces-4" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="st">":)"</span></span>
@@ -438,14 +429,14 @@ Listing&nbsp;3: Making Faces
 <pre><code>🙂</code></pre>
 </div>
 </div>
-<div id="f1ae378d" class="cell" data-execution_count="10">
-<div id="lst-0_einstein" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored">
+<div id="0132c69e" class="cell" data-execution_count="10">
+<div id="lst-0_einstein" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored" data-code-line-numbers="true">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-0_einstein-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Listing&nbsp;4: Einstein
 </figcaption>
 <div aria-describedby="lst-0_einstein-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="sourceCode cell-code" id="lst-0_einstein"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="lst-0_einstein-1"><a href="#lst-0_einstein-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<div class="sourceCode cell-code" id="lst-0_einstein" data-code-line-numbers="true"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="lst-0_einstein-1"><a href="#lst-0_einstein-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
 <span id="lst-0_einstein-2"><a href="#lst-0_einstein-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Prompt the user for an integer</span></span>
 <span id="lst-0_einstein-3"><a href="#lst-0_einstein-3" aria-hidden="true" tabindex="-1"></a>    m <span class="op">=</span> <span class="bu">int</span>(<span class="dv">50</span>)</span>
 <span id="lst-0_einstein-4"><a href="#lst-0_einstein-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -465,14 +456,14 @@ Listing&nbsp;4: Einstein
 <pre><code>E: 4500000000000000000</code></pre>
 </div>
 </div>
-<div id="86fa1ddc" class="cell" data-execution_count="11">
-<div id="lst-0_tip" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored">
+<div id="89380d21" class="cell" data-execution_count="11">
+<div id="lst-0_tip" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored" data-code-line-numbers="true">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-0_tip-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Listing&nbsp;5: Tip Calculator
 </figcaption>
 <div aria-describedby="lst-0_tip-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="sourceCode cell-code" id="lst-0_tip"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="lst-0_tip-1"><a href="#lst-0_tip-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<div class="sourceCode cell-code" id="lst-0_tip" data-code-line-numbers="true"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="lst-0_tip-1"><a href="#lst-0_tip-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
 <span id="lst-0_tip-2"><a href="#lst-0_tip-2" aria-hidden="true" tabindex="-1"></a>    meal <span class="op">=</span> dollars_to_float(<span class="st">"76.50"</span>)</span>
 <span id="lst-0_tip-3"><a href="#lst-0_tip-3" aria-hidden="true" tabindex="-1"></a>    percent <span class="op">=</span> percent_to_float(<span class="st">"20%"</span>)</span>
 <span id="lst-0_tip-4"><a href="#lst-0_tip-4" aria-hidden="true" tabindex="-1"></a>    tip <span class="op">=</span> meal <span class="op">*</span> percent</span>
@@ -542,16 +533,16 @@ Note&nbsp;4: Difference betweeen <code>=</code> and <code>==</code>
 <li><code>if</code> Statements use <code>bool</code> or boolean values (<code>true or false</code>) to decide whether to execute</li>
 <li>To better understand if statement behavior look at the following code:</li>
 </ul>
-<div id="da1fcb32" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a>y <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb21-3"><a href="#cb21-3"></a></span>
-<span id="cb21-4"><a href="#cb21-4"></a><span class="cf">if</span> x <span class="op">&lt;</span> y:</span>
-<span id="cb21-5"><a href="#cb21-5"></a>    <span class="bu">print</span>(<span class="st">"x is less than y"</span>)</span>
-<span id="cb21-6"><a href="#cb21-6"></a><span class="cf">if</span> x <span class="op">&gt;</span> y:</span>
-<span id="cb21-7"><a href="#cb21-7"></a>    <span class="bu">print</span>(<span class="st">"x is greater than y"</span>)</span>
-<span id="cb21-8"><a href="#cb21-8"></a><span class="cf">if</span> x <span class="op">==</span> y:</span>
-<span id="cb21-9"><a href="#cb21-9"></a>    <span class="bu">print</span>(<span class="st">"x is equal to y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="9db4f37f" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>y <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a></span>
+<span id="cb19-4"><a href="#cb19-4"></a><span class="cf">if</span> x <span class="op">&lt;</span> y:</span>
+<span id="cb19-5"><a href="#cb19-5"></a>    <span class="bu">print</span>(<span class="st">"x is less than y"</span>)</span>
+<span id="cb19-6"><a href="#cb19-6"></a><span class="cf">if</span> x <span class="op">&gt;</span> y:</span>
+<span id="cb19-7"><a href="#cb19-7"></a>    <span class="bu">print</span>(<span class="st">"x is greater than y"</span>)</span>
+<span id="cb19-8"><a href="#cb19-8"></a><span class="cf">if</span> x <span class="op">==</span> y:</span>
+<span id="cb19-9"><a href="#cb19-9"></a>    <span class="bu">print</span>(<span class="st">"x is equal to y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>x is greater than y</code></pre>
 </div>
@@ -565,16 +556,16 @@ Note&nbsp;4: Difference betweeen <code>=</code> and <code>==</code>
 </ul></li>
 <li>You can improve upon this flow using the <code>if</code> <code>elif</code> <code>else</code> syntax</li>
 </ul>
-<div id="0ddc1cfd" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a>y <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb23-3"><a href="#cb23-3"></a></span>
-<span id="cb23-4"><a href="#cb23-4"></a><span class="cf">if</span> x <span class="op">&lt;</span> y:</span>
-<span id="cb23-5"><a href="#cb23-5"></a>    <span class="bu">print</span>(<span class="st">"x is less than y"</span>)</span>
-<span id="cb23-6"><a href="#cb23-6"></a><span class="cf">elif</span> x <span class="op">&gt;</span> y:</span>
-<span id="cb23-7"><a href="#cb23-7"></a>    <span class="bu">print</span>(<span class="st">"x is greater than y"</span>)</span>
-<span id="cb23-8"><a href="#cb23-8"></a><span class="cf">else</span>:</span>
-<span id="cb23-9"><a href="#cb23-9"></a>    <span class="bu">print</span>(<span class="st">"x is equal to y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="d632dd58" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>y <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a></span>
+<span id="cb21-4"><a href="#cb21-4"></a><span class="cf">if</span> x <span class="op">&lt;</span> y:</span>
+<span id="cb21-5"><a href="#cb21-5"></a>    <span class="bu">print</span>(<span class="st">"x is less than y"</span>)</span>
+<span id="cb21-6"><a href="#cb21-6"></a><span class="cf">elif</span> x <span class="op">&gt;</span> y:</span>
+<span id="cb21-7"><a href="#cb21-7"></a>    <span class="bu">print</span>(<span class="st">"x is greater than y"</span>)</span>
+<span id="cb21-8"><a href="#cb21-8"></a><span class="cf">else</span>:</span>
+<span id="cb21-9"><a href="#cb21-9"></a>    <span class="bu">print</span>(<span class="st">"x is equal to y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>x is equal to y</code></pre>
 </div>
@@ -588,14 +579,14 @@ Note&nbsp;4: Difference betweeen <code>=</code> and <code>==</code>
 <li><code>or</code> allows your program to decide between one or more alternatives</li>
 <li>When dealing with multiple conditions, using <em>or</em> can drastically decrease code complexity</li>
 </ul>
-<div id="69a3430a" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb25-2"><a href="#cb25-2"></a>y <span class="op">=</span> <span class="dv">7</span></span>
-<span id="cb25-3"><a href="#cb25-3"></a></span>
-<span id="cb25-4"><a href="#cb25-4"></a><span class="cf">if</span> (x <span class="op">&lt;</span> y) <span class="kw">or</span> (x <span class="op">&gt;</span> y):</span>
-<span id="cb25-5"><a href="#cb25-5"></a>    <span class="bu">print</span>(<span class="st">"x is not equal to y"</span>)</span>
-<span id="cb25-6"><a href="#cb25-6"></a><span class="cf">else</span>:</span>
-<span id="cb25-7"><a href="#cb25-7"></a>    <span class="bu">print</span>(<span class="st">"x is equal to y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="92fe90e3" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>y <span class="op">=</span> <span class="dv">7</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a></span>
+<span id="cb23-4"><a href="#cb23-4"></a><span class="cf">if</span> (x <span class="op">&lt;</span> y) <span class="kw">or</span> (x <span class="op">&gt;</span> y):</span>
+<span id="cb23-5"><a href="#cb23-5"></a>    <span class="bu">print</span>(<span class="st">"x is not equal to y"</span>)</span>
+<span id="cb23-6"><a href="#cb23-6"></a><span class="cf">else</span>:</span>
+<span id="cb23-7"><a href="#cb23-7"></a>    <span class="bu">print</span>(<span class="st">"x is equal to y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>x is not equal to y</code></pre>
 </div>
@@ -612,18 +603,18 @@ Note&nbsp;4: Difference betweeen <code>=</code> and <code>==</code>
 <li><code>and</code> statements are another type of conditional, they check whether something meets multiple conditions simultaneously</li>
 <li>Starting with the following code, let’s make some readability and functionality improvements</li>
 </ul>
-<div id="7428a1c5" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>score <span class="op">=</span> <span class="dv">78</span></span>
-<span id="cb27-2"><a href="#cb27-2"></a><span class="cf">if</span> score <span class="op">&gt;=</span> <span class="dv">90</span> <span class="kw">and</span> score <span class="op">&lt;=</span> <span class="dv">100</span>:</span>
-<span id="cb27-3"><a href="#cb27-3"></a>    <span class="bu">print</span>(<span class="st">"Grade: A"</span>)</span>
-<span id="cb27-4"><a href="#cb27-4"></a><span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">80</span> <span class="kw">and</span> score <span class="op">&lt;</span> <span class="dv">90</span>:</span>
-<span id="cb27-5"><a href="#cb27-5"></a>    <span class="bu">print</span>(<span class="st">"Grade: B"</span>)</span>
-<span id="cb27-6"><a href="#cb27-6"></a><span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">70</span> <span class="kw">and</span> score <span class="op">&lt;</span> <span class="dv">80</span>:</span>
-<span id="cb27-7"><a href="#cb27-7"></a>    <span class="bu">print</span>(<span class="st">"Grade: C"</span>)</span>
-<span id="cb27-8"><a href="#cb27-8"></a><span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">60</span> <span class="kw">and</span> score <span class="op">&lt;</span> <span class="dv">70</span>:</span>
-<span id="cb27-9"><a href="#cb27-9"></a>    <span class="bu">print</span>(<span class="st">"Grade: D"</span>)</span>
-<span id="cb27-10"><a href="#cb27-10"></a><span class="cf">else</span>:</span>
-<span id="cb27-11"><a href="#cb27-11"></a>    <span class="bu">print</span>(<span class="st">"Grade: F"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="21814493" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>score <span class="op">=</span> <span class="dv">78</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="cf">if</span> score <span class="op">&gt;=</span> <span class="dv">90</span> <span class="kw">and</span> score <span class="op">&lt;=</span> <span class="dv">100</span>:</span>
+<span id="cb25-3"><a href="#cb25-3"></a>    <span class="bu">print</span>(<span class="st">"Grade: A"</span>)</span>
+<span id="cb25-4"><a href="#cb25-4"></a><span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">80</span> <span class="kw">and</span> score <span class="op">&lt;</span> <span class="dv">90</span>:</span>
+<span id="cb25-5"><a href="#cb25-5"></a>    <span class="bu">print</span>(<span class="st">"Grade: B"</span>)</span>
+<span id="cb25-6"><a href="#cb25-6"></a><span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">70</span> <span class="kw">and</span> score <span class="op">&lt;</span> <span class="dv">80</span>:</span>
+<span id="cb25-7"><a href="#cb25-7"></a>    <span class="bu">print</span>(<span class="st">"Grade: C"</span>)</span>
+<span id="cb25-8"><a href="#cb25-8"></a><span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">60</span> <span class="kw">and</span> score <span class="op">&lt;</span> <span class="dv">70</span>:</span>
+<span id="cb25-9"><a href="#cb25-9"></a>    <span class="bu">print</span>(<span class="st">"Grade: D"</span>)</span>
+<span id="cb25-10"><a href="#cb25-10"></a><span class="cf">else</span>:</span>
+<span id="cb25-11"><a href="#cb25-11"></a>    <span class="bu">print</span>(<span class="st">"Grade: F"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Grade: C</code></pre>
 </div>
@@ -631,18 +622,18 @@ Note&nbsp;4: Difference betweeen <code>=</code> and <code>==</code>
 <ul>
 <li>A nice feature of python is you can chain together conditionals in an easy to understand format</li>
 </ul>
-<div id="e40800ba" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a>score <span class="op">=</span> <span class="dv">81</span></span>
-<span id="cb29-2"><a href="#cb29-2"></a><span class="cf">if</span> <span class="dv">90</span> <span class="op">&lt;=</span> score <span class="op">&lt;=</span> <span class="dv">100</span>:</span>
-<span id="cb29-3"><a href="#cb29-3"></a>    <span class="bu">print</span>(<span class="st">"Grade: A"</span>)</span>
-<span id="cb29-4"><a href="#cb29-4"></a><span class="cf">elif</span> <span class="dv">80</span> <span class="op">&lt;=</span> score <span class="op">&lt;</span> <span class="dv">90</span>:</span>
-<span id="cb29-5"><a href="#cb29-5"></a>    <span class="bu">print</span>(<span class="st">"Grade: B"</span>)</span>
-<span id="cb29-6"><a href="#cb29-6"></a><span class="cf">elif</span> <span class="dv">70</span> <span class="op">&lt;=</span> score <span class="op">&lt;</span> <span class="dv">80</span>:</span>
-<span id="cb29-7"><a href="#cb29-7"></a>    <span class="bu">print</span>(<span class="st">"Grade: C"</span>)</span>
-<span id="cb29-8"><a href="#cb29-8"></a><span class="cf">elif</span> <span class="dv">60</span> <span class="op">&lt;=</span> score <span class="op">&lt;</span> <span class="dv">70</span>:</span>
-<span id="cb29-9"><a href="#cb29-9"></a>    <span class="bu">print</span>(<span class="st">"Grade: D"</span>)</span>
-<span id="cb29-10"><a href="#cb29-10"></a><span class="cf">else</span>:</span>
-<span id="cb29-11"><a href="#cb29-11"></a>    <span class="bu">print</span>(<span class="st">"Grade: F"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="6e0a2b5f" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>score <span class="op">=</span> <span class="dv">81</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="cf">if</span> <span class="dv">90</span> <span class="op">&lt;=</span> score <span class="op">&lt;=</span> <span class="dv">100</span>:</span>
+<span id="cb27-3"><a href="#cb27-3"></a>    <span class="bu">print</span>(<span class="st">"Grade: A"</span>)</span>
+<span id="cb27-4"><a href="#cb27-4"></a><span class="cf">elif</span> <span class="dv">80</span> <span class="op">&lt;=</span> score <span class="op">&lt;</span> <span class="dv">90</span>:</span>
+<span id="cb27-5"><a href="#cb27-5"></a>    <span class="bu">print</span>(<span class="st">"Grade: B"</span>)</span>
+<span id="cb27-6"><a href="#cb27-6"></a><span class="cf">elif</span> <span class="dv">70</span> <span class="op">&lt;=</span> score <span class="op">&lt;</span> <span class="dv">80</span>:</span>
+<span id="cb27-7"><a href="#cb27-7"></a>    <span class="bu">print</span>(<span class="st">"Grade: C"</span>)</span>
+<span id="cb27-8"><a href="#cb27-8"></a><span class="cf">elif</span> <span class="dv">60</span> <span class="op">&lt;=</span> score <span class="op">&lt;</span> <span class="dv">70</span>:</span>
+<span id="cb27-9"><a href="#cb27-9"></a>    <span class="bu">print</span>(<span class="st">"Grade: D"</span>)</span>
+<span id="cb27-10"><a href="#cb27-10"></a><span class="cf">else</span>:</span>
+<span id="cb27-11"><a href="#cb27-11"></a>    <span class="bu">print</span>(<span class="st">"Grade: F"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Grade: B</code></pre>
 </div>
@@ -650,18 +641,18 @@ Note&nbsp;4: Difference betweeen <code>=</code> and <code>==</code>
 <ul>
 <li>Again, similar to <code>or</code> it’s best to ask the simplest question in a conditional</li>
 </ul>
-<div id="b5540f45" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a>score <span class="op">=</span> <span class="dv">90</span></span>
-<span id="cb31-2"><a href="#cb31-2"></a><span class="cf">if</span> score <span class="op">&gt;=</span> <span class="dv">90</span>:</span>
-<span id="cb31-3"><a href="#cb31-3"></a>    <span class="bu">print</span>(<span class="st">"Grade: A"</span>)</span>
-<span id="cb31-4"><a href="#cb31-4"></a><span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">80</span>:</span>
-<span id="cb31-5"><a href="#cb31-5"></a>    <span class="bu">print</span>(<span class="st">"Grade: B"</span>)</span>
-<span id="cb31-6"><a href="#cb31-6"></a><span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">70</span>:</span>
-<span id="cb31-7"><a href="#cb31-7"></a>    <span class="bu">print</span>(<span class="st">"Grade: C"</span>)</span>
-<span id="cb31-8"><a href="#cb31-8"></a><span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">60</span>:</span>
-<span id="cb31-9"><a href="#cb31-9"></a>    <span class="bu">print</span>(<span class="st">"Grade: D"</span>)</span>
-<span id="cb31-10"><a href="#cb31-10"></a><span class="cf">else</span>:</span>
-<span id="cb31-11"><a href="#cb31-11"></a>    <span class="bu">print</span>(<span class="st">"Grade: F"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="5157d047" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a>score <span class="op">=</span> <span class="dv">90</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="cf">if</span> score <span class="op">&gt;=</span> <span class="dv">90</span>:</span>
+<span id="cb29-3"><a href="#cb29-3"></a>    <span class="bu">print</span>(<span class="st">"Grade: A"</span>)</span>
+<span id="cb29-4"><a href="#cb29-4"></a><span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">80</span>:</span>
+<span id="cb29-5"><a href="#cb29-5"></a>    <span class="bu">print</span>(<span class="st">"Grade: B"</span>)</span>
+<span id="cb29-6"><a href="#cb29-6"></a><span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">70</span>:</span>
+<span id="cb29-7"><a href="#cb29-7"></a>    <span class="bu">print</span>(<span class="st">"Grade: C"</span>)</span>
+<span id="cb29-8"><a href="#cb29-8"></a><span class="cf">elif</span> score <span class="op">&gt;=</span> <span class="dv">60</span>:</span>
+<span id="cb29-9"><a href="#cb29-9"></a>    <span class="bu">print</span>(<span class="st">"Grade: D"</span>)</span>
+<span id="cb29-10"><a href="#cb29-10"></a><span class="cf">else</span>:</span>
+<span id="cb29-11"><a href="#cb29-11"></a>    <span class="bu">print</span>(<span class="st">"Grade: F"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Grade: A</code></pre>
 </div>
@@ -679,21 +670,21 @@ Note&nbsp;4: Difference betweeen <code>=</code> and <code>==</code>
 </ul></li>
 <li>Discussed in <a href="#sec-udf" class="quarto-xref">Unit&nbsp;0.1.3</a> it’s useful to create your own functions</li>
 </ul>
-<div id="161bffee" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a><span class="kw">def</span> main():</span>
-<span id="cb33-2"><a href="#cb33-2"></a>    x <span class="op">=</span> <span class="dv">21</span></span>
-<span id="cb33-3"><a href="#cb33-3"></a>    <span class="cf">if</span> is_even(x):</span>
-<span id="cb33-4"><a href="#cb33-4"></a>        <span class="bu">print</span>(<span class="st">"Even"</span>)</span>
-<span id="cb33-5"><a href="#cb33-5"></a>    <span class="cf">else</span>:</span>
-<span id="cb33-6"><a href="#cb33-6"></a>        <span class="bu">print</span>(<span class="st">"Odd"</span>)</span>
-<span id="cb33-7"><a href="#cb33-7"></a></span>
-<span id="cb33-8"><a href="#cb33-8"></a><span class="kw">def</span> is_even(n):</span>
-<span id="cb33-9"><a href="#cb33-9"></a>    <span class="cf">if</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb33-10"><a href="#cb33-10"></a>        <span class="cf">return</span> <span class="va">True</span></span>
-<span id="cb33-11"><a href="#cb33-11"></a>    <span class="cf">else</span>:</span>
-<span id="cb33-12"><a href="#cb33-12"></a>        <span class="cf">return</span> <span class="va">False</span></span>
-<span id="cb33-13"><a href="#cb33-13"></a></span>
-<span id="cb33-14"><a href="#cb33-14"></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="c6fd2efd" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a><span class="kw">def</span> main():</span>
+<span id="cb31-2"><a href="#cb31-2"></a>    x <span class="op">=</span> <span class="dv">21</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a>    <span class="cf">if</span> is_even(x):</span>
+<span id="cb31-4"><a href="#cb31-4"></a>        <span class="bu">print</span>(<span class="st">"Even"</span>)</span>
+<span id="cb31-5"><a href="#cb31-5"></a>    <span class="cf">else</span>:</span>
+<span id="cb31-6"><a href="#cb31-6"></a>        <span class="bu">print</span>(<span class="st">"Odd"</span>)</span>
+<span id="cb31-7"><a href="#cb31-7"></a></span>
+<span id="cb31-8"><a href="#cb31-8"></a><span class="kw">def</span> is_even(n):</span>
+<span id="cb31-9"><a href="#cb31-9"></a>    <span class="cf">if</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb31-10"><a href="#cb31-10"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb31-11"><a href="#cb31-11"></a>    <span class="cf">else</span>:</span>
+<span id="cb31-12"><a href="#cb31-12"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb31-13"><a href="#cb31-13"></a></span>
+<span id="cb31-14"><a href="#cb31-14"></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Odd</code></pre>
 </div>
@@ -706,18 +697,18 @@ Note&nbsp;4: Difference betweeen <code>=</code> and <code>==</code>
 <li>Recall that <code>==</code> evaluates whether something is equal or not, it returns a <code>Bool</code></li>
 </ul></li>
 </ul>
-<div id="490c34a5" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a><span class="kw">def</span> main():</span>
-<span id="cb35-2"><a href="#cb35-2"></a>    x <span class="op">=</span> <span class="dv">94</span></span>
-<span id="cb35-3"><a href="#cb35-3"></a>    <span class="cf">if</span> is_even(x):</span>
-<span id="cb35-4"><a href="#cb35-4"></a>        <span class="bu">print</span>(<span class="st">"Even"</span>)</span>
-<span id="cb35-5"><a href="#cb35-5"></a>    <span class="cf">else</span>:</span>
-<span id="cb35-6"><a href="#cb35-6"></a>        <span class="bu">print</span>(<span class="st">"Odd"</span>)</span>
-<span id="cb35-7"><a href="#cb35-7"></a></span>
-<span id="cb35-8"><a href="#cb35-8"></a><span class="kw">def</span> is_even(n):</span>
-<span id="cb35-9"><a href="#cb35-9"></a>    <span class="cf">return</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span></span>
-<span id="cb35-10"><a href="#cb35-10"></a></span>
-<span id="cb35-11"><a href="#cb35-11"></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="460c3c74" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a><span class="kw">def</span> main():</span>
+<span id="cb33-2"><a href="#cb33-2"></a>    x <span class="op">=</span> <span class="dv">94</span></span>
+<span id="cb33-3"><a href="#cb33-3"></a>    <span class="cf">if</span> is_even(x):</span>
+<span id="cb33-4"><a href="#cb33-4"></a>        <span class="bu">print</span>(<span class="st">"Even"</span>)</span>
+<span id="cb33-5"><a href="#cb33-5"></a>    <span class="cf">else</span>:</span>
+<span id="cb33-6"><a href="#cb33-6"></a>        <span class="bu">print</span>(<span class="st">"Odd"</span>)</span>
+<span id="cb33-7"><a href="#cb33-7"></a></span>
+<span id="cb33-8"><a href="#cb33-8"></a><span class="kw">def</span> is_even(n):</span>
+<span id="cb33-9"><a href="#cb33-9"></a>    <span class="cf">return</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span></span>
+<span id="cb33-10"><a href="#cb33-10"></a></span>
+<span id="cb33-11"><a href="#cb33-11"></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Even</code></pre>
 </div>
@@ -731,20 +722,20 @@ Note&nbsp;4: Difference betweeen <code>=</code> and <code>==</code>
 <li>Similar to other conditional statements, <code>match</code> can be used to run code that matches a certain value</li>
 <li>The structure follows the Python pattern of identation with conditions and uses the keywords <code>match</code> and <code>case</code></li>
 </ul>
-<div id="ca1e7529" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a>name <span class="op">=</span> <span class="st">"Ron"</span></span>
-<span id="cb37-2"><a href="#cb37-2"></a></span>
-<span id="cb37-3"><a href="#cb37-3"></a><span class="cf">match</span> name:</span>
-<span id="cb37-4"><a href="#cb37-4"></a>    <span class="cf">case</span> <span class="st">"Harry"</span>:</span>
-<span id="cb37-5"><a href="#cb37-5"></a>        <span class="bu">print</span>(<span class="st">"Gryffindor"</span>)</span>
-<span id="cb37-6"><a href="#cb37-6"></a>    <span class="cf">case</span> <span class="st">"Ron"</span>:</span>
-<span id="cb37-7"><a href="#cb37-7"></a>        <span class="bu">print</span>(<span class="st">"Gryffindor"</span>)</span>
-<span id="cb37-8"><a href="#cb37-8"></a>    <span class="cf">case</span> <span class="st">"Hermione"</span>:</span>
-<span id="cb37-9"><a href="#cb37-9"></a>        <span class="bu">print</span>(<span class="st">"Gryffindor"</span>)</span>
-<span id="cb37-10"><a href="#cb37-10"></a>    <span class="cf">case</span> <span class="st">"Draco"</span>:</span>
-<span id="cb37-11"><a href="#cb37-11"></a>        <span class="bu">print</span>(<span class="st">"Slytherin"</span>)</span>
-<span id="cb37-12"><a href="#cb37-12"></a>    <span class="cf">case</span> _:</span>
-<span id="cb37-13"><a href="#cb37-13"></a>        <span class="bu">print</span>(<span class="st">"Who?"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="a8c7c41e" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a>name <span class="op">=</span> <span class="st">"Ron"</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a></span>
+<span id="cb35-3"><a href="#cb35-3"></a><span class="cf">match</span> name:</span>
+<span id="cb35-4"><a href="#cb35-4"></a>    <span class="cf">case</span> <span class="st">"Harry"</span>:</span>
+<span id="cb35-5"><a href="#cb35-5"></a>        <span class="bu">print</span>(<span class="st">"Gryffindor"</span>)</span>
+<span id="cb35-6"><a href="#cb35-6"></a>    <span class="cf">case</span> <span class="st">"Ron"</span>:</span>
+<span id="cb35-7"><a href="#cb35-7"></a>        <span class="bu">print</span>(<span class="st">"Gryffindor"</span>)</span>
+<span id="cb35-8"><a href="#cb35-8"></a>    <span class="cf">case</span> <span class="st">"Hermione"</span>:</span>
+<span id="cb35-9"><a href="#cb35-9"></a>        <span class="bu">print</span>(<span class="st">"Gryffindor"</span>)</span>
+<span id="cb35-10"><a href="#cb35-10"></a>    <span class="cf">case</span> <span class="st">"Draco"</span>:</span>
+<span id="cb35-11"><a href="#cb35-11"></a>        <span class="bu">print</span>(<span class="st">"Slytherin"</span>)</span>
+<span id="cb35-12"><a href="#cb35-12"></a>    <span class="cf">case</span> _:</span>
+<span id="cb35-13"><a href="#cb35-13"></a>        <span class="bu">print</span>(<span class="st">"Who?"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Gryffindor</code></pre>
 </div>
@@ -757,16 +748,16 @@ Note&nbsp;4: Difference betweeen <code>=</code> and <code>==</code>
 </ul></li>
 <li>Improve upon the code by using the <code>|</code> operator, which equates to <code>or</code> and checks multiple values in the same case statement</li>
 </ul>
-<div id="9cde31ed" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a>name <span class="op">=</span> <span class="st">"Hermione"</span></span>
-<span id="cb39-2"><a href="#cb39-2"></a></span>
-<span id="cb39-3"><a href="#cb39-3"></a><span class="cf">match</span> name:</span>
-<span id="cb39-4"><a href="#cb39-4"></a>    <span class="cf">case</span> <span class="st">"Harry"</span> <span class="op">|</span> <span class="st">"Ron"</span> <span class="op">|</span> <span class="st">"Hermione"</span>:</span>
-<span id="cb39-5"><a href="#cb39-5"></a>        <span class="bu">print</span>(<span class="st">"Gryffindor"</span>)</span>
-<span id="cb39-6"><a href="#cb39-6"></a>    <span class="cf">case</span> <span class="st">"Draco"</span>:</span>
-<span id="cb39-7"><a href="#cb39-7"></a>        <span class="bu">print</span>(<span class="st">"Slytherin"</span>)</span>
-<span id="cb39-8"><a href="#cb39-8"></a>    <span class="cf">case</span> _:</span>
-<span id="cb39-9"><a href="#cb39-9"></a>        <span class="bu">print</span>(<span class="st">"Who?"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="dcc6f49b" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a>name <span class="op">=</span> <span class="st">"Hermione"</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a></span>
+<span id="cb37-3"><a href="#cb37-3"></a><span class="cf">match</span> name:</span>
+<span id="cb37-4"><a href="#cb37-4"></a>    <span class="cf">case</span> <span class="st">"Harry"</span> <span class="op">|</span> <span class="st">"Ron"</span> <span class="op">|</span> <span class="st">"Hermione"</span>:</span>
+<span id="cb37-5"><a href="#cb37-5"></a>        <span class="bu">print</span>(<span class="st">"Gryffindor"</span>)</span>
+<span id="cb37-6"><a href="#cb37-6"></a>    <span class="cf">case</span> <span class="st">"Draco"</span>:</span>
+<span id="cb37-7"><a href="#cb37-7"></a>        <span class="bu">print</span>(<span class="st">"Slytherin"</span>)</span>
+<span id="cb37-8"><a href="#cb37-8"></a>    <span class="cf">case</span> _:</span>
+<span id="cb37-9"><a href="#cb37-9"></a>        <span class="bu">print</span>(<span class="st">"Who?"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Gryffindor</code></pre>
 </div>
@@ -776,14 +767,14 @@ Note&nbsp;4: Difference betweeen <code>=</code> and <code>==</code>
 </section>
 <section id="sec-problem-set-1" class="level2">
 <h2 class="anchored" data-anchor-id="sec-problem-set-1">Problem Set 1</h2>
-<div id="9a77cd64" class="cell" data-execution_count="22">
-<div id="lst-1_thought" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored">
+<div id="9398cc9e" class="cell" data-execution_count="22">
+<div id="lst-1_thought" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored" data-code-line-numbers="true">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-1_thought-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Listing&nbsp;6: Deep Thought
 </figcaption>
 <div aria-describedby="lst-1_thought-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="sourceCode cell-code" id="lst-1_thought"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="lst-1_thought-1"><a href="#lst-1_thought-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build the main function</span></span>
+<div class="sourceCode cell-code" id="lst-1_thought" data-code-line-numbers="true"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="lst-1_thought-1"><a href="#lst-1_thought-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build the main function</span></span>
 <span id="lst-1_thought-2"><a href="#lst-1_thought-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
 <span id="lst-1_thought-3"><a href="#lst-1_thought-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Prompt the user for the answer to the Great Question of Life, the Universe and Everything</span></span>
 <span id="lst-1_thought-4"><a href="#lst-1_thought-4" aria-hidden="true" tabindex="-1"></a>    ans <span class="op">=</span> (<span class="st">"ForTy-tWo"</span>).lower().strip()</span>
@@ -816,14 +807,14 @@ Tip&nbsp;1: Case Conditions
 <p>The <code>case _ if</code> syntax allows you to add conditions to each case when using a match statement. Combine this with the <code>in</code> operator to perform searches in strings: <code>case _ if h in hello</code>.</p>
 </div>
 </div>
-<div id="3d7c35f6" class="cell" data-execution_count="23">
-<div id="lst-1_bank" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored">
+<div id="c563c7e2" class="cell" data-execution_count="23">
+<div id="lst-1_bank" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored" data-code-line-numbers="true">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-1_bank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Listing&nbsp;7: Home Federal Savings Bank
 </figcaption>
 <div aria-describedby="lst-1_bank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="sourceCode cell-code" id="lst-1_bank"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="lst-1_bank-1"><a href="#lst-1_bank-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build the main function</span></span>
+<div class="sourceCode cell-code" id="lst-1_bank" data-code-line-numbers="true"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="lst-1_bank-1"><a href="#lst-1_bank-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build the main function</span></span>
 <span id="lst-1_bank-2"><a href="#lst-1_bank-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
 <span id="lst-1_bank-3"><a href="#lst-1_bank-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Prompt the user for a greeting</span></span>
 <span id="lst-1_bank-4"><a href="#lst-1_bank-4" aria-hidden="true" tabindex="-1"></a>    greet <span class="op">=</span> (<span class="st">"How you doing?"</span>).lower().strip()</span>
@@ -844,6 +835,61 @@ Listing&nbsp;7: Home Federal Savings Bank
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$20</code></pre>
+</div>
+</div>
+<div id="c3f72843" class="cell" data-execution_count="24">
+<div id="lst-1_file" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored" data-code-line-numbers="true">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-1_file-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Listing&nbsp;8: File Extensions
+</figcaption>
+<div aria-describedby="lst-1_file-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="sourceCode cell-code" id="lst-1_file" data-code-line-numbers="true"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="lst-1_file-1"><a href="#lst-1_file-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build the main function</span></span>
+<span id="lst-1_file-2"><a href="#lst-1_file-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="lst-1_file-3"><a href="#lst-1_file-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Put the necessary extensions in a tuple</span></span>
+<span id="lst-1_file-4"><a href="#lst-1_file-4" aria-hidden="true" tabindex="-1"></a>    ext <span class="op">=</span> (<span class="st">".gif"</span>, <span class="st">".jpg"</span>, <span class="st">".jpeg"</span>, <span class="st">".png"</span>, <span class="st">".pdf"</span>, <span class="st">".txt"</span>, <span class="st">".zip"</span>)</span>
+<span id="lst-1_file-5"><a href="#lst-1_file-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Group those into MIME types</span></span>
+<span id="lst-1_file-6"><a href="#lst-1_file-6" aria-hidden="true" tabindex="-1"></a>    mime <span class="op">=</span> (<span class="st">"image/gif"</span>, <span class="st">"image/jpeg"</span>, <span class="st">"image/png"</span>, <span class="st">"application/pdf"</span>, <span class="st">"text/plain"</span>, <span class="st">"application/zip"</span>)</span>
+<span id="lst-1_file-7"><a href="#lst-1_file-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get the user's file</span></span>
+<span id="lst-1_file-8"><a href="#lst-1_file-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span> <span class="op">=</span> <span class="st">"virus.png"</span>.lower().strip()</span>
+<span id="lst-1_file-9"><a href="#lst-1_file-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="lst-1_file-10"><a href="#lst-1_file-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Check which MIME type the file is and return the value</span></span>
+<span id="lst-1_file-11"><a href="#lst-1_file-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">file</span>.endswith(ext):</span>
+<span id="lst-1_file-12"><a href="#lst-1_file-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">file</span>.split(<span class="st">'.'</span>)[<span class="op">-</span><span class="dv">1</span>] <span class="op">==</span> ext[<span class="dv">1</span>].split(<span class="st">'.'</span>)[<span class="op">-</span><span class="dv">1</span>] <span class="kw">or</span> <span class="bu">file</span>.split(<span class="st">'.'</span>)[<span class="op">-</span><span class="dv">1</span>] <span class="op">==</span> ext[<span class="dv">2</span>].split(<span class="st">'.'</span>)[<span class="op">-</span><span class="dv">1</span>]:</span>
+<span id="lst-1_file-13"><a href="#lst-1_file-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="bu">print</span>(mime[<span class="dv">1</span>])</span>
+<span id="lst-1_file-14"><a href="#lst-1_file-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> <span class="bu">file</span>.split(<span class="st">'.'</span>)[<span class="op">-</span><span class="dv">1</span>] <span class="op">==</span> ext[<span class="dv">0</span>].split(<span class="st">'.'</span>)[<span class="op">-</span><span class="dv">1</span>]:</span>
+<span id="lst-1_file-15"><a href="#lst-1_file-15" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="bu">print</span>(mime[<span class="dv">0</span>])</span>
+<span id="lst-1_file-16"><a href="#lst-1_file-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> <span class="bu">file</span>.split(<span class="st">'.'</span>)[<span class="op">-</span><span class="dv">1</span>] <span class="op">==</span> ext[<span class="dv">3</span>].split(<span class="st">'.'</span>)[<span class="op">-</span><span class="dv">1</span>]:</span>
+<span id="lst-1_file-17"><a href="#lst-1_file-17" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="bu">print</span>(mime[<span class="dv">2</span>])</span>
+<span id="lst-1_file-18"><a href="#lst-1_file-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> <span class="bu">file</span>.split(<span class="st">'.'</span>)[<span class="op">-</span><span class="dv">1</span>] <span class="op">==</span> ext[<span class="dv">4</span>].split(<span class="st">'.'</span>)[<span class="op">-</span><span class="dv">1</span>]:</span>
+<span id="lst-1_file-19"><a href="#lst-1_file-19" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="bu">print</span>(mime[<span class="dv">3</span>])</span>
+<span id="lst-1_file-20"><a href="#lst-1_file-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> <span class="bu">file</span>.split(<span class="st">'.'</span>)[<span class="op">-</span><span class="dv">1</span>] <span class="op">==</span> ext[<span class="op">-</span><span class="dv">2</span>].split(<span class="st">'.'</span>)[<span class="op">-</span><span class="dv">1</span>]:</span>
+<span id="lst-1_file-21"><a href="#lst-1_file-21" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="bu">print</span>(mime[<span class="op">-</span><span class="dv">2</span>])</span>
+<span id="lst-1_file-22"><a href="#lst-1_file-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="lst-1_file-23"><a href="#lst-1_file-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="bu">print</span>(mime[<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="lst-1_file-24"><a href="#lst-1_file-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="lst-1_file-25"><a href="#lst-1_file-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">print</span>(<span class="st">"application/octet-stream"</span>)</span>
+<span id="lst-1_file-26"><a href="#lst-1_file-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="lst-1_file-27"><a href="#lst-1_file-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="lst-1_file-28"><a href="#lst-1_file-28" aria-hidden="true" tabindex="-1"></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</figure>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>image/png</code></pre>
+</div>
+</div>
+<div id="nte-repetitive_code" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;5
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There are far more efficient ways to do the above, including using a dictionary and iterators. Those are covered in the next unit.</p>
 </div>
 </div>
 </section>

@@ -24,33 +24,18 @@ git checkout main
 git merge --no-ff cs50p main
 git push
 ```
+:::
 
 ## Quarto and Markdown {#sec-quarto-markdown .unnumbered}
+:::{}
 - Quarto is used from the command line, the .qmd file uses markdown syntax
 - Using Docker to spin up a container to run the quarto preview was clunky and complicated, still did not work
   - So, simplest solution is spinning up a virtual envionment in the folder I want to work from and then using the venv
 
 ### Some general markdown tips for .qmd files {#sec-md-tips .unnumbered}
-```{quarto}
-:::{}
-- This creates a list
-- Add various items
-- Also knows whether to continue with your symbol
-1. Create a numbered one
-2. That even has subnumbers on an indent
+- Even though there are general settings set at the top of the `.qmd` file, when settings are changed on specific objects, *all* of their settings must be configured, even the document's defaults
 :::
-- To add a block of code, ```{code_lang} followed by the code block and then```
-```
-> Blockquote start 
-> 
-> More text
 
-```
-> Same pattern
-> 
-> As above
-```
-:::
 :::{#nte-quarto_md_basics .callout-note .unnumbered}
 ## Quarto Markdown Basics
 
@@ -160,6 +145,7 @@ main()
 ```{python}
 #| lst-label: lst-0_indoor
 #| lst-cap: Indoor Voice
+#| code-line-numbers: true
 
 # Problem Set 0, Problem 1
 # Prompt the user for input
@@ -182,6 +168,7 @@ a_lower()
 ```{python}
 #| lst-label: lst-0_playback
 #| lst-cap: Playback Speed
+#| code-line-numbers: true
 
 # Prompt the user for input
 def ask_user():
@@ -203,6 +190,7 @@ playback()
 ```{python}
 #| lst-label: lst-0_faces
 #| lst-cap: Making Faces
+#| code-line-numbers: true
 
 # Build main function
 def main():
@@ -227,6 +215,7 @@ main()
 ```{python}
 #| lst-label: lst-0_einstein
 #| lst-cap: Einstein
+#| code-line-numbers: true
 
 def main():
     # Prompt the user for an integer
@@ -245,6 +234,7 @@ main()
 ```{python}
 #| lst-label: lst-0_tip
 #| lst-cap: Tip Calculator
+#| code-line-numbers: true
 
 def main():
     meal = dollars_to_float("76.50")
@@ -466,6 +456,7 @@ match name:
 ```{python}
 #| lst-label: lst-1_thought
 #| lst-cap: Deep Thought
+#| code-line-numbers: true
 
 # Build the main function
 def main():
@@ -489,6 +480,7 @@ The `case _ if` syntax allows you to add conditions to each case when using a ma
 ```{python}
 #| lst-label: lst-1_bank
 #| lst-cap: Home Federal Savings Bank
+#| code-line-numbers: true
 
 # Build the main function
 def main():
@@ -510,18 +502,54 @@ main()
 ```{python}
 #| lst-label: lst-1_file
 #| lst-cap: File Extensions
+#| code-line-numbers: true
+
+# Build the main function
+def main():
+    # Put the necessary extensions in a tuple
+    ext = (".gif", ".jpg", ".jpeg", ".png", ".pdf", ".txt", ".zip")
+    # Group those into MIME types
+    mime = ("image/gif", "image/jpeg", "image/png", "application/pdf", "text/plain", "application/zip")
+    # Get the user's file
+    file = "virus.png".lower().strip()
+
+    # Check which MIME type the file is and return the value
+    if file.endswith(ext):
+        if file.split('.')[-1] == ext[1].split('.')[-1] or file.split('.')[-1] == ext[2].split('.')[-1]:
+            return print(mime[1])
+        elif file.split('.')[-1] == ext[0].split('.')[-1]:
+            return print(mime[0])
+        elif file.split('.')[-1] == ext[3].split('.')[-1]:
+            return print(mime[2])
+        elif file.split('.')[-1] == ext[4].split('.')[-1]:
+            return print(mime[3])
+        elif file.split('.')[-1] == ext[-2].split('.')[-1]:
+            return print(mime[-2])
+        else:
+            return print(mime[-1])
+    else:
+        return print("application/octet-stream")
 
 
+main()
 ```
+:::{#nte-repetitive_code .callout-note}
+There are far more efficient ways to do the above, including using a dictionary and iterators. Those are covered in the next unit.
+:::
 ```{python}
 #| lst-label: lst-1_math
 #| lst-cap: Math Interpreter
+#| code-line-numbers: true
+
 
 
 ```
 ```{python}
 #| lst-label: lst-1_meal
 #| lst-cap: Meal Time
+#| code-line-numbers: true
+
+
 
 
 ```

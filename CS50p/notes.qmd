@@ -577,7 +577,7 @@ main()
 # Build the main function
 def main():
     # Prompt the user for the time
-    ut = input("7:03")
+    ut = "7:03"
 
     # Convert the time to a float
     tm = convert(ut)
@@ -606,3 +606,6 @@ def convert(time):
 if __name__ == '__main__':
     main()
 ```
+
+# Unit 2: Loops {#sec-unit_2}
+## Lecture 2 {#sec-lecture_2}

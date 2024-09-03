@@ -541,15 +541,68 @@ There are far more efficient ways to do the above, including using a dictionary 
 #| lst-cap: Math Interpreter
 #| code-line-numbers: true
 
+# Build the main function
+def main():
+    # Prompt the user for an expression
+    exp = "52 / 6"
+
+    # Split the expression into x, y, and z
+    x, y, z = exp.split(' ')
+
+    # Ensure Data Quality
+    x = float(x)
+    z = float(z)
+
+    # Evaluate the expression
+    match y:
+        case _ if y == '+':
+            return print(x + z)
+        case _ if y == '-':
+            return print(x - z)
+        case _ if y == '*':
+            return print(x * z)
+        case _ if y == '/':
+            return print(x / z)
+        case _:
+            return 0
 
 
+main()
 ```
 ```{python}
 #| lst-label: lst-1_meal
 #| lst-cap: Meal Time
 #| code-line-numbers: true
 
+# Build the main function
+def main():
+    # Prompt the user for the time
+    ut = input("7:03")
+
+    # Convert the time to a float
+    tm = convert(ut)
+
+    # Return what meal corresponds to the time, if any
+    match tm:
+        case _ if 7.00 <= tm <= 8.00:
+            return print("breakfast time")
+        case _ if 12.00 <= tm <= 13.00:
+            return print("lunch time")
+        case _ if 18.00 <= tm <= 19.00:
+            return print("dinner time")
+        case _:
+            return exit
+
+def convert(time):
+    # Convert the string via code that performs several operations at once
+    # The string time is split at the ':', the first item is converted to float
+    # The Second item is converted to float and then divided by 60 to convert it to a decimal
+    time = float(time.split(":")[0]) + float(time.split(":")[1])/60
+
+    return time
 
 
 
+if __name__ == '__main__':
+    main()
 ```

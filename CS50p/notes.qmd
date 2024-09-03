@@ -13,7 +13,6 @@ code-block-bg: "#37474F"
 ---
 # Document Introduction {#sec-introduction .unnumbered}
 ## Git {#sec-git .unnumbered}
-:::{}
 - My local Computer_Science repo now has a specific branch for CS50p
   - Note, you can use git within the .venv or outside of it, git is unaffected by the virtual environment for CS50p.
 ```{zsh}
@@ -24,17 +23,14 @@ git checkout main
 git merge --no-ff cs50p main
 git push
 ```
-:::
 
 ## Quarto and Markdown {#sec-quarto-markdown .unnumbered}
-:::{}
 - Quarto is used from the command line, the .qmd file uses markdown syntax
 - Using Docker to spin up a container to run the quarto preview was clunky and complicated, still did not work
   - So, simplest solution is spinning up a virtual envionment in the folder I want to work from and then using the venv
 
 ### Some general markdown tips for .qmd files {#sec-md-tips .unnumbered}
 - Even though there are general settings set at the top of the `.qmd` file, when settings are changed on specific objects, *all* of their settings must be configured, even the document's defaults
-:::
 
 :::{#nte-quarto_md_basics .callout-note .unnumbered}
 ## Quarto Markdown Basics
@@ -45,7 +41,6 @@ For more markdown tips, docs, and shortcuts <https://quarto.org/docs/authoring/m
 # Unit 0: Functions and Variables {#sec-unit_0 .unnumbered}
 ## Lecture 0 {#sec-lecture_0}
 ### Integers or `int` {#sec-integers}
-:::{}
 * F-string formatting is a way to embed variables in strings, simply use ```print(f"There are, {count} apples.")```
 * In python an integer is referred to as an `int` 
 * It's easy to interact with `int` variables natively in Python
@@ -71,10 +66,7 @@ print(x + y)
 Quarto does not support user input code rendering, so the file preview fails with functions like `input()`. As a result, appropriate values are hard-coded.
 :::
 
-:::
-
 ### Floats {#sec-floats}
-:::{}
 * A floating point value is a real number with a decimal, like `0.52`
 * Modifying the previous code to use the `float` data type allows you to perform operations on decimals too
 * When dealing with decimals, you may want or need to round the values
@@ -103,7 +95,6 @@ z = x / y
 # Print the result
 print(f"{z:.2f}")
 ```
-:::
 
 ::: {#nte-numeric_operators .callout-note}
 ## Python Numeric Operators
@@ -112,7 +103,6 @@ Python has several built-in operators for numeric data types: `+`, `-`, `*`, `/`
 :::
 
 ### Def (User Defined Functions) {#sec-udf}
-:::{}
 * Use the `def` keyword to initialize a UDF (user-defined function)
 * Follow this with the function name, parentheses, and then any conditions in the parentheses
 ```{python}
@@ -139,7 +129,6 @@ def square(n):
 
 main()
 ```
-:::
 
 ## Problem Set 0 {#sec-problem-set-0}
 ```{python}
@@ -265,13 +254,11 @@ main()
 ```
 # Unit 1: Conditionals {#sec-unit_1}
 ## Lecture 1 {#sec-lecture_1}
-:::{}
 - Conditionals allow you to provide specific instructions in your program on how to handle various situations
 - Python has a set of built-in operators to compare a left hand term to a right hand term
   - `> and <` are what you expect: greater than and less than, respectively. 
   - `>= and <=` follow the same pattern as above: greater than or equal to and less than or equal to, respectively.
   - `== and !=` this denotes equal to and not equal to, respectively.
-:::
 
 ::: {#nte-equal_sign_diff .callout-note}
 ## Difference betweeen `=` and `==`
@@ -280,7 +267,6 @@ Using a single `=` will assign a value on the right to the value on the left: `x
 :::
 
 ### if Statements {#sec-if}
-::: {}
 - `if` Statements use `bool` or boolean values (`true or false`) to decide whether to execute
 - To better understand if statement behavior look at the following code:
 ```{python}
@@ -310,10 +296,8 @@ elif x > y:
 else:
     print("x is equal to y")
 ```
-:::
 
 ### or Statements {#sec-or}
-:::{}
 - `or` allows your program to decide between one or more alternatives
 - When dealing with multiple conditions, using *or* can drastically decrease code complexity
 ```{python}
@@ -326,10 +310,8 @@ else:
     print("x is equal to y")
 ```
 - This code block works, but we could improve upon it further by just checking to see if `x == y` or `x != y`
-:::
 
 ### and Statements {#sec-and}
-:::{}
 - `and` statements are another type of conditional, they check whether something meets multiple conditions simultaneously 
 - Starting with the following code, let's make some readability and functionality improvements
 ```{python}
@@ -373,10 +355,8 @@ elif score >= 60:
 else:
     print("Grade: F")
 ```
-:::
 
 ### Modulo {#sec-modulo}
-:::{}
 - Mentioned briefly in [@nte-numeric_operators], the `%` operator shows whether a number divides evenly or with a remainder
   - For example, `24 % 2` evaluates to `0`, but `24 % 5` evaluates to 4 the *remainder*
   - In mathematics, whether something is even or odd is referred to as parity
@@ -414,10 +394,8 @@ def is_even(n):
 
 main()
 ```
-:::
 
 ### match Statements {#sec-match}
-:::{}
 - Similar to other conditional statements, `match` can be used to run code that matches a certain value
 - The structure follows the Python pattern of identation with conditions and uses the keywords `match` and `case`
 ```{python}
@@ -450,7 +428,6 @@ match name:
     case _:
         print("Who?")
 ```
-:::
 
 ## Problem Set 1 {#sec-problem-set-1}
 ```{python}
@@ -609,7 +586,6 @@ if __name__ == '__main__':
 
 # Unit 2: Loops {#sec-unit_2}
 ## Lecture 2 {#sec-lecture_2}
-:::{}
 - Loops are a way of doing something over and over again
 - Pretend you write the following block of code
 ```{python}
@@ -620,10 +596,8 @@ print("meow")
 print("meow")
 ```
 - It's not going to be efficient to do this 20 times, let a few hundred, this is where loops are useful
-:::
 
 ### while Loops {#sec-while_loops}
-:::{}
 - The `while` loops is nearly universal in all coding languages
 - As its name says, it runs while a condition is `true` and until it is `false` or *vice versa*
   - Like with all processes run from a command line, use `Ctrl-C` to kill any hanging or infinitely running programs
@@ -635,7 +609,9 @@ while i < 3:
     print("meow")
     i += 1
 ```
-:::
 :::{#tip-add_sub_assignment}
 The `+=` and `-=` symbols are the addition and subtraction assignment operators, respectively. They are a great shortcut for iteratively adding values while looping. 
 :::
+
+### for Loops {#sec-for_loops}
+- 

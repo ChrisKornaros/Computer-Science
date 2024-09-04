@@ -429,7 +429,7 @@ match name:
         print("Who?")
 ```
 
-## Problem Set 1 {#sec-problem-set-1}
+## Problem Set 1 {#sec-problem_set_1}
 ```{python}
 #| lst-label: lst-1_thought
 #| lst-cap: Deep Thought
@@ -729,3 +729,145 @@ for student in students:
 
 ### Mario {#sec-mario}
 - The classic 2D Mario games are a great illustration of the use of loops
+  - Similar to `meow` imagine printing three `#` in a vertical stack, just like blocks in Mario
+  - You could do it one line of code at a time, or with a for loop
+- You can easily modify the below code to print block width instead
+- ```print("#" * n)``` instead of a loop will print the character n times on a line
+```{python}
+#| output: false
+
+# Build main function
+def main():
+    return block_height(3)
+
+def block_height(n):
+    for _ in range(n):
+        print("#")
+
+main()
+```
+- You can combine code for the height, with code for the width to print out a square
+  - Doing so, you'll see how nested for loops behave
+  - Notice the use of `end=""` which changes the default line end behavior of print from a line break `"\n"` to continuing on the same line
+```{python}
+# Build main function
+def main():
+    # Get the height
+    blocks = int(3)
+
+    # Print the square
+    for h in range(blocks):
+        # Print the columns
+        for w in range(blocks):
+            print("#", end = "")
+        # Print the rows
+        print()
+
+# Build the row function
+def print_row(n):
+    print("#" * n)
+
+# Build the column function
+def print_col(h):
+    for _ in range(h):
+        print("#")
+
+main()
+```
+
+## Problem Set 2 {#sec-problem_set_2}
+:::{#nte-camel_snake_case .callout-note}
+## camelCase and snake_case
+Many times in code, you'll see variable names in various formats. Most commonly, you'll see `camelCase`, where the first word is lower case and then subsequent words have a capital first letter without a space separator, and `snake_case` where all words are lower case and they're separated by an `_`. 
+:::
+```{python}
+#| lst-label: lst-2_camel
+#| lst-cap: camelCase
+#| code-line-numbers: true
+
+# Build the main function
+def main():
+    # Prompt the user for a variable in camelCase
+    camel = "testThisProgramOutForMe".strip()
+
+    # Convert the variable name to snake_case, first initialize a blank list
+    snake = []
+    # Iterate through the variable string
+    # By adding a print() line in each iteration, I can check to see where code breaks
+    start = 1
+    for a in camel:
+        # Start the snake list with the first letter in the camelCase variable
+        # Data quality check: with the binary start variable, if the first letter in the first word is the same as the last, like in test
+        # I am able to avoid any bugs/errors
+        if a == camel[0] and start == 1:
+            snake = snake + list(a)
+            # print(snake)
+            start -= 1
+        # If lowercase, add it to the most recent list item
+        elif a.islower():
+            snake[-1] = snake[-1] + a
+            # print(snake)
+        # If uppercase, add a new list item
+        elif a.isupper():
+            snake = snake + list(a)
+            # print(snake)
+        else:
+            break
+
+    # Create the snake_case output
+    for s in snake:
+        # Start the string
+        if s == snake[0]:
+            snake_case = s
+            # print(snake_case)
+        else:
+            snake_case = snake_case + '_' +str(s.lower())
+            # print(snake_case)
+
+    print(f"snake_case: {snake_case}")
+
+
+
+main()
+
+```
+
+:::{#nte-list_manipulation .callout-note}
+## Manipulating Lists
+Lists in Python use *zero indexing* and can be created with literal syntax `[]` or formal syntax `list()`. You can manipulate lists using literal syntax and various formal methods and functions, as show in @lst-2_camel.
+:::
+
+:::{#imp-data_quality_checks .callout-important}
+## Built-In Data Quality Checks
+Data quality is one of the top issues plaguing data engineers, scientiests, analysts, and beyond right now. It's important to understand your output and why your code is operating in the way it is. As you saw above, I added a variable `start = 1` to essentially serve as a binary check. Once the loop ran once and the list was started, `start -= 1` so the rest of the conditional runs, but only checks the letter's case. This is because if the first and last letter of a word are the same, the conditional interpreted that as the start of a new word, rather than the end of the first.
+:::
+
+```{python}
+#| lst-label: lst-2_coke
+#| lst-cap: Coke Machine
+#| code-line-numbers: true
+
+
+
+```
+
+```{python}
+#| lst-label: lst-2_twttr
+#| lst-cap: Just Setting up my twttr
+#| code-line-numbers: true
+
+```
+
+```{python}
+#| lst-label: lst-2_vanity
+#| lst-cap: Vanity Plates
+#| code-line-numbers: true
+
+```
+
+```{python}
+#| lst-label: lst-2_nutrition
+#| lst-cap: Nutrition Facts
+#| code-line-numbers: true
+
+```

@@ -114,9 +114,9 @@ name = "Chris"#input("What's your name? ")
 hello()
 print(name)
 ```
-* Notice how everything is indented under def, Python uses indentation to understand what's part of the function
-* Similar to other programming languages, Python utilizes main functions in scripts for the primary purpose
-* Utilize a main function and return a value as follows
+- Notice how everything is indented under def, Python uses indentation to understand what's part of the function
+- Similar to other programming languages, Python utilizes main functions in scripts for the primary purpose
+- Utilize a main function and return a value as follows
 ```{python}
 def main():
     x = 3#int(input("What's x? "))
@@ -847,7 +847,38 @@ Data quality is one of the top issues plaguing data engineers, scientiests, anal
 #| lst-cap: Coke Machine
 #| code-line-numbers: true
 
+# Build the main function
+def main():
 
+    # Initial money needed to buy the Coke
+    due = 50
+    # Initialize a start flag
+    start = 1
+    # Repeat while > 0
+    while due > 0:
+        if start == 1:
+            # Provide the amount of money owed
+            print(f"Amount Due: {due}")
+            # Prompt the user for the coin
+            coin = int(25)
+            # Stop this conditional from repeating
+            start -= 1
+        # Ensure the coin is a nickle, dime, or quarter
+        if coin not in [25, 10, 5]:
+            due = due
+            print(f"Amount Due: {due}")
+            coin = int(25)
+        elif coin in [25, 10, 5]:
+            due = due - coin
+            if due > 0:
+                print(f"Amount Due: {due}")
+                coin = int(25)
+            elif due <= 0:
+                print(f"Change Owed: {abs(due)}")
+                break
+
+
+main()
 
 ```
 
@@ -856,12 +887,34 @@ Data quality is one of the top issues plaguing data engineers, scientiests, anal
 #| lst-cap: Just Setting up my twttr
 #| code-line-numbers: true
 
+# Build the main function
+def main():
+    # Prompt the user for a string
+    inp = "Hello, I am Chris and THIS is_a test."
+    # Create a list of vowels
+    vow = ['A', 'E', 'I', 'O', 'U']
+
+    for i in inp:
+        if i.upper() in vow:
+            inp = inp.replace(i, "")
+        else:
+            inp = inp
+
+
+    print(inp)
+
+
+
+main()
+
 ```
 
 ```{python}
-#| lst-label: lst-2_vanity
+#| lst-label: lst-2_plates
 #| lst-cap: Vanity Plates
 #| code-line-numbers: true
+
+
 
 ```
 

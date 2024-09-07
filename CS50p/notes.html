@@ -120,6 +120,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#sec-problem_set_2" id="toc-sec-problem_set_2" class="nav-link" data-scroll-target="#sec-problem_set_2">Problem Set 2</a></li>
   </ul></li>
+  <li><a href="#sec-unit_3" id="toc-sec-unit_3" class="nav-link" data-scroll-target="#sec-unit_3">Unit 3: Exceptions</a>
+  <ul class="collapse">
+  <li><a href="#sec-lecture_3" id="toc-sec-lecture_3" class="nav-link" data-scroll-target="#sec-lecture_3">Lecture 3</a></li>
+  </ul></li>
   </ul>
 </nav>
 </div>
@@ -204,7 +208,7 @@ Note&nbsp;1: Quarto Markdown Basics
 <li>In python an integer is referred to as an <code>int</code></li>
 <li>It’s easy to interact with <code>int</code> variables natively in Python</li>
 </ul>
-<div id="9d40aaff" class="cell" data-execution_count="1">
+<div id="0eb038ac" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>x <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>y <span class="op">=</span> <span class="dv">2</span></span>
 <span id="cb2-3"><a href="#cb2-3"></a></span>
@@ -218,7 +222,7 @@ Note&nbsp;1: Quarto Markdown Basics
 <ul>
 <li>You can improve upon the above program by using base Python functions</li>
 </ul>
-<div id="97445e52" class="cell" data-execution_count="2">
+<div id="59e90bc3" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>x <span class="op">=</span> <span class="dv">5</span><span class="co">#int(input("What's x? "))</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a>y <span class="op">=</span> <span class="dv">4</span><span class="co">#int(input("What's y? "))</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a></span>
@@ -252,7 +256,7 @@ Note&nbsp;2: Hardcoded Variable Values
 <li>Additionally, <code>print(f"{z:,}")</code> prints the variable <code>z</code> and adds a comma to the value</li>
 </ul></li>
 </ul>
-<div id="ee4c9586" class="cell" data-execution_count="3">
+<div id="78d323a4" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Get the user's input</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a>x <span class="op">=</span> <span class="dv">2</span><span class="co">#float(input("What's x? "))</span></span>
 <span id="cb6-3"><a href="#cb6-3"></a>y <span class="op">=</span> <span class="fl">3.3</span><span class="co">#float(input("What's y? "))</span></span>
@@ -269,7 +273,7 @@ Note&nbsp;2: Hardcoded Variable Values
 <ul>
 <li>Finally, you could remove the piece of code that rounds the values with f-string formatting</li>
 </ul>
-<div id="8d02cbe4" class="cell" data-execution_count="4">
+<div id="cb1584d4" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># Get the user's input</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>x <span class="op">=</span> <span class="fl">2.2</span><span class="co">#float(input("What's x? "))</span></span>
 <span id="cb8-3"><a href="#cb8-3"></a>y <span class="op">=</span> <span class="fl">3.4</span><span class="co">#float(input("What's y? "))</span></span>
@@ -303,7 +307,7 @@ Note&nbsp;3: Python Numeric Operators
 <li>Use the <code>def</code> keyword to initialize a UDF (user-defined function)</li>
 <li>Follow this with the function name, parentheses, and then any conditions in the parentheses</li>
 </ul>
-<div id="686e463a" class="cell" data-execution_count="5">
+<div id="8d3522a8" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">def</span> hello():</span>
 <span id="cb10-2"><a href="#cb10-2"></a>    <span class="bu">print</span>(<span class="st">"hello"</span>)</span>
 <span id="cb10-3"><a href="#cb10-3"></a></span>
@@ -321,7 +325,7 @@ Chris</code></pre>
 <li>Similar to other programming languages, Python utilizes main functions in scripts for the primary purpose</li>
 <li>Utilize a main function and return a value as follows</li>
 </ul>
-<div id="2156b4b0" class="cell" data-execution_count="6">
+<div id="d443fdf7" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">def</span> main():</span>
 <span id="cb12-2"><a href="#cb12-2"></a>    x <span class="op">=</span> <span class="dv">3</span><span class="co">#int(input("What's x? "))</span></span>
 <span id="cb12-3"><a href="#cb12-3"></a>    <span class="bu">print</span>(<span class="st">"x squared is"</span>, square(x))</span>
@@ -340,7 +344,7 @@ Chris</code></pre>
 </section>
 <section id="sec-problem-set-0" class="level2">
 <h2 class="anchored" data-anchor-id="sec-problem-set-0">Problem Set 0</h2>
-<div id="35f26b22" class="cell" data-execution_count="7">
+<div id="203602b4" class="cell" data-execution_count="7">
 <div id="lst-0_indoor" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored" data-code-line-numbers="true">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-0_indoor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -370,7 +374,7 @@ Listing&nbsp;1: Indoor Voice
 <pre><code>my name is wd-40</code></pre>
 </div>
 </div>
-<div id="315f68bb" class="cell" data-execution_count="8">
+<div id="d7c97b5e" class="cell" data-execution_count="8">
 <div id="lst-0_playback" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored" data-code-line-numbers="true">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-0_playback-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -400,7 +404,7 @@ Listing&nbsp;2: Playback Speed
 <pre><code>Hello,...it's...very...nice...to...meet...you!</code></pre>
 </div>
 </div>
-<div id="c407d344" class="cell" data-execution_count="9">
+<div id="38963468" class="cell" data-execution_count="9">
 <div id="lst-0_faces" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored" data-code-line-numbers="true">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-0_faces-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -433,7 +437,7 @@ Listing&nbsp;3: Making Faces
 <pre><code>🙂</code></pre>
 </div>
 </div>
-<div id="f68170b7" class="cell" data-execution_count="10">
+<div id="643fec77" class="cell" data-execution_count="10">
 <div id="lst-0_einstein" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored" data-code-line-numbers="true">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-0_einstein-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -460,7 +464,7 @@ Listing&nbsp;4: Einstein
 <pre><code>E: 4500000000000000000</code></pre>
 </div>
 </div>
-<div id="5b519e40" class="cell" data-execution_count="11">
+<div id="88ec2907" class="cell" data-execution_count="11">
 <div id="lst-0_tip" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored" data-code-line-numbers="true">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-0_tip-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -534,7 +538,7 @@ Note&nbsp;4: Difference betweeen <code>=</code> and <code>==</code>
 <li><code>if</code> Statements use <code>bool</code> or boolean values (<code>true or false</code>) to decide whether to execute</li>
 <li>To better understand if statement behavior look at the following code:</li>
 </ul>
-<div id="07547459" class="cell" data-execution_count="12">
+<div id="b8a0eb74" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a>y <span class="op">=</span> <span class="dv">4</span></span>
 <span id="cb19-3"><a href="#cb19-3"></a></span>
@@ -557,7 +561,7 @@ Note&nbsp;4: Difference betweeen <code>=</code> and <code>==</code>
 </ul></li>
 <li>You can improve upon this flow using the <code>if</code> <code>elif</code> <code>else</code> syntax</li>
 </ul>
-<div id="8163fafb" class="cell" data-execution_count="13">
+<div id="546be2a2" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb21-2"><a href="#cb21-2"></a>y <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb21-3"><a href="#cb21-3"></a></span>
@@ -578,7 +582,7 @@ Note&nbsp;4: Difference betweeen <code>=</code> and <code>==</code>
 <li><code>or</code> allows your program to decide between one or more alternatives</li>
 <li>When dealing with multiple conditions, using <em>or</em> can drastically decrease code complexity</li>
 </ul>
-<div id="f7da9fec" class="cell" data-execution_count="14">
+<div id="fd6d05fc" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb23-2"><a href="#cb23-2"></a>y <span class="op">=</span> <span class="dv">7</span></span>
 <span id="cb23-3"><a href="#cb23-3"></a></span>
@@ -600,7 +604,7 @@ Note&nbsp;4: Difference betweeen <code>=</code> and <code>==</code>
 <li><code>and</code> statements are another type of conditional, they check whether something meets multiple conditions simultaneously</li>
 <li>Starting with the following code, let’s make some readability and functionality improvements</li>
 </ul>
-<div id="c98df537" class="cell" data-execution_count="15">
+<div id="8efc5941" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>score <span class="op">=</span> <span class="dv">78</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a><span class="cf">if</span> score <span class="op">&gt;=</span> <span class="dv">90</span> <span class="kw">and</span> score <span class="op">&lt;=</span> <span class="dv">100</span>:</span>
 <span id="cb25-3"><a href="#cb25-3"></a>    <span class="bu">print</span>(<span class="st">"Grade: A"</span>)</span>
@@ -619,7 +623,7 @@ Note&nbsp;4: Difference betweeen <code>=</code> and <code>==</code>
 <ul>
 <li>A nice feature of python is you can chain together conditionals in an easy to understand format</li>
 </ul>
-<div id="5a7ba9c0" class="cell" data-execution_count="16">
+<div id="6ee51526" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>score <span class="op">=</span> <span class="dv">81</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a><span class="cf">if</span> <span class="dv">90</span> <span class="op">&lt;=</span> score <span class="op">&lt;=</span> <span class="dv">100</span>:</span>
 <span id="cb27-3"><a href="#cb27-3"></a>    <span class="bu">print</span>(<span class="st">"Grade: A"</span>)</span>
@@ -638,7 +642,7 @@ Note&nbsp;4: Difference betweeen <code>=</code> and <code>==</code>
 <ul>
 <li>Again, similar to <code>or</code> it’s best to ask the simplest question in a conditional</li>
 </ul>
-<div id="e3aa32ca" class="cell" data-execution_count="17">
+<div id="06105f99" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a>score <span class="op">=</span> <span class="dv">90</span></span>
 <span id="cb29-2"><a href="#cb29-2"></a><span class="cf">if</span> score <span class="op">&gt;=</span> <span class="dv">90</span>:</span>
 <span id="cb29-3"><a href="#cb29-3"></a>    <span class="bu">print</span>(<span class="st">"Grade: A"</span>)</span>
@@ -665,7 +669,7 @@ Note&nbsp;4: Difference betweeen <code>=</code> and <code>==</code>
 </ul></li>
 <li>Discussed in <a href="#sec-udf" class="quarto-xref">Unit&nbsp;0.1.3</a> it’s useful to create your own functions</li>
 </ul>
-<div id="5f9c0576" class="cell" data-execution_count="18">
+<div id="fa6b1449" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a><span class="kw">def</span> main():</span>
 <span id="cb31-2"><a href="#cb31-2"></a>    x <span class="op">=</span> <span class="dv">21</span></span>
 <span id="cb31-3"><a href="#cb31-3"></a>    <span class="cf">if</span> is_even(x):</span>
@@ -692,7 +696,7 @@ Note&nbsp;4: Difference betweeen <code>=</code> and <code>==</code>
 <li>Recall that <code>==</code> evaluates whether something is equal or not, it returns a <code>Bool</code></li>
 </ul></li>
 </ul>
-<div id="a05b31d6" class="cell" data-execution_count="19">
+<div id="7ed9e66b" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a><span class="kw">def</span> main():</span>
 <span id="cb33-2"><a href="#cb33-2"></a>    x <span class="op">=</span> <span class="dv">94</span></span>
 <span id="cb33-3"><a href="#cb33-3"></a>    <span class="cf">if</span> is_even(x):</span>
@@ -715,7 +719,7 @@ Note&nbsp;4: Difference betweeen <code>=</code> and <code>==</code>
 <li>Similar to other conditional statements, <code>match</code> can be used to run code that matches a certain value</li>
 <li>The structure follows the Python pattern of identation with conditions and uses the keywords <code>match</code> and <code>case</code></li>
 </ul>
-<div id="0449a25a" class="cell" data-execution_count="20">
+<div id="d900071c" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a>name <span class="op">=</span> <span class="st">"Ron"</span></span>
 <span id="cb35-2"><a href="#cb35-2"></a></span>
 <span id="cb35-3"><a href="#cb35-3"></a><span class="cf">match</span> name:</span>
@@ -741,7 +745,7 @@ Note&nbsp;4: Difference betweeen <code>=</code> and <code>==</code>
 </ul></li>
 <li>Improve upon the code by using the <code>|</code> operator, which equates to <code>or</code> and checks multiple values in the same case statement</li>
 </ul>
-<div id="22bc63da" class="cell" data-execution_count="21">
+<div id="8c123ebe" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a>name <span class="op">=</span> <span class="st">"Hermione"</span></span>
 <span id="cb37-2"><a href="#cb37-2"></a></span>
 <span id="cb37-3"><a href="#cb37-3"></a><span class="cf">match</span> name:</span>
@@ -759,7 +763,7 @@ Note&nbsp;4: Difference betweeen <code>=</code> and <code>==</code>
 </section>
 <section id="sec-problem_set_1" class="level2">
 <h2 class="anchored" data-anchor-id="sec-problem_set_1">Problem Set 1</h2>
-<div id="290097a5" class="cell" data-execution_count="22">
+<div id="66f622d3" class="cell" data-execution_count="22">
 <div id="lst-1_thought" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored" data-code-line-numbers="true">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-1_thought-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -799,7 +803,7 @@ Tip&nbsp;1: Case Conditions
 <p>The <code>case _ if</code> syntax allows you to add conditions to each case when using a match statement. Combine this with the <code>in</code> operator to perform searches in strings: <code>case _ if h in hello</code>.</p>
 </div>
 </div>
-<div id="d9c94ca6" class="cell" data-execution_count="23">
+<div id="b04a071a" class="cell" data-execution_count="23">
 <div id="lst-1_bank" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored" data-code-line-numbers="true">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-1_bank-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -829,7 +833,7 @@ Listing&nbsp;7: Home Federal Savings Bank
 <pre><code>$20</code></pre>
 </div>
 </div>
-<div id="da0e3aa5" class="cell" data-execution_count="24">
+<div id="fa37cc2f" class="cell" data-execution_count="24">
 <div id="lst-1_file" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored" data-code-line-numbers="true">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-1_file-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -884,7 +888,7 @@ Note&nbsp;5
 <p>There are far more efficient ways to do the above, including using a dictionary and iterators. Those are covered in the next unit.</p>
 </div>
 </div>
-<div id="d799edbc" class="cell" data-execution_count="25">
+<div id="e86f5712" class="cell" data-execution_count="25">
 <div id="lst-1_math" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored" data-code-line-numbers="true">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-1_math-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -925,7 +929,7 @@ Listing&nbsp;9: Math Interpreter
 <pre><code>8.666666666666666</code></pre>
 </div>
 </div>
-<div id="b029a172" class="cell" data-execution_count="26">
+<div id="e83582ce" class="cell" data-execution_count="26">
 <div id="lst-1_meal" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored" data-code-line-numbers="true">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-1_meal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -980,7 +984,7 @@ Listing&nbsp;10: Meal Time
 <li>Loops are a way of doing something over and over again</li>
 <li>Pretend you write the following block of code</li>
 </ul>
-<div id="52878737" class="cell" data-execution_count="27">
+<div id="3ca0f8a1" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a><span class="bu">print</span>(<span class="st">"meow"</span>)</span>
 <span id="cb44-2"><a href="#cb44-2"></a><span class="bu">print</span>(<span class="st">"meow"</span>)</span>
 <span id="cb44-3"><a href="#cb44-3"></a><span class="bu">print</span>(<span class="st">"meow"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -999,7 +1003,7 @@ Listing&nbsp;10: Meal Time
 <li>The term iteration is very significant with regards to coding, it refers to each cycle through a loop</li>
 <li>For a basic example of a while loop with an iteration counter:</li>
 </ul>
-<div id="9c155ffe" class="cell" data-execution_count="28">
+<div id="db5a728f" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb45-2"><a href="#cb45-2"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">3</span>:</span>
 <span id="cb45-3"><a href="#cb45-3"></a>    <span class="bu">print</span>(<span class="st">"meow"</span>)</span>
@@ -1033,14 +1037,14 @@ Tip&nbsp;2: Addition and Subtraction Assignment Operators
 <li>Using the same example as the while loop, look how clean the following is</li>
 </ul></li>
 </ul>
-<div id="c3018f04" class="cell" data-execution_count="29">
+<div id="4abed9d8" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a><span class="cf">for</span> i <span class="kw">in</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>]:</span>
 <span id="cb47-2"><a href="#cb47-2"></a>    <span class="bu">print</span>(<span class="st">"meow"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>This can be further improved upon using the <code>range</code> data type, and the built-in <code>range()</code> function</li>
 </ul>
-<div id="c9f74f08" class="cell" data-execution_count="30">
+<div id="00e590d6" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
 <span id="cb48-2"><a href="#cb48-2"></a>    <span class="bu">print</span>(<span class="st">"meow"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1057,7 +1061,7 @@ Note&nbsp;6: Use of the <code>_</code> as a wildcard operator
 <p>You can further simplifying things by removing the unused <code>i</code> and replacing it with a <code>_</code> to represent it. <strong><em>However,</em></strong> only do this when the variable you’re replacing, in this case <code>i</code>, isn’t used in the code.</p>
 </div>
 </div>
-<div id="7aa106b7" class="cell" data-execution_count="31">
+<div id="b69195ae" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
 <span id="cb49-2"><a href="#cb49-2"></a>    <span class="bu">print</span>(<span class="st">"meow"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1067,7 +1071,7 @@ Note&nbsp;6: Use of the <code>_</code> as a wildcard operator
 <li>Adding the <code>\n</code> linebreak and <code>end=""</code> tells the compiler to add a linebreak at the end of each meow</li>
 </ul></li>
 </ul>
-<div id="fc162dc8" class="cell" data-execution_count="32">
+<div id="5d9b8b62" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1"></a><span class="bu">print</span>(<span class="st">"meow</span><span class="ch">\n</span><span class="st">"</span> <span class="op">*</span> <span class="dv">3</span>, end<span class="op">=</span><span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
@@ -1078,7 +1082,7 @@ Note&nbsp;6: Use of the <code>_</code> as a wildcard operator
 <li>See how you can tie together various kinds of loops with the following</li>
 </ul></li>
 </ul>
-<div id="89c6dafd" class="cell" data-execution_count="33">
+<div id="e0e21836" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1"></a><span class="kw">def</span> main():</span>
 <span id="cb51-2"><a href="#cb51-2"></a>    meow(get_number())</span>
 <span id="cb51-3"><a href="#cb51-3"></a></span>
@@ -1109,7 +1113,7 @@ Note&nbsp;6: Use of the <code>_</code> as a wildcard operator
 <li>Combine this function with previous examples to simplify your code</li>
 </ul></li>
 </ul>
-<div id="ceaefff7" class="cell" data-execution_count="34">
+<div id="a43b5103" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1"></a>students <span class="op">=</span> [<span class="st">"Harry"</span>, <span class="st">"Ron"</span>, <span class="st">"Hermione"</span>]</span>
 <span id="cb52-2"><a href="#cb52-2"></a></span>
 <span id="cb52-3"><a href="#cb52-3"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(students)):</span>
@@ -1132,7 +1136,7 @@ Note&nbsp;6: Use of the <code>_</code> as a wildcard operator
 <li>You could store students and houses in lists and try to keep their positions always lined up, but the issues are obvious</li>
 <li>A better approach is using a dictionary</li>
 </ul>
-<div id="8496d8b1" class="cell" data-execution_count="35">
+<div id="5a6874df" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1"></a>students_list <span class="op">=</span> [<span class="st">"Hermoine"</span>, <span class="st">"Harry"</span>, <span class="st">"Ron"</span>, <span class="st">"Draco"</span>]</span>
 <span id="cb54-2"><a href="#cb54-2"></a>houses_list <span class="op">=</span> [<span class="st">"Gryffindor"</span>, <span class="st">"Gryffindor"</span>, <span class="st">"Griffindor"</span>, <span class="st">"Slytherin"</span>]</span>
 <span id="cb54-3"><a href="#cb54-3"></a></span>
@@ -1148,7 +1152,7 @@ Note&nbsp;6: Use of the <code>_</code> as a wildcard operator
 <ul>
 <li>You could also expand your dictionary to have more information than just the Student and their House</li>
 </ul>
-<div id="3ebd2d2d" class="cell" data-execution_count="36">
+<div id="7b787e4e" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1"></a>students <span class="op">=</span> [</span>
 <span id="cb55-2"><a href="#cb55-2"></a>    {<span class="st">"name"</span>: <span class="st">"Hermoine"</span>, <span class="st">"house"</span>: <span class="st">"Gryffindor"</span>, <span class="st">"patronus"</span>: <span class="st">"Otter"</span>},</span>
 <span id="cb55-3"><a href="#cb55-3"></a>    {<span class="st">"name"</span>: <span class="st">"Harry"</span>, <span class="st">"house"</span>: <span class="st">"Gryffindor"</span>, <span class="st">"patronus"</span>: <span class="st">"Stag"</span>},</span>
@@ -1171,7 +1175,7 @@ Note&nbsp;6: Use of the <code>_</code> as a wildcard operator
 <li>You can easily modify the below code to print block width instead</li>
 <li><code>print("#" * n)</code> instead of a loop will print the character n times on a line</li>
 </ul>
-<div id="e36ac1b4" class="cell" data-execution_count="37">
+<div id="2972c7d8" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1"></a><span class="co"># Build main function</span></span>
 <span id="cb56-2"><a href="#cb56-2"></a><span class="kw">def</span> main():</span>
 <span id="cb56-3"><a href="#cb56-3"></a>    <span class="cf">return</span> block_height(<span class="dv">3</span>)</span>
@@ -1189,7 +1193,7 @@ Note&nbsp;6: Use of the <code>_</code> as a wildcard operator
 <li>Notice the use of <code>end=""</code> which changes the default line end behavior of print from a line break <code>"\n"</code> to continuing on the same line</li>
 </ul></li>
 </ul>
-<div id="87ee2024" class="cell" data-execution_count="38">
+<div id="6cae81f7" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1"></a><span class="co"># Build main function</span></span>
 <span id="cb57-2"><a href="#cb57-2"></a><span class="kw">def</span> main():</span>
 <span id="cb57-3"><a href="#cb57-3"></a>    <span class="co"># Get the height</span></span>
@@ -1236,7 +1240,7 @@ Note&nbsp;7: camelCase and snake_case
 <p>Many times in code, you’ll see variable names in various formats. Most commonly, you’ll see <code>camelCase</code>, where the first word is lower case and then subsequent words have a capital first letter without a space separator, and <code>snake_case</code> where all words are lower case and they’re separated by an <code>_</code>.</p>
 </div>
 </div>
-<div id="02098d50" class="cell" data-execution_count="39">
+<div id="7227ec85" class="cell" data-execution_count="39">
 <div id="lst-2_camel" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored" data-code-line-numbers="true">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-2_camel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1320,7 +1324,7 @@ Important&nbsp;1: Built-In Data Quality Checks
 <p>Data quality is one of the top issues plaguing data engineers, scientiests, analysts, and beyond right now. It’s important to understand your output and why your code is operating in the way it is. As you saw above, I added a variable <code>start = 1</code> to essentially serve as a binary check. Once the loop ran once and the list was started, <code>start -= 1</code> so the rest of the conditional runs, but only checks the letter’s case. This is because if the first and last letter of a word are the same, the conditional interpreted that as the start of a new word, rather than the end of the first.</p>
 </div>
 </div>
-<div id="a0d51cdd" class="cell" data-execution_count="40">
+<div id="76071be3" class="cell" data-execution_count="40">
 <div id="lst-2_coke" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored" data-code-line-numbers="true">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-2_coke-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1368,7 +1372,7 @@ Amount Due: 25
 Change Owed: 0</code></pre>
 </div>
 </div>
-<div id="8bc03114" class="cell" data-execution_count="41">
+<div id="b70da7f7" class="cell" data-execution_count="41">
 <div id="lst-2_twttr" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored" data-code-line-numbers="true">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-2_twttr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1401,7 +1405,7 @@ Listing&nbsp;13: Just Setting up my twttr
 <pre><code>Hll,  m Chrs nd THS s_ tst.</code></pre>
 </div>
 </div>
-<div id="121cf1e1" class="cell" data-execution_count="42">
+<div id="f1b05530" class="cell" data-execution_count="42">
 <div id="lst-2_plates" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored" data-code-line-numbers="true">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-2_plates-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1451,6 +1455,70 @@ Listing&nbsp;14: Vanity Plates
 <pre><code>Valid</code></pre>
 </div>
 </div>
+<div id="2fbcec8a" class="cell" data-execution_count="43">
+<div id="lst-2_nutrition" class="python cell-code listing quarto-float quarto-figure quarto-figure-left anchored" data-code-line-numbers="true">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-2_nutrition-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Listing&nbsp;15: Nutrition Facts
+</figcaption>
+<div aria-describedby="lst-2_nutrition-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="sourceCode cell-code" id="lst-2_nutrition" data-code-line-numbers="true"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="lst-2_nutrition-1"><a href="#lst-2_nutrition-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build the main function</span></span>
+<span id="lst-2_nutrition-2"><a href="#lst-2_nutrition-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="lst-2_nutrition-3"><a href="#lst-2_nutrition-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Prompt the user for the fruit</span></span>
+<span id="lst-2_nutrition-4"><a href="#lst-2_nutrition-4" aria-hidden="true" tabindex="-1"></a>    fruit <span class="op">=</span> <span class="st">"honeydew melon"</span></span>
+<span id="lst-2_nutrition-5"><a href="#lst-2_nutrition-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Return the calories</span></span>
+<span id="lst-2_nutrition-6"><a href="#lst-2_nutrition-6" aria-hidden="true" tabindex="-1"></a>    cal_calc(fruit)</span>
+<span id="lst-2_nutrition-7"><a href="#lst-2_nutrition-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="lst-2_nutrition-8"><a href="#lst-2_nutrition-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Build the calorie calculator</span></span>
+<span id="lst-2_nutrition-9"><a href="#lst-2_nutrition-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cal_calc(f):</span>
+<span id="lst-2_nutrition-10"><a href="#lst-2_nutrition-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Dictionary with the fruit and its calories per portion</span></span>
+<span id="lst-2_nutrition-11"><a href="#lst-2_nutrition-11" aria-hidden="true" tabindex="-1"></a>    cal_dict <span class="op">=</span> {</span>
+<span id="lst-2_nutrition-12"><a href="#lst-2_nutrition-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Apple"</span>: <span class="dv">130</span>,</span>
+<span id="lst-2_nutrition-13"><a href="#lst-2_nutrition-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Avocado"</span>: <span class="dv">50</span>,</span>
+<span id="lst-2_nutrition-14"><a href="#lst-2_nutrition-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Banana"</span>: <span class="dv">110</span>,</span>
+<span id="lst-2_nutrition-15"><a href="#lst-2_nutrition-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Cantaloupe"</span>: <span class="dv">50</span>,</span>
+<span id="lst-2_nutrition-16"><a href="#lst-2_nutrition-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Grapefruit"</span>: <span class="dv">60</span>,</span>
+<span id="lst-2_nutrition-17"><a href="#lst-2_nutrition-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Grapes"</span>: <span class="dv">90</span>,</span>
+<span id="lst-2_nutrition-18"><a href="#lst-2_nutrition-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Honeydew Melon"</span>: <span class="dv">50</span>,</span>
+<span id="lst-2_nutrition-19"><a href="#lst-2_nutrition-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Kiwifruit"</span>: <span class="dv">90</span>,</span>
+<span id="lst-2_nutrition-20"><a href="#lst-2_nutrition-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Lemon"</span>: <span class="dv">15</span>,</span>
+<span id="lst-2_nutrition-21"><a href="#lst-2_nutrition-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Lime"</span>: <span class="dv">20</span>,</span>
+<span id="lst-2_nutrition-22"><a href="#lst-2_nutrition-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Nectarine"</span>: <span class="dv">60</span>,</span>
+<span id="lst-2_nutrition-23"><a href="#lst-2_nutrition-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Orange"</span>: <span class="dv">80</span>,</span>
+<span id="lst-2_nutrition-24"><a href="#lst-2_nutrition-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Peach"</span>: <span class="dv">60</span>,</span>
+<span id="lst-2_nutrition-25"><a href="#lst-2_nutrition-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Pear"</span>: <span class="dv">100</span>,</span>
+<span id="lst-2_nutrition-26"><a href="#lst-2_nutrition-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Pineapple"</span>: <span class="dv">50</span>,</span>
+<span id="lst-2_nutrition-27"><a href="#lst-2_nutrition-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Plums"</span>: <span class="dv">70</span>,</span>
+<span id="lst-2_nutrition-28"><a href="#lst-2_nutrition-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Strawberries"</span>: <span class="dv">50</span>,</span>
+<span id="lst-2_nutrition-29"><a href="#lst-2_nutrition-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Sweet Cherries"</span>: <span class="dv">100</span>,</span>
+<span id="lst-2_nutrition-30"><a href="#lst-2_nutrition-30" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Tangerine"</span>: <span class="dv">50</span>,</span>
+<span id="lst-2_nutrition-31"><a href="#lst-2_nutrition-31" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Watermelon"</span>: <span class="dv">80</span></span>
+<span id="lst-2_nutrition-32"><a href="#lst-2_nutrition-32" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="lst-2_nutrition-33"><a href="#lst-2_nutrition-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Check to see if the fruit is listed</span></span>
+<span id="lst-2_nutrition-34"><a href="#lst-2_nutrition-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> k, v <span class="kw">in</span> cal_dict.items():</span>
+<span id="lst-2_nutrition-35"><a href="#lst-2_nutrition-35" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> f.casefold() <span class="op">==</span> k.casefold():</span>
+<span id="lst-2_nutrition-36"><a href="#lst-2_nutrition-36" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="bu">print</span>(<span class="ss">f"Calories: </span><span class="sc">{</span>v<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="lst-2_nutrition-37"><a href="#lst-2_nutrition-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="lst-2_nutrition-38"><a href="#lst-2_nutrition-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">None</span></span>
+<span id="lst-2_nutrition-39"><a href="#lst-2_nutrition-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="lst-2_nutrition-40"><a href="#lst-2_nutrition-40" aria-hidden="true" tabindex="-1"></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</figure>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Calories: 50</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="sec-unit_3" class="level1">
+<h1>Unit 3: Exceptions</h1>
+<section id="sec-lecture_3" class="level2">
+<h2 class="anchored" data-anchor-id="sec-lecture_3">Lecture 3</h2>
+<ul>
+<li>Exceptions are things that go wrong within our code</li>
+<li></li>
+</ul>
 </section>
 </section>
 

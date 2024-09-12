@@ -1004,4 +1004,12 @@ main()
 # Unit 3: Exceptions {#sec-unit_3}
 ## Lecture 3 {#sec-lecture_3}
 - Exceptions are things that go wrong within our code
+- A syntax error (or parsing error) is a common type of error that most python users encounter early on
+  - Happens when code is entered incorrectly
+  - The parser repeats the line with arrows pointing at the token in the line where the error occurred
+- Runtime errors are those created by unexpected behavior in your code and include many types:
+  - Some of the types are included in base python, some are specific to libraries
+  - ***ZeroDivisionError***
+  - ***NameError***
+  - ***TypeError***
 - 

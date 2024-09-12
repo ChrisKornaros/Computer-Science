@@ -1017,7 +1017,7 @@ main()
 
 :::{#nte-Error_Documentation .callout-note}
 ## Error Documentation
-For more information on Errors and Exceptions, checkout Python's documentation on the subject: <https://docs.python.org/3/tutorial/errors.html>
+For more information on errors and error handling, as well as how Python processes both, checkout the official documentation on the subject: [Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html)
 :::
 
 ### try {#sec-try}

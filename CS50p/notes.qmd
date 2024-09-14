@@ -1021,4 +1021,130 @@ For more information on errors and error handling, as well as how Python process
 :::
 
 ### try {#sec-try}
-- In Python, ```try``` and ```except``` are ways of testing user/code input before something goes wrong
+- In Python, `try` and `except` are ways of testing user/code input before something goes wrong
+  - The try block of code will attempt to run the code on the subsequent indented lines, after the colon
+  - If the `try` block isn't successful, it generates an `exception` or `error`
+  - If you just use `except:` after a try block, it will do whatever you intend, regardless of the ***type*** of error
+- The code below will attempt to store a user input value, x, as an int and then print it
+  - If the error is a value error, it prints the specified message
+```{python}
+try:
+    x = int("10")
+    print(f"x is {x}")
+except ValueError:
+    print("x is not an integer")
+```
+
+- We can improve the code in a few ways
+  - It's best practice to `try` as few lines of code as possible; however, the following generates a different kind of error
+  - There's an error storing the variable x because Python can't convert the string `"test"` to type `int`
+  - So, Python excepts a `NameError` instead of a `ValueError` because `name 'x' is not defined`
+```{python}
+#| output: false
+
+try:
+    x = int("test")
+except ValueError:
+    print("x is not an integer")
+
+print(f"x is {x}")
+```
+
+- You can work around this error handling mismatch with another implementation of `try ... except`
+```{python}
+try:
+    x = int("test")
+except ValueError:
+    print("x is not an integer")
+else:
+    print(f"x is {x}")
+```
+
+- If Python doesn't catch an exception then it runs the block of code after `else`
+- You could further improve this code by adding a loop that will run forever, unless the right condition is met
+```{python}
+while True:
+    try:
+        x = int(10)
+    except ValueError:
+        print("x is not an integer")
+    else:
+        break
+
+print(f"x is {x}")
+```
+
+- To best implement this, refactor the code to use UDFs, abstracting the loop from the main function
+  - Note, `return` can also `break` your program out of a loop **and** it returns a value
+  - The following code could have an else block that returns a value that is stored in the `try` block; however, the pattern used accomplishes the same output, with less code
+```{python}
+def main():
+    x = get_int()
+    print(f"x is {x}.")
+
+def get_int():
+    while True:
+        try:
+            return int(10)
+        except ValueError:
+            print("x is not an integer")
+
+main()
+```
+
+- The final piece of error handling basics in Python is the `pass` command
+  - Simply put, it tells Python to do nothing upon encountering an error
+  - In the context of our code example, it will not print "x is not an integer" just reprompt the user
+```{python}
+def main():
+    x = get_int(10.0)
+    print(f"x is {x}")
+
+
+def get_int(prompt):
+    while True:
+        try:
+            return int(prompt)
+        except ValueError:
+            pass
+
+
+main()
+```
+
+## Problem Set 3 {#sec-problem_set_3}
+```{python}
+#| lst-label: lst-3_fuel
+#| lst-cap: Fuel Gauge
+#| code-line-numbers: true
+
+
+
+```
+
+```{python}
+#| lst-label: lst-3_taqueria
+#| lst-cap: Felipe's Taqueria
+#| code-line-numbers: true
+
+
+
+```
+
+```{python}
+#| lst-label: lst-3_grocery
+#| lst-cap: Grocery List
+#| code-line-numbers: true
+
+
+
+```
+
+```{python}
+#| lst-label: lst-3_outdated
+#| lst-cap: Outdated
+#| code-line-numbers: true
+
+
+
+```

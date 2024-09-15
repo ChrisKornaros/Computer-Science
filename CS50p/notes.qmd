@@ -1166,7 +1166,43 @@ main()
 #| lst-cap: Felipe's Taqueria
 #| code-line-numbers: true
 
+# Build the main function
+def main():
+    # Define the food items
+    menu = {
+    "Baja Taco": 4.25,
+    "Burrito": 7.50,
+    "Bowl": 8.50,
+    "Nachos": 11.00,
+    "Quesadilla": 8.50,
+    "Super Burrito": 8.50,
+    "Super Quesadilla": 9.50,
+    "Taco": 3.00,
+    "Tortilla Salad": 8.00
+    }
+    # Create a loop to continuously prompt the users
+    total_ord = 0
 
+    #while True:
+    try:
+        # Prompt the user
+        item_food = food("taco").title()
+        # Reprompt the user if the food isn't on the menu
+        if item_food in menu.keys():
+            # Return the total
+            total_ord = round(total_ord + menu.get(item_food), 2)
+            print(f"Total: ${total_ord:.2f}")
+        else:
+            return
+    except EOFError:
+        return print("")
+
+# Build the food input function
+def food(prompt):
+    f = str(prompt) 
+    return f
+
+main()
 
 ```
 

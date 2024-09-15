@@ -1186,7 +1186,7 @@ def main():
     #while True:
     try:
         # Prompt the user
-        item_food = food("taco").title()
+        item_food = food("super quesadilla").title()
         # Reprompt the user if the food isn't on the menu
         if item_food in menu.keys():
             # Return the total
@@ -1194,7 +1194,7 @@ def main():
             print(f"Total: ${total_ord:.2f}")
         else:
             return
-    except EOFError:
+    except:
         return print("")
 
 # Build the food input function

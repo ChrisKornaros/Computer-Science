@@ -1487,6 +1487,50 @@ for arg in sys.argv[1:]:
   - In Python these, libraries implemented as folders, are called packages
 - `PyPI` is a repository or directory of all third-party packages currently available
 - `cowsay` is a well-known package that allows a cow to talk to the user
+- The Python package manager is called `pip` and it easily allows you to download packages to your local system
+  - If you want to install a package locally, so you can import it into scripts, `pip install cowsay`
+:::{#imp-virtual_environments .callout-important}
+#### Virtual Environments and Isolation
+It's common practice in Python (and other languages) to create virtual environments or containers (when a more robust solution is needed), to isolate program requirements to specific projects. Typically, you won't need much more than pip and/or wheel (a package to handle C dependencies) installed locally. Then, use `pip install` within that `venv`. If you use `pip freeze > requirements.txt` within the venv, you can save the installed dependencies to a local file and then install those in new environments more easily. View the official [venv]<https://docs.python.org/3/library/venv.html> documentation to learn more.
+:::
+
+### APIs {#sec-apis}
+- Application program interfaces, or `API`, allow you to connect to the code of others
+- Basic Python has the `requests` package which allows your program to behave as a web browser would
+  - This is commonly used to scrape websites for data or automatically retrieve new information
+  - Common formats for data downloaded off the internet are `.csv`, `.txt`, and `.json`
+  - Read more in the offciail [requests]<https://docs.python-requests.org/> documentation
+- The `.json` file format stands for `JavaScriptObjectNotation` and is a ***structured*** format for storing data
+  - *Structured* implies a `key:value` storage format, the same as dictionaries
+  - Luckily, python has the `json` library that can help interpret and manipulate json data
+  - Read more in the official [json]<https://docs.python.org/3/library/json.html> documentation
+
+### Making Your Own Libraries {#sec-myo_libraries}
+- Stated at the beginning of this unit, situations where you want to reuse bits of code or share it, are perfect for libraries
+- For a basic example, take the following two code blocks
+  - Assume the first block is a file called `sayings.py`
+  - Assume the second is a separate .py file in the same local directory
+  - Notice how the import syntax is the same, and only the functionality of `goodbye` is imported
+```{python}
+#| eval: false
+
+def hello(name):
+    print(f"hello, {name}")
+
+
+def goodbye(name):
+    print(f"goodbye, {name}")
+```
+```{python}
+#| eval: false
+
+import sys
+
+from sayings import goodbye
+
+if len(sys.argv) == 2:
+    goodbye(sys.argv[1])
+```
 
 ## Problem Set 4 {#sec-problem_set_4}
 ```{python}

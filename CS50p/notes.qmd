@@ -1250,9 +1250,292 @@ main()
 #| lst-cap: Outdated
 #| code-line-numbers: true
 
+# Build the main function
+def main():
+    global months
+    # List containing the months in Titlecase
+    months = {
+        "January" : '1',
+        "February" : '2',
+        "March" : '3',
+        "April" : '4',
+        "May" : '5',
+        "June" : '6',
+        "July" : '7',
+        "August" : '8',
+        "September" : '9',
+        "October" : '10',
+        "November" : '11',
+        "December" : '12'
+    }
 
+    # Initialize a blank list for the separated date string
+    date_list = []
+    # Prompt a user for the date, ensure the month and format are acceptable before continuing
+    while True:
+        try:
+            ad = "January 7, 1998".strip().title()
+            # See if there is a '/' in the date, then handle accordingly
+            if '/' in ad:
+                date_list = ad.split('/')
+                if date_list[0] in months.values() and int(date_list[1]) <= 31:
+                    break
+                else:
+                    pass # Reprompt the user for input if the month is incorrect
+            # See if there is a ' ' in the date, then handle accordingly
+            elif ' ' in ad:
+                date_list = ad.split(' ')
+                if ',' in date_list[1]:
+                    date_list[1] = date_list[1].replace(',', '')
+                    if date_list[0].title() in months.keys() and int(date_list[1]) <= 31:
+                        break
+                    else:
+                        pass
+                else:
+                    pass # Reprompt if there is no comma, you can also use continue
+            else:
+                pass
+        except:
+            pass # If the code encounters an error, reprompt the user
 
+    # Convert the format from middle-endian to big-endian
+    date_fin = big_end(date_list)
+
+    # Pad the month and day with leading zeros if necessary
+    date_fin[1] = date_fin[1].zfill(2)
+    date_fin[2] = date_fin[2].zfill(2)
+
+    return print(f"{date_fin[0]}-{date_fin[1]}-{date_fin[2]}")
+
+# Define the endian conversion function
+def big_end(m_end):
+    # Check whether it's a numeric or string formatted month
+    if m_end[0] in months.keys():
+        m_end[0] = months.get(m_end[0])
+        b_end = [m_end[2], m_end[0], m_end[1]]
+        return b_end
+    elif m_end[0] in months.values():
+        b_end = [m_end[2], m_end[0], m_end[1]]
+        return b_end
+    else:
+        return 0
+
+main()
 ```
 
 # Unit 4: Libraries {#sec-unit_4}
 ## Lecture 4 {#sec-lecture_4}
+
+## Problem Set 4 {#sec-problem_set_4}
+```{python}
+#| lst-label: lst-X
+#| lst-cap: template
+#| code-line-numbers: true
+
+
+
+```
+
+```{python}
+#| lst-label: lst-X
+#| lst-cap: template
+#| code-line-numbers: true
+
+
+
+```
+
+```{python}
+#| lst-label: lst-X
+#| lst-cap: template
+#| code-line-numbers: true
+
+
+
+```
+
+```{python}
+#| lst-label: lst-X
+#| lst-cap: template
+#| code-line-numbers: true
+
+
+
+```
+
+```{python}
+#| lst-label: lst-X
+#| lst-cap: template
+#| code-line-numbers: true
+
+
+
+```
+
+```{python}
+#| lst-label: lst-X
+#| lst-cap: template
+#| code-line-numbers: true
+
+
+
+```
+
+# Unit 5: Unit Tests {#sec-unit_5}
+## Lecture 5 {#sec-lecture_5}
+
+## Problem Set 5 {#sec-problem_set_5}
+```{python}
+#| lst-label: lst-test_twttr
+#| lst-cap: Testing my twttr
+#| code-line-numbers: true
+
+
+
+```
+
+```{python}
+#| lst-label: lst-test_bank
+#| lst-cap: Back to the Bank
+#| code-line-numbers: true
+
+
+
+```
+
+```{python}
+#| lst-label: lst-test_plates
+#| lst-cap: Re-requesting a Vanity Plate
+#| code-line-numbers: true
+
+
+
+```
+
+```{python}
+#| lst-label: lst-test_fuel
+#| lst-cap: Refueling
+#| code-line-numbers: true
+
+
+
+```
+
+# Unit 6: File I/O {#sec-unit_6}
+## Lecture 6 {#sec-lecture_6}
+
+## Problem Set 6 {#sec-problem_set_6}
+```{python}
+#| lst-label: lst-lines
+#| lst-cap: Lines of Code
+#| code-line-numbers: true
+
+
+
+```
+
+```{python}
+#| lst-label: lst-pizza
+#| lst-cap: Pizza Py
+#| code-line-numbers: true
+
+
+
+```
+
+```{python}
+#| lst-label: lst-scourgify
+#| lst-cap: Scourgify
+#| code-line-numbers: true
+
+
+
+```
+
+```{python}
+#| lst-label: lst-shirt
+#| lst-cap: CS50 P-Shirt
+#| code-line-numbers: true
+
+
+
+```
+
+# Unit 7: Regular Expressions {#sec-unit_7}
+## Lecture 7 {#sec-lecture_7}
+
+## Problem Set 7 {#sec-problem_set_7}
+```{python}
+#| lst-label: lst-numb3rs
+#| lst-cap: NUMB3RS
+#| code-line-numbers: true
+
+
+
+```
+
+```{python}
+#| lst-label: lst-watch
+#| lst-cap: Watch on YouTube
+#| code-line-numbers: true
+
+
+
+```
+
+```{python}
+#| lst-label: lst-working
+#| lst-cap: Working 9-to-5
+#| code-line-numbers: true
+
+
+
+```
+```{python}
+#| lst-label: lst-um
+#| lst-cap: Regular, um, Expressions
+#| code-line-numbers: true
+
+
+
+```
+
+```{python}
+#| lst-label: lst-response
+#| lst-cap: Response Validation
+#| code-line-numbers: true
+
+
+
+```
+
+# Unit 8: Object Oriented Programming {#sec-unit_8}
+## Lecture 8 {#sec-lecture_8}
+
+## Problem Set 8 {#sec-problem_set_8}
+```{python}
+#| lst-label: lst-seasons
+#| lst-cap: Seasons of Love
+#| code-line-numbers: true
+
+
+
+```
+
+```{python}
+#| lst-label: lst-jar
+#| lst-cap: Cookie Jar
+#| code-line-numbers: true
+
+
+
+```
+
+```{python}
+#| lst-label: lst-shirtificate
+#| lst-cap: CS50 Shirtificate
+#| code-line-numbers: true
+
+
+
+```

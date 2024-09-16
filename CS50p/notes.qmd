@@ -33,7 +33,7 @@ git push
 - Even though there are general settings set at the top of the `.qmd` file, when settings are changed on specific objects, *all* of their settings must be configured, even the document's defaults
 
 :::{#nte-quarto_md_basics .callout-note .unnumbered}
-## Quarto Markdown Basics
+#### Quarto Markdown Basics
 
 For more markdown tips, docs, and shortcuts <https://quarto.org/docs/authoring/markdown-basics.html>
 :::
@@ -61,7 +61,7 @@ y = 4#int(input("What's y? "))
 print(x + y)
 ```
 ::: {#nte-hardcoded_variables .callout-note}
-## Hardcoded Variable Values
+#### Hardcoded Variable Values
 
 Quarto does not support user input code rendering, so the file preview fails with functions like `input()`. As a result, appropriate values are hard-coded.
 :::
@@ -97,7 +97,7 @@ print(f"{z:.2f}")
 ```
 
 ::: {#nte-numeric_operators .callout-note}
-## Python Numeric Operators
+#### Python Numeric Operators
 
 Python has several built-in operators for numeric data types: `+`, `-`, `*`, `/`, `** (exponentiation)`, `% (remainder)`.
 :::
@@ -261,7 +261,7 @@ main()
   - `== and !=` this denotes equal to and not equal to, respectively.
 
 ::: {#nte-equal_sign_diff .callout-note}
-## Difference betweeen `=` and `==`
+#### Difference betweeen `=` and `==`
 
 Using a single `=` will assign a value on the right to the value on the left: `x = 2`; however, the double `==` will check if the value on the right equals the value on the left `x == 2`.  
 :::
@@ -450,7 +450,7 @@ def main():
 main()
 ```
 :::{#tip-case_conditions .callout-tip}
-## Case Conditions
+#### Case Conditions
 
 The `case _ if` syntax allows you to add conditions to each case when using a match statement. Combine this with the `in` operator to perform searches in strings: `case _ if h in hello`. 
 :::
@@ -611,7 +611,7 @@ while i < 3:
 ```
 
 :::{#tip-add_sub_assignment .callout-tip}
-## Addition and Subtraction Assignment Operators
+#### Addition and Subtraction Assignment Operators
 The `+=` and `-=` symbols are the addition and subtraction assignment operators, respectively. They are a great shortcut for iteratively adding values while looping. 
 :::
 
@@ -634,7 +634,7 @@ for i in range(3):
 ```
 
 :::{#nte-underscore_wildcard .callout-note}
-## Use of the `_` as a wildcard operator
+#### Use of the `_` as a wildcard operator
 You can further simplifying things by removing the unused `i` and replacing it with a `_` to represent it. ***However,*** only do this when the variable you're replacing, in this case `i`, isn't used in the code.
 :::
 
@@ -777,7 +777,7 @@ main()
 
 ## Problem Set 2 {#sec-problem_set_2}
 :::{#nte-camel_snake_case .callout-note}
-## camelCase and snake_case
+#### camelCase and snake_case
 Many times in code, you'll see variable names in various formats. Most commonly, you'll see `camelCase`, where the first word is lower case and then subsequent words have a capital first letter without a space separator, and `snake_case` where all words are lower case and they're separated by an `_`. 
 :::
 ```{python}
@@ -833,12 +833,12 @@ main()
 ```
 
 :::{#nte-list_manipulation .callout-note}
-## Manipulating Lists
+#### Manipulating Lists
 Lists in Python use *zero indexing* and can be created with literal syntax `[]` or formal syntax `list()`. You can manipulate lists using literal syntax and various formal methods and functions, as show in @lst-2_camel.
 :::
 
 :::{#imp-data_quality_checks .callout-important}
-## Built-In Data Quality Checks
+#### Built-In Data Quality Checks
 Data quality is one of the top issues plaguing data engineers, scientiests, analysts, and beyond right now. It's important to understand your output and why your code is operating in the way it is. As you saw above, I added a variable `start = 1` to essentially serve as a binary check. Once the loop ran once and the list was started, `start -= 1` so the rest of the conditional runs, but only checks the letter's case. This is because if the first and last letter of a word are the same, the conditional interpreted that as the start of a new word, rather than the end of the first.
 :::
 
@@ -1016,7 +1016,7 @@ main()
   - If there are common errors, you can build in your solutions to error messages
 
 :::{#nte-Error_Documentation .callout-note}
-## Error Documentation
+#### Error Documentation
 For more information on errors and error handling, as well as how Python processes both, checkout the official documentation on the subject: [Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html)
 :::
 
@@ -1253,3 +1253,6 @@ main()
 
 
 ```
+
+# Unit 4: Libraries {#sec-unit_4}
+## Lecture 4 {#sec-lecture_4}

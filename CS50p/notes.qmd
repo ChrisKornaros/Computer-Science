@@ -1740,7 +1740,7 @@ if __name__ == '__main__':
 ```
 
 :::{#nte-if_name_guard .callout-note}
-#### The `if __name__ == '__main__' technique
+#### The `if __name__ == '__main__'` technique
 You may be wondering why you see this code syntax when calling main functions instead of just `main()` at the end of some scripts. When writing production code, you might need to import your script to run tests on individual functions (like get_level() or generate_integer()). If you don't include the `if __name__ == "__main__":` guard, `main()` will run immediately when the script is imported, causing unintended behavior during testing.
 :::
 

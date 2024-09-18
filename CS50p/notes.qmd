@@ -1602,8 +1602,21 @@ main()
 #| code-line-numbers: true
 #| eval: false
 
+# Import the required packages
+import inflect
 
+# Build the main function
+def main():
+    p = inflect.engine()
+    name = []
+    while True:
+        try:
+            name.append(input("Name: "))
+        except EOFError:
+            hills = p.join(name, final_sep=",")
+            return print("Adieu, adieu, to", hills)
 
+main()
 ```
 
 ```{python}
@@ -1612,8 +1625,40 @@ main()
 #| code-line-numbers: true
 #| eval: false
 
+# Import the necessary packages
+import random
+import sys
+
+# Build the main function
+def main():
+    # Initialize the random seed
+    #random.seed(a=12345)
+    # Prompt the user for a positive integer
+    while True:
+        try:
+            n = int(input("Level: "))
+            if 0 < n:
+                break
+        except ValueError:
+            pass
+
+    # Generate a random number
+    num = random.randint(1, n)
+    # Reprompt the user for a guess until they get it correct
+    while True:
+        try:
+            guess = int(input("Guess: "))
+            if guess < num:
+                print("Too small!")
+            elif num < guess:
+                print("Too large!")
+            else:
+                sys.exit("Just right!")
+        except ValueError:
+            pass
 
 
+main()
 ```
 
 ```{python}
@@ -1622,9 +1667,82 @@ main()
 #| code-line-numbers: true
 #| eval: false
 
+# Import the necessary packages
+import random
+
+# Build the main function
+def main():
+    # Prompt the user for a level, n of value 1, 2, or 3
+    level = get_level()
+
+    # Initialize the score
+    score = 0
+
+    # Generate the equations
+    for _ in range(10):
+        x = generate_integer(level)
+        y = generate_integer(level)
+
+        # Allow the user up to three attempts per equation
+        attempt = 0
+        while attempt < 3:
+            try:
+                # Prompt the user for the answer
+                a = int(input(f"{x} + {y} = "))
+
+                # Check the answer
+                if a == (x + y):
+                    score += 1
+                    break
+                else:
+                    print("EEE")
+                    attempt += 1
+            # If the input isn't an integer
+            except ValueError:
+                print("EEE")
+                attempt += 1
+
+        # If the user fails after 3 attempts, show the correct answer
+        if attempt == 3:
+            print(f"{x} + {y} = {x + y}")
+
+    # Output the user's score
+    print(f"Score: {score}")
+
+
+def get_level():
+    while True:
+        try:
+            level = int(input("Level: "))
+            if level in [1, 2, 3]:
+                return level
+        except ValueError:
+            pass
+
+
+# Build the generate integer function
+def generate_integer(level):
+    # See which level and generate an X and Y value
+    if level == 1:
+        return random.randint(0, 9)
+    elif level == 2:
+        return random.randint(10, 99)
+    elif level == 3:
+        return random.randint(100, 999)
+    else:
+        raise ValueError("Level must be 1, 2, or 3")
+
+
+if __name__ == '__main__':
+    main()
 
 
 ```
+
+:::{#nte-if_name_guard .callout-note}
+#### The `if __name__ == '__main__' technique
+You may be wondering why you see this code syntax when calling main functions instead of just `main()` at the end of some scripts. When writing production code, you might need to import your script to run tests on individual functions (like get_level() or generate_integer()). If you don't include the `if __name__ == "__main__":` guard, `main()` will run immediately when the script is imported, causing unintended behavior during testing.
+:::
 
 ```{python}
 #| lst-label: lst-bitcoin

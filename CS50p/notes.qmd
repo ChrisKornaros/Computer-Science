@@ -1892,8 +1892,19 @@ def test_zero():
           square("cat")
 ```
 
-### Testing Strings {#sec-testing_strings}
-- 
+::: {#tip-testing_strings .callout-tip} 
+#### Testing Strings
+If you want to test strings with `pytest`, make sure that your function `return`s a value, instead of only `print(str)`. `pytest` works by testing function output and requires the `return` clause.
+:::
+
+- Unit testing code with multiple tests is so common you have the ability to run a folder of tests with one command
+- For example, in your working directory run `mkdir test`
+  - You can then run `code test/test.py`
+  - Add a `.py` file that you want to test to the test folder
+  - Additionally, add a `__init__.py` file to the test directory
+    - `pytest` doesn't allow you to run tests as a folder without the special `__init__` file
+    - Even leaving this file blank tells `pytest` that the whole folder has tests that can be run
+    - Learn more in the `pytest` documentation on [Import Mechanisms]<https://docs.pytest.org/en/7.1.x/explanation/pythonpath.html?highlight=folder#pytest-import-mechanisms-and-sys-path-pythonpath>
 
 ## Problem Set 5 {#sec-problem_set_5}
 ```{python}

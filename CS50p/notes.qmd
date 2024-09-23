@@ -1787,6 +1787,125 @@ main()
 
 # Unit 5: Unit Tests {#sec-unit_5}
 ## Lecture 5 {#sec-lecture_5}
+- Up until now, I've been testing code with print statements
+  - It's common and often the best practice to write your own code to test your programs
+- Consider the following code, called `calculator.py` in my current working directory
+```{python}
+#| eval: false
+
+def main():
+    x = int(input("What's x? "))
+    print("x squared is", square(x))
+
+def square(n):
+    return n * n
+
+if __name__ == '__main__':
+    main()
+```
+
+- You could manually test simple numbers such as 2, but for more complex outputs this isn't a scalable practice
+- You can create a simple script to test your code as follows
+  - **Notice:** I'm in the same working directory, so I can call the name of the .py file as I would a library, and then specify the function
+```{python}
+#| eval: false
+
+from calculator import square
+
+def main():
+    test_square()
+
+def test_square():
+    if square(2) != 4:
+        print("2 squared was not 4")
+    if square(3) != 9:
+        print("3 squared was not 9")
+
+if __name__ == "__main__":
+    main()
+```
+
+- Running this code will output nothing, which could mean we passed our tests or it didn't encounter a corner case that throws an error
+- If we want to test more cases, our code can easily expand beyond a manageable size
+
+### assert {#sec-assert}
+- Python's `assert` command lets us tell the compiler something (an assertion) is true
+  - You could modify the previous test code to remove both if statements and `assert square(2) == 4` `assert square(3) == 9`
+  - Definitively asserting what `square(2)` and `square(3)` equal reduces the lines of code
+- You can then break your code by changing the `square()` function to equal `n + n`
+  - Subsequently running `test_calculator()` will then return an `AssertionError`, which means a condition was not met
+  - That being said, you could see how even this format will become bloated at scale if you specify issues with code
+
+### pytest {#sec-pytest}
+- `pytest` is a third-party library that allows you to unit test your program, aka you can test functions within a program
+- In your command-line, typing `pytest test_calculator.py` will provide output/feedback on the functions within your script
+- In the current format, `pytest` will test all assertions at once, but if one line fails, then it will stop testing the rest
+  - Modifying the code, so it has various testing categories allows you to narrow down the issues with your code
+```{python}
+#| eval: false
+
+from calculator import square
+
+
+def test_positive():
+    assert square(2) == 4
+    assert square(3) == 9
+
+
+def test_negative():
+    assert square(-2) == 4
+    assert square(-3) == 9
+
+
+def test_zero():
+    assert square(0) == 0
+```
+
+- Testing frameworks like `pytest` will run each function, even if one fails
+  - This framework in particular has useful functions built-in to enable more robust testing and error responses
+  - Instead of using assert, below, the `raises` function from `pytest` allows you to express the expectation of an error
+  - Learn more in the official [pytest]<https://docs.pytest.org/en/7.1.x/getting-started.html> documentation
+```{python}
+#| eval: false
+
+  import pytest
+
+  from calculator import square
+
+
+  def test_positive():
+      assert square(2) == 4
+      assert square(3) == 9
+
+
+  def test_negative():
+      assert square(-2) == 4
+      assert square(-3) == 9
+
+
+  def test_zero():
+      assert square(0) == 0
+
+
+  def test_str():
+      with pytest.raises(TypeError):
+          square("cat")
+```
+
+::: {#tip-testing_strings .callout-tip} 
+#### Testing Strings
+If you want to test strings with `pytest`, make sure that your function `return`s a value, instead of only `print(str)`. `pytest` works by testing function output and requires the `return` clause.
+:::
+
+### Organizing Tests Into Folders {#sec-organizing_tests_into_folders}
+- Unit testing code with multiple tests is so common you have the ability to run a folder of tests with one command
+- For example, in your working directory run `mkdir test`
+  - You can then run `code test/test.py`
+  - Add a `.py` file that you want to test to the test folder
+  - Additionally, add a `__init__.py` file to the test directory
+    - `pytest` doesn't allow you to run tests as a folder without the special `__init__` file
+    - Even leaving this file blank tells `pytest` that the whole folder has tests that can be run
+    - Learn more in the `pytest` documentation on [Import Mechanisms]<https://docs.pytest.org/en/7.1.x/explanation/pythonpath.html?highlight=folder#pytest-import-mechanisms-and-sys-path-pythonpath>
 
 ## Problem Set 5 {#sec-problem_set_5}
 ```{python}

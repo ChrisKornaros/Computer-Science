@@ -1787,6 +1787,43 @@ main()
 
 # Unit 5: Unit Tests {#sec-unit_5}
 ## Lecture 5 {#sec-lecture_5}
+- Up until now, I've been testing code with print statements
+  - It's common and often the best practice to write your own code to test your programs
+- Consider the following code, called `calculator.py` in my current working directory
+```{python}
+#| eval: false
+
+def main():
+    x = int(input("What's x? "))
+    print("x squared is", square(x))
+
+def square(n):
+    return n * n
+
+if __name__ == '__main__':
+    main()
+```
+
+- You could manually test simple numbers such as 2, but for more complex outputs this isn't a scalable practice
+- You can create a simple script to test your code as follows
+  - **Notice:** I'm in the same working directory, so I can call the name of the .py file as I would a library, and then specify the function
+```{python}
+#| eval: false
+
+from calculator import square
+
+def main():
+    test_square()
+
+def test_square():
+    if square(2) != 4:
+        print("2 squared was not 4")
+    if square(3) != 9:
+        print("3 squared was not 9")
+
+if __name__ == "__main__":
+    main()
+```
 
 ## Problem Set 5 {#sec-problem_set_5}
 ```{python}

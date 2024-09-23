@@ -1825,6 +1825,76 @@ if __name__ == "__main__":
     main()
 ```
 
+- Running this code will output nothing, which could mean we passed our tests or it didn't encounter a corner case that throws an error
+- If we want to test more cases, our code can easily expand beyond a manageable size
+
+### assert {#sec-assert}
+- Python's `assert` command lets us tell the compiler something (an assertion) is true
+  - You could modify the previous test code to remove both if statements and `assert square(2) == 4` `assert square(3) == 9`
+  - Definitively asserting what `square(2)` and `square(3)` equal reduces the lines of code
+- You can then break your code by changing the `square()` function to equal `n + n`
+  - Subsequently running `test_calculator()` will then return an `AssertionError`, which means a condition was not met
+  - That being said, you could see how even this format will become bloated at scale if you specify issues with code
+
+### pytest {#sec-pytest}
+- `pytest` is a third-party library that allows you to unit test your program, aka you can test functions within a program
+- In your command-line, typing `pytest test_calculator.py` will provide output/feedback on the functions within your script
+- In the current format, `pytest` will test all assertions at once, but if one line fails, then it will stop testing the rest
+  - Modifying the code, so it has various testing categories allows you to narrow down the issues with your code
+```{python}
+#| eval: false
+
+from calculator import square
+
+
+def test_positive():
+    assert square(2) == 4
+    assert square(3) == 9
+
+
+def test_negative():
+    assert square(-2) == 4
+    assert square(-3) == 9
+
+
+def test_zero():
+    assert square(0) == 0
+```
+
+- Testing frameworks like `pytest` will run each function, even if one fails
+  - This framework in particular has useful functions built-in to enable more robust testing and error responses
+  - Instead of using assert, below, the `raises` function from `pytest` allows you to express the expectation of an error
+  - Learn more in the official [pytest]<https://docs.pytest.org/en/7.1.x/getting-started.html> documentation
+```{python}
+#| eval: false
+
+  import pytest
+
+  from calculator import square
+
+
+  def test_positive():
+      assert square(2) == 4
+      assert square(3) == 9
+
+
+  def test_negative():
+      assert square(-2) == 4
+      assert square(-3) == 9
+
+
+  def test_zero():
+      assert square(0) == 0
+
+
+  def test_str():
+      with pytest.raises(TypeError):
+          square("cat")
+```
+
+### Testing Strings {#sec-testing_strings}
+- 
+
 ## Problem Set 5 {#sec-problem_set_5}
 ```{python}
 #| lst-label: lst-test_twttr

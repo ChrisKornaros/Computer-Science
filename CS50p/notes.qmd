@@ -28,6 +28,7 @@ git push
 - Quarto is used from the command line, the .qmd file uses markdown syntax
 - Using Docker to spin up a container to run the quarto preview was clunky and complicated, still did not work
   - So, simplest solution is spinning up a virtual envionment in the folder I want to work from and then using the venv
+- Use `Cmd + Shift + i` to insert a code block
 
 ### Some general markdown tips for .qmd files {#sec-md-tips .unnumbered}
 - Even though there are general settings set at the top of the `.qmd` file, when settings are changed on specific objects, *all* of their settings must be configured, even the document's defaults
@@ -2022,7 +2023,63 @@ def test_gauge():
 
 # Unit 6: File I/O {#sec-unit_6}
 ## Lecture 6 {#sec-lecture_6}
-- 
+### File I/O {#sec-file_i/o}
+- Up until now, all the code written was stored in memory: once the program ends, all information gathered/stored is lost
+- File I/O (input/output) lets you store data so you can access it later
+  - Writing to flat files (.txt, .csv)
+  - Writing to databases (PostgreSQL, DuckDB)
+  - Etc.
+
+### open {#sec-open}
+- `open` is a built-in Python function that allows you to open a file and utilize its contents in a program
+  - You can both read from it and write to it
+- Here's a basic example of how to create a file and then write to it
+  - The `w` in `open()` tells Python to write to the file
+  - If you just wanted to read a file's contents, you can use `r`
+  - If you want to modify a file, instead of overwriting it, use `a`
+
+```{python}
+#| eval: false
+
+name = input("What's your name? ")
+
+file = open("names.txt", "w")
+file.write(name)
+file.close()
+```
+
+### with {#sec-with}
+- The keyword `with` allows you to automate the closing of a file
+- Say you wanted to read and print out all of the lines in a file, with is great for interacting with that file
+- This code is quite simple
+  - It opens the file from earlier, `names.txt`, and stores each line in a list object
+  - Then, it prints out each line, stripped of any excess line breaks or white space on each side
+```{python}
+with open("names.txt", "r") as file:
+    for line in file:
+        print(line.rstrip())
+```
+### CSV {#sec-csv}
+- `CSV` stands for ***comma separated values***
+  - Like its name implies, this file format separates the values within it via commas
+  - This is a common format for storing and sharing data
+  - For a classic, relation DB the first line(s) of the file would be the header, each column separated by a column
+  - Then, subsequent rows would have their values from left to right stored, in accordance with the column headers
+- While a `.csv` file is straightforward enough, it can be complicated, luckily there's the `csv` package in Python
+  - There's a handy tool in the library called `reader` which helps handle embedded commas, among other things
+    - Think about fields that may have commas, or comment boxes where a comma may be within quotes
+  - There's also the `DictReader` object, which enables even more flexible csv functionality
+    - This will let you specify columns in your code based on a header line in the .csv file
+    - Doing so ensures that your code will always run so long as the file is configured properly
+      - This technique is called `coding defensively`
+- As always, learn more by reading Python's official [CSV]<https://docs.python.org/3/library/csv.html> documentation
+
+### Binary Files and `PIL` {#sec-binary_files_pil}
+- A binary file is, as it sounds, simply a collection of 1s and 0s, this type of file can store anything
+- `PIL` is a popular Python library that works well with image files
+- Animated GIFs are files where numerous images are played in a looping sequence to create a simple animation effect
+- You can create simplistic gifs using PIL
+  - Take an image, then combine it with the reading/writing/appending techniques to output the .gif
 
 ## Problem Set 6 {#sec-problem_set_6}
 ```{python}

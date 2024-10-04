@@ -2038,6 +2038,9 @@ def test_gauge():
   - If you just wanted to read a file's contents, you can use `r`
   - If you want to modify a file, instead of overwriting it, use `a`
   - If you want to create a file, you can use `x`, which returns an error if the file exists
+- Furthermore, you can specify how the file should be handled
+  - `t` for Text, the default mode
+  - `b` for Binary, (i.e. images)
 
 ```{python}
 #| eval: false

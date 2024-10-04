@@ -2037,6 +2037,7 @@ def test_gauge():
   - The `w` in `open()` tells Python to write to the file
   - If you just wanted to read a file's contents, you can use `r`
   - If you want to modify a file, instead of overwriting it, use `a`
+  - If you want to create a file, you can use `x`, which returns an error if the file exists
 
 ```{python}
 #| eval: false
